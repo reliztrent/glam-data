@@ -12,9 +12,9 @@ theme_color: yellow
 # Ccustom variables will be accessible in the templates via {{ site.myvariable }}.
 title: GLAM data
 description: Experiments with open data and galleries, libraries, archives, and museums
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/glam-data" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-github_repo: reliztrent.github.io # the GitHub repo name for your project
+github_repo: glam-data # the GitHub repo name for your project
 github_username: reliztrent
 
 # Optional social link, you can choose from the following options:
