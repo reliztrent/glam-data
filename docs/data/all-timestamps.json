@@ -1,0 +1,27 @@
+---
+layout: none
+---
+[
+	{
+		"count":{{site.data.2020-01-gmdmar.pagination.of}}
+	},
+	{
+		"count":{{site.data.2020-02-gmdmar.pagination.of}}
+	},
+	{
+		"count":{{site.data.2020-03-gmdmar.pagination.of}}
+	},
+	{
+		"count":{{site.data.2020-04-gmdmar.pagination.of}}
+	},
+	{
+		"count":{{site.data.2020-05-gmdmar.pagination.of}}
+	},
+	{
+		"count":{{site.data.2020-06-gmdmar.pagination.of}}
+	},
+	{
+		"count":{{site.data.2020-07-gmdmar.pagination.of}}
+	}
+
+]
