@@ -1,0 +1,27 @@
+---
+layout: page
+title: Dashboard
+---
+
+<h3>Total online items: {{site.data.maps-loc-gov-facets.facets[0].filters[0].count}}</h3>
+<h3>Total online Sanborn items: {{site.data.all_facet_sanborn_count[0].count}}</h3>
+
+<div>
+	<h4>Online</h4>
+	<p>Online items in loc.gov/maps: online vs not online</p>
+	{% include d3-maps-online.html %}
+</div>
+
+<div>
+	<h4>Part Of</h4>
+	<p>Online items in loc.gov/maps, by Collection ("Part Of")</p>
+	{% include d3-maps-partof.html %}
+</div>
+
+<div>
+	<h4>Original Format</h4>
+	<p>Online items in loc.gov/maps, by Original Format</p>
+	{% include d3-maps-original-format.html %}
+</div>
+
+
