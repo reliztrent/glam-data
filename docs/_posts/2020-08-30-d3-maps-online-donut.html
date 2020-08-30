@@ -65,7 +65,7 @@ var color = d3.scaleOrdinal()
 // Compute the position of each group on the pie:
 var pie = d3.pie()
   .sort(null) // Do not sort group by size
-  .value(function(d) {return d.value.count; })
+  .value(function(d) {return d.count; })
 var data_ready = pie(data)
 console.log(data_ready)
 
