@@ -29,7 +29,7 @@ layout: none
 	{
 		"count":{{site.data.2020-07-gmdmar.pagination.of}},
 		"facet":"2020-07"
-	}
+	},
 	{
 		"count":{{site.data.2020-08-gmdmar.pagination.of}},
 		"facet":"2020-08"
