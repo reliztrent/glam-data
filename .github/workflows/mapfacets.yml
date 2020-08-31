@@ -1,5 +1,5 @@
 name: Refresh Feed
-on: 0 4 * * *
+on: '0 4 * * *'
 jobs:
   refresh-feed:
     runs-on: ubuntu-latest
