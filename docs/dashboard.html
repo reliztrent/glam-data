@@ -4,7 +4,9 @@ title: Dashboard
 ---
 
 <h3>Online map objects: {{site.data.maps-loc-gov-facets.facets[0].filters[0].count}}</h3>
-<h3>Online Sanborns: {{site.data.maps-loc-gov-facets.facets[5].filters[1].count}}</h3>
+<p> Online Sanborns atlases: {{site.data.maps-loc-gov-facets.facets[5].filters[1].count}}</p>
+<p> Online gmd.mar: {{site.data.gmdmar-facets.facets[0].filters[0].count}}</p>
+
 
 <div>
 	<h4>Online</h4>
@@ -21,13 +23,20 @@ title: Dashboard
 </div>
 
 <div>
+	<h4>Part Of</h4>
+	<p>Online items in loc.gov/maps, by Collection ("Part Of")</p>
+	<div id="d3-maps-partof"></div>
+	
+</div>
+
+<!--<div>
 	<h4>Original Format</h4>
 	<p>Online items in loc.gov/maps, by Original Format</p>
 	<div id="d3-maps-original-format-donut"></div>
-</div>
+</div> 
+if you uncomment this, add back in the js script include at the bottom-->
 
 
 <script src="//d3js.org/d3.v4.min.js"></script>
 {% include d3-maps-online.html %}
 {% include d3-maps-partof.html %}
-{% include d3-maps-original-format.html %}
