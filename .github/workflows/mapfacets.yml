@@ -17,7 +17,7 @@ jobs:
         with:
           ENDPOINT: https://www.loc.gov/maps/?fo=json&at=facets
           RETRY: true
-          SAVE_NAME: echo 'maps-facets-' ${{ env.TIMESTAMP }}
+          SAVE_NAME: maps-facets-${{ env.TIMESTAMP }}
           
       - name: Build and Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@releases/v3
