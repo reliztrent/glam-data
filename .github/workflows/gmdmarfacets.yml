@@ -17,7 +17,7 @@ jobs:
       - name: Fetch API Data 📦
         uses: JamesIves/fetch-api-data-action@1.0.15
         with:
-          ENDPOINT: https://www.loc.gov/maps/?fo=json&at=facets
+          ENDPOINT: https://www.loc.gov/maps/?sq=group:gmd.mar&fo=json&at=facets
           RETRY: true
           SAVE_NAME: gmdmar-facets-${{ env.TIMESTAMP }}
           
