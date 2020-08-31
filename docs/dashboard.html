@@ -2,32 +2,30 @@
 layout: page
 title: Dashboard
 ---
+<h2>Maps on loc.gov</h2>
 
 <h3>Online map objects: {{site.data.maps-loc-gov-facets.facets[0].filters[0].count}}</h3>
 <p> Online Sanborns atlases: {{site.data.maps-loc-gov-facets.facets[5].filters[1].count}}</p>
 <p> Online gmd.mar: {{site.data.gmdmar-facets.facets[0].filters[0].count}}</p>
 
 
-<div>
-	<h4>Online</h4>
-	<p>Online items in loc.gov/maps: online vs not online</p>
-	<div id="d3-maps-online-donut"></div>
 
-</div>
+<h3>Online vs Not Online objects</h3>
+<p>Online objects in loc.gov/maps: online vs not online. Included are all map objects. Items not online include links to catalog or other metadata records without online resources. Items online include primarily digitized materials, but also webpages, finding aids, e-resources, and other online resources. </p>
+<div id="d3-maps-online-donut"></div>
 
-<div>
-	<h4>Part Of</h4>
-	<p>Online items in loc.gov/maps, by Collection ("Part Of")</p>
-	<div id="d3-maps-partof"></div>
-	
-</div>
 
-<div>
-	<h4>Part Of</h4>
-	<p>Online items in loc.gov/maps, by Collection ("Part Of")</p>
-	<div id="d3-maps-partof"></div>
-	
-</div>
+<h3>Part Of</h3>
+<p>Online objects in loc.gov/maps, by Collection ("Part Of")</p>
+<div id="d3-maps-partof"></div>
+
+
+<h3>Recently added or updated, gmd.mar</h3>
+<p>Bi-weekly gmd.mar build, including count of all objects created or modified</p>
+<div id="d3-gmdmar-recent"></div>
+
+
+
 
 <!--<div>
 	<h4>Original Format</h4>
@@ -40,3 +38,4 @@ if you uncomment this, add back in the js script include at the bottom-->
 <script src="//d3js.org/d3.v4.min.js"></script>
 {% include d3-maps-online.html %}
 {% include d3-maps-partof.html %}
+{% include d3-gmdmar-recent.html %}
