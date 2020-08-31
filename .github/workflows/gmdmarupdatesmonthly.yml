@@ -1,0 +1,32 @@
+name: Monthly new gmd.mar updates
+on:
+  schedule:
+    - cron: '10 4 1 * *'
+jobs:
+  refresh-feed:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          
+      - name: Set env
+        run: echo ::set-env name=MONTH::$(date +"%Y%m")
+        run: echo ::set-env name=FIRSTDAYLASTMONTH::$(date -d "-1 month -$(($(date +%d)-1)) days" +"%Y-%m-%d")
+        run: echo ::set-env name=LASTDAYLASTMONTH::$(date -d "-$(date +%d) days" '+%Y-%m-%d')
+  
+      - name: Fetch API Data 📦
+        uses: JamesIves/fetch-api-data-action@1.0.15
+        with:
+          ENDPOINT: https://www.loc.gov/search/?all=true&sb=shelf-id&sq=group:gmd.mar+AND+number_source_modified:[${{ env.FIRSTDAYLASTMONTH }} TO ${{ env.LASTDAYLASTMONTH }}]&fo=json&at=facets
+          RETRY: true
+          SAVE_NAME: maps-loc-gov-facets-${{ env.MONTH }}
+          
+      - name: Build and Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          ACCESS_TOKEN: ${{ secrets.BUILD_AND_DEPLOY_ACTION_ACCESS_TOKEN }}
+          BRANCH: master # Pushes the updates to the master branch.
+          FOLDER: fetch-api-data-action # Must maintain this variable, appears to be ignored
+          TARGET_FOLDER: docs/_data # Saves the data into the 'docs/_data' directory on the master branch.
