@@ -1,18 +1,24 @@
 ---
 layout: page
-title: Dashboard
+title: P1 Maps Dashboard
 ---
-<h2>Maps on loc.gov</h2>
+
+<style>
+	.h0 {font-size:90px !important;}
+</style>
 
 <div class="clearfix">
-	<div class="col-3 sm-width-full left">
-		<h3>Online map objects: {{site.data.maps-loc-gov-facets.facets[0].filters[0].count}}</h3>
+	<div class="col-4 sm-width-full left">
+		<h3>Online map objects</h3>
+		<p>{{site.data.maps-loc-gov-facets.facets[0].filters[0].count}}</p>
 	</div>
-	<div class="col-3 sm-width-full left">
-		<h3> Online Sanborns atlases: {{site.data.maps-loc-gov-facets.facets[5].filters[1].count}}</h3>
+	<div class="col-4 sm-width-full left">
+		<h3> Online Sanborns atlases</h3>
+		<p>{{site.data.maps-loc-gov-facets.facets[5].filters[1].count}}</p>
 	</div>
-	<div class="col-3 sm-width-full left">
-		<h3> Online gmd.mar: {{site.data.gmdmar-facets.facets[0].filters[0].count}}</h3>
+	<div class="col-4 sm-width-full left">
+		<h3> Online gmd.mar</h3>
+		<p>{{site.data.gmdmar-facets.facets[0].filters[0].count}}</p>
 	</div>
 </div>
 
@@ -23,7 +29,7 @@ title: Dashboard
 		<div id="d3-gmdmar-recent"></div>
 
 		<h3>Part Of</h3>
-		<p>Online objects in loc.gov/maps, by Collection ("Part Of")</p>
+		<p>Online objects in loc.gov/maps, by Collection</p>
 		<div id="d3-maps-partof"></div>
 
 	</div>
