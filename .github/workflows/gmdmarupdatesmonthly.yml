@@ -1,5 +1,6 @@
 name: Monthly new gmd.mar updates
 on:
+  push
   schedule:
     - cron: '10 4 1 * *'
 jobs:
