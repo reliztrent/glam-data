@@ -1,5 +1,7 @@
-name: Refresh Feed
-on: '0 4 * * *'
+name: Daily get loc.gov map facets
+on:
+  schedule:
+    - chron: '0 4 * * *'
 jobs:
   refresh-feed:
     runs-on: ubuntu-latest
