@@ -1,34 +1,14 @@
 ---
 layout: none
 ---
-[
+[{% for facet in site.data.maps-loc-gov-facets.facets %}
+  {% if facet.type == "partof"%}
+  {% for filter in facet.filters %}
   {
-    "count": "{{site.data.2020-01-gmdmar.pagination.of}}",
-    "facet": "Jan 2020"
-  },
-  {
-    "count": "{{site.data.2020-02-gmdmar.pagination.of}}",
-    "month": "Feb 2020"
-  },
-  {
-    "count": "{{site.data.2020-03-gmdmar.pagination.of}}",
-    "month": "Mar 2020"
-  },
-  {
-    "count": "{{site.data.2020-04-gmdmar.pagination.of}}",
-    "month": "Apr 2020"
-  },
-  {
-    "count": "{{site.data.2020-05-gmdmar.pagination.of}}",
-    "month": "May 2020"
-  },
-  {
-    "count": "{{site.data.2020-06-gmdmar.pagination.of}}",
-    "month": "Jun 2020"
-  },
-  {
-    "count": "{{site.data.2020-07-gmdmar.pagination.of}}",
-    "month": "Jul 2020"
-  }
-
-]
+    "count": "{{ filter.count }}",
+    "month": "{{ filter.title }}"
+  }{% if forloop.last == false %},{% endif %}
+  {% endfor %}
+  {% break %}
+  {% endif %}
+{% endfor %}]
