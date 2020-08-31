@@ -3,7 +3,6 @@ markdown: kramdown
 plugins:
   - jekyll-remote-theme
 remote_theme: broccolini/swiss
-theme_color: yellow
 
 
 # Site settings
