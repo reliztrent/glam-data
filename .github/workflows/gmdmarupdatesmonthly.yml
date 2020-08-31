@@ -11,9 +11,11 @@ jobs:
         with:
           persist-credentials: false
           
-      - name: Set env
+      - name: Set MONTH env
         run: echo ::set-env name=MONTH::$(date +"%Y%m")
+      - name: Set FIRSTDAYLASTMONTH env
         run: echo ::set-env name=FIRSTDAYLASTMONTH::$(date -d "-1 month -$(($(date +%d)-1)) days" +"%Y-%m-%d")
+      - name: Set LASTDAYLASTMONTH env
         run: echo ::set-env name=LASTDAYLASTMONTH::$(date -d "-$(date +%d) days" '+%Y-%m-%d')
   
       - name: Fetch API Data 📦
