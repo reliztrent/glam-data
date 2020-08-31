@@ -11,8 +11,8 @@ jobs:
         with:
           persist-credentials: false
           
-      - name: Set MONTH env
-        run: echo ::set-env name=MONTH::$(date +"%Y%m")
+      - name: Set LASTMONTH env
+        run: echo ::set-env name=LASTMONTH::$(date -d "-$(date +%d) days" '+%Y%m)
       - name: Set FIRSTDAYLASTMONTH env
         run: echo ::set-env name=FIRSTDAYLASTMONTH::$(date -d "-1 month -$(($(date +%d)-1)) days" +"%Y-%m-%d")
       - name: Set LASTDAYLASTMONTH env
@@ -23,7 +23,7 @@ jobs:
         with:
           ENDPOINT: https://www.loc.gov/search/?all=true&sb=shelf-id&sq=group:gmd.mar+AND+number_source_modified:[${{ env.FIRSTDAYLASTMONTH }} TO ${{ env.LASTDAYLASTMONTH }}]&fo=json&at=facets
           RETRY: true
-          SAVE_NAME: maps-loc-gov-facets-${{ env.MONTH }}
+          SAVE_NAME: maps-loc-gov-facets-${{ env.LASTMONTH }}
           
       - name: Build and Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@releases/v3
