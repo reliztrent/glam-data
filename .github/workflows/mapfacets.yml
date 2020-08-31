@@ -8,12 +8,16 @@ jobs:
         uses: actions/checkout@v2
         with:
           persist-credentials: false
+          
+      - name: Set env
+        run: echo ::set-env name=TIMESTAMP::$(date +"%Y-%m-%d-%H-%M")
   
       - name: Fetch API Data 📦
         uses: JamesIves/fetch-api-data-action@1.0.15
         with:
           ENDPOINT: https://www.loc.gov/maps/?fo=json&at=facets
           RETRY: true
+          SAVE_NAME: echo $TIMESTAMP
           
       - name: Build and Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@releases/v3
@@ -21,4 +25,4 @@ jobs:
           ACCESS_TOKEN: ${{ secrets.BUILD_AND_DEPLOY_ACTION_ACCESS_TOKEN }}
           BRANCH: master # Pushes the updates to the master branch.
           FOLDER: fetch-api-data-action # The location of the data.json file saved by the Fetch API Data action.
-          TARGET_FOLDER: data # Saves the data into the 'data' directory on the master branch.
+          TARGET_FOLDER: docs/data # Saves the data into the 'data' directory on the master branch.
