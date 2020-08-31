@@ -4,31 +4,31 @@ layout: none
 [
   {
     "count": "{{site.data.2020-01-gmdmar.pagination.of}}",
-    "month": "2020-01"
+    "facet": "Jan 2020"
   },
   {
     "count": "{{site.data.2020-02-gmdmar.pagination.of}}",
-    "month": "2020-02"
+    "month": "Feb 2020"
   },
   {
     "count": "{{site.data.2020-03-gmdmar.pagination.of}}",
-    "month": "2020-03"
+    "month": "Mar 2020"
   },
   {
     "count": "{{site.data.2020-04-gmdmar.pagination.of}}",
-    "month": "2020-04"
+    "month": "Apr 2020"
   },
   {
     "count": "{{site.data.2020-05-gmdmar.pagination.of}}",
-    "month": "2020-05"
+    "month": "May 2020"
   },
   {
     "count": "{{site.data.2020-06-gmdmar.pagination.of}}",
-    "month": "2020-06"
+    "month": "Jun 2020"
   },
   {
     "count": "{{site.data.2020-07-gmdmar.pagination.of}}",
-    "month": "2020-07"
+    "month": "Jul 2020"
   }
 
 ]
