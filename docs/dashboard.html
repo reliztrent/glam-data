@@ -6,27 +6,27 @@ title: Dashboard
 
 <div class="container">
 	<div class="row">
-		<div class="col6">
+		<div class="col-6 sm-width-full">
 			<h3>Online map objects: {{site.data.maps-loc-gov-facets.facets[0].filters[0].count}}</h3>
 			<p> Online Sanborns atlases: {{site.data.maps-loc-gov-facets.facets[5].filters[1].count}}</p>
 			<p> Online gmd.mar: {{site.data.gmdmar-facets.facets[0].filters[0].count}}</p>
 		</div>
 
-		<div class="col6">
+		<div class="col-6 sm-width-full">
 			<h3>Online vs Not Online objects</h3>
 			<p>Online objects in loc.gov/maps: online vs not online. Included are all map objects. Items not online include links to catalog or other metadata records without online resources. Items online include primarily digitized materials, but also webpages, finding aids, e-resources, and other online resources. </p>
 			<div id="d3-maps-online-donut"></div>
 		</div>
 	</div>
-	
+
 	<div class="row">
-		<div class="col6">
+		<div class="col-6 sm-width-full">
 			<h3>Part Of</h3>
 			<p>Online objects in loc.gov/maps, by Collection ("Part Of")</p>
 			<div id="d3-maps-partof"></div>
 		</div>
 
-		<div class="col6">
+		<div class="col-6 sm-width-full">
 			<h3>Recently added or updated, gmd.mar</h3>
 			<p>Bi-weekly gmd.mar build, including count of all objects created or modified</p>
 			<div id="d3-gmdmar-recent"></div>
