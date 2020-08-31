@@ -24,7 +24,7 @@ d3.json("/data/all-facet-partof.json", function(data) {
 // X axis
 var x = d3.scaleBand()
   .range([ 0, maps_partof_width ])
-  .domain(data.map(function(d) { return d.value; }))
+  .domain(data.map(function(d) { return d.facet; }))
   .padding(0.2);
 maps_partof.append("g")
   .attr("transform", "translate(0," + maps_partof_height + ")")
