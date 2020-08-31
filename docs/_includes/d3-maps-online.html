@@ -8,7 +8,7 @@ var maps_online_donut_width = 450
 var maps_online_donut_radius = Math.min(maps_online_donut_width, maps_online_donut_height) / 2 - maps_online_donut_margin
 
 // append the svg "maps_online_donut" object to the div called 'my_dataviz'
-var maps_online_donut = d3.select("#d3-maps-online")
+var maps_online_donut = d3.select("#d3-maps-online-donut")
   .append("svg")
     .attr("width", maps_online_donut_width)
     .attr("height", maps_online_donut_height)
@@ -19,7 +19,7 @@ d3.json("/data/all-facet-digitized.json", function(data) {
 
 // set the color scale
 var color = d3.scaleOrdinal()
-  .domain(["true","false"])
+  .domain(["Online","Not online"])
   .range(d3.schemeCategory10);
 
 // Compute the position of each group on the pie:
