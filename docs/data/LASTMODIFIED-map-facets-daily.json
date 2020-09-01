@@ -2,9 +2,5 @@
 layout: none
 ---
 {% for file in site.data.gmdmar-facets-daily %}
-  {{ file[0] }}
+  {{ file[0] | slide -8,8}}
 {% endfor %}
-
-
-{{ site.data.mydata_2020-08-31.somefield }}
-{{ site.data.mydata_2020-08-31.somefield }}
