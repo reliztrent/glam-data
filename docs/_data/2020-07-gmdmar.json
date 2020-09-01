@@ -1,9 +1,9 @@
 {
   "pagination": {
     "from": 1,
-    "results": "1 - 25",
-    "last": "https://www.loc.gov/search/?all=true&at=pagination&fo=json&sb=shelf-id&sp=2&sq=group:gmd.mar+AND+number_source_modified:%5B2020-07-01+TO+2020-08-01%5D",
-    "total": 2,
+    "results": "1 - 22",
+    "last": null,
+    "total": 1,
     "previous": null,
     "perpage": 25,
     "perpage_options": [
@@ -12,18 +12,14 @@
       100,
       150
     ],
-    "of": 34,
-    "next": "https://www.loc.gov/search/?all=true&at=pagination&fo=json&sb=shelf-id&sp=2&sq=group:gmd.mar+AND+number_source_modified:%5B2020-07-01+TO+2020-08-01%5D",
+    "of": 22,
+    "next": null,
     "current": 1,
-    "to": 25,
+    "to": 22,
     "page_list": [
       {
         "url": null,
         "number": 1
-      },
-      {
-        "url": "https://www.loc.gov/search/?all=true&at=pagination&fo=json&sb=shelf-id&sp=2&sq=group:gmd.mar+AND+number_source_modified:%5B2020-07-01+TO+2020-08-01%5D",
-        "number": 2
       }
     ],
     "first": null

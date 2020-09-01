@@ -2,7 +2,7 @@
   "pagination": {
     "from": 1,
     "results": "1 - 25",
-    "last": "https://www.loc.gov/search/?all=true&at=pagination&fo=json&sb=shelf-id&sp=2&sq=group:gmd.mar+AND+number_source_modified:%5B2020-03-01+TO+2020-04-01%5D",
+    "last": "https://www.loc.gov/search/?all=true&at=pagination&fo=json&sb=shelf-id&sp=2&sq=group:gmd.mar+AND+number_source_modified:%5B2020-03-01+TO+2020-03-31%5D",
     "total": 2,
     "previous": null,
     "perpage": 25,
@@ -13,7 +13,7 @@
       150
     ],
     "of": 34,
-    "next": "https://www.loc.gov/search/?all=true&at=pagination&fo=json&sb=shelf-id&sp=2&sq=group:gmd.mar+AND+number_source_modified:%5B2020-03-01+TO+2020-04-01%5D",
+    "next": "https://www.loc.gov/search/?all=true&at=pagination&fo=json&sb=shelf-id&sp=2&sq=group:gmd.mar+AND+number_source_modified:%5B2020-03-01+TO+2020-03-31%5D",
     "current": 1,
     "to": 25,
     "page_list": [
@@ -22,7 +22,7 @@
         "number": 1
       },
       {
-        "url": "https://www.loc.gov/search/?all=true&at=pagination&fo=json&sb=shelf-id&sp=2&sq=group:gmd.mar+AND+number_source_modified:%5B2020-03-01+TO+2020-04-01%5D",
+        "url": "https://www.loc.gov/search/?all=true&at=pagination&fo=json&sb=shelf-id&sp=2&sq=group:gmd.mar+AND+number_source_modified:%5B2020-03-01+TO+2020-03-31%5D",
         "number": 2
       }
     ],
