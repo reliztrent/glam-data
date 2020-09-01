@@ -1,7 +1,10 @@
 ---
 layout: none
 ---
-{% for thing in site.data.gmdmar-facets-daily %}
-  thing id: {{ thing.id }}
-  thing name: {{ thing.name }}
+
+{% for thing_hash in site.data.gmdmar-facets-daily %}
+{% assign thing = thing_hash[1] %}
+
+    {{ thing }},
+
 {% endfor %}
