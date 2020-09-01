@@ -1,6 +1,7 @@
 ---
 layout: none
 ---
-{% for image in site.data.gmdmar-facets-daily %}
-  {{ image.id }}
+{% for thing in site.data.gmdmar-facets-daily %}
+  thing id: {{ thing.id }}
+  thing name: {{ thing.name }}
 {% endfor %}
