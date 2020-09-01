@@ -2,14 +2,14 @@
 layout: page
 title: LOC Maps Dashboard
 ---
-{% assign TODAY = site.time | date: "%Y%m%d" %}
+{% assign TODAY = "now" | date: "%Y%m%d" %}
 {% assign MAPFACETSTODAY = site.data.map-facets-daily.map-facets-[ TODAY ] %}
 
 <style>
 	.h0 {font-size:80px !important; padding-top:30px; padding-bottom:35px;}
 </style>
 
-<p>Data about publicly-availalable maps from the <a href='https://loc.gov/maps'>Library of Congress online map collections</a>. Last updated: <code>{{ [ TODAY ] }}</code>.
+<p>Data about publicly-availalable maps from the <a href='https://loc.gov/maps'>Library of Congress online map collections</a>. Last updated: <code>{{ [ TODAY ] }} 00:12 AM</code>.
 
 <div class="clearfix">
 	<div class="col-4 sm-width-full left">
