@@ -19,7 +19,7 @@ jobs:
         with:
           ENDPOINT: https://www.loc.gov/maps/?fo=json&at=facets
           RETRY: true
-          SAVE_NAME: maps-loc-gov-facets-${{ env.TIMESTAMP }}
+          SAVE_NAME: map-facets-${{ env.TIMESTAMP }}
           
       - name: Build and Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@releases/v3
@@ -27,4 +27,4 @@ jobs:
           ACCESS_TOKEN: ${{ secrets.BUILD_AND_DEPLOY_ACTION_ACCESS_TOKEN }}
           BRANCH: master # Pushes the updates to the master branch.
           FOLDER: fetch-api-data-action # Must maintain this variable, appears to be ignored
-          TARGET_FOLDER: docs/_data # Saves the data into the 'docs/_data' directory on the master branch.
+          TARGET_FOLDER: docs/_data/map-facets-daily # Saves the data into the 'docs/_data' directory on the master branch.
