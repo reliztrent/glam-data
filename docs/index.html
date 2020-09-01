@@ -23,7 +23,7 @@ title: LOC Maps Dashboard
 		<p>{{site.data.map-facets-daily.map-facets-20200901.facets[5].filters[1].count}}</p>
 	</div>
 	<div class="col-4 sm-width-full left">
-		<h3> Online gmd.mar</h3>
+		<h3> Online gmd.mar objects</h3>
 		<p>{{site.data.gmdmar-facets-daily.gmdmar-facets-20200901.facets[0].filters[0].count}}</p>
 	</div>
 	<p>&nbsp;</p>
@@ -57,6 +57,8 @@ title: LOC Maps Dashboard
 	<div id="d3-maps-original-format-donut"></div>
 </div> 
 if you uncomment this, add back in the js script include at the bottom-->
+
+<p><small>Online map objects, Online Sanborn atlases, Online gmd.mar objects: <code>{% include last-modified.lm-map-facets-daily %}</code></small></p>
 
 
 <script src="//d3js.org/d3.v4.min.js"></script>
