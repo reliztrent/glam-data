@@ -3,7 +3,7 @@ layout: page
 title: loc.gov Maps Dashboard
 ---
 {% assign TODAY = "now" | date: "%Y%m%d" %}
-{% assign MAPFACETSTODAY = site.data.maps-facets-daily.map-facets-[TODAY] %}
+{% assign MAPFACETSTODAY = site.data.maps-facets-daily.map-facets-[ TODAY ] %}
 
 <style>
 	.h0 {font-size:80px !important; padding-top:30px; padding-bottom:35px;}
@@ -12,11 +12,11 @@ title: loc.gov Maps Dashboard
 <div class="clearfix">
 	<div class="col-4 sm-width-full left">
 		<h3>Online map objects</h3>
-		<p>{{[MAPFACETSTODAY].facets[0].filters[0].count}}</p>
+		<p>{{[ MAPFACETSTODAY ].facets[0].filters[0].count}}</p>
 	</div>
 	<div class="col-4 sm-width-full left">
 		<h3> Online Sanborns atlases</h3>
-		<p>{{site.data.maps-facets-daily.map-facets-{{ 'now' | date: "%Y%m%d" }}.facets[5].filters[1].count}}</p>
+		<p>{{site.data.maps-facets-daily.map-facets-20200901.facets[5].filters[1].count}}</p>
 	</div>
 	<div class="col-4 sm-width-full left">
 		<h3> Online gmd.mar</h3>
