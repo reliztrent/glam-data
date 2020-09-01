@@ -13,6 +13,11 @@ layout: none
 
 {% assign date_list = date_list | split: ',' %}
 {% assign date_list = date_list | sort: date_list %}
-{% assign most_recent = date_list | last %}
+{% assign last_modified = date_list | first %}
+{% assign year = last_modified | slide: 1,4 %}
+{% assign month = last_modified | slide: 5,6 %}
+{% assign day = last_modified | slide: 7,8 %}
 
-{{ most_recent }}
+{{ year }}
+{{ month }}
+{{ day }}
