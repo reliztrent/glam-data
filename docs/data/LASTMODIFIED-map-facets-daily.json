@@ -11,4 +11,8 @@ layout: none
   {% endif %}
 {% endfor %}
 
-{{ date_list }}
+{% assign date_list = date_list | split: ',' %}
+{% assign date_list = date_list | sort: date_list %}
+{% assign most_recent = date_list | last %}
+
+{{ most_recent }}
