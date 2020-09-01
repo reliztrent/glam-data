@@ -14,7 +14,8 @@
 {% assign year = last_modified | slice: 0,4 %}
 {% assign month = last_modified | slice: 4,2 %}
 {% assign day = last_modified | slice: 6,2 %}
-{{ date_list | split: ',' | first}}
+{{ date_array }}
+{{ date_list | split: ',' | sort }}
 
 
 {{ month }}/{{ day }}/{{ year }}
