@@ -1,6 +1,10 @@
 ---
 layout: none
 ---
+{% assign date_list = '' | split: '' %}
+
 {% for file in site.data.gmdmar-facets-daily %}
-  {{ file[0] | slide -8,8}}
+  {% assign file_date file[0] | slice -8,8 %}
+  {% assign date_list = date_list | concat: file_date %}
+  {{ date_list }}
 {% endfor %}
