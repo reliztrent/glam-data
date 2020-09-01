@@ -58,27 +58,46 @@ title: LOC Maps Dashboard
 </div> 
 if you uncomment this, add back in the js script include at the bottom-->
 
-<p> Data sources</p>
+<h3>Data last updated</h3>
 <table class="small">
 	<thead>
 		<tr>
-			<th>Last updated</th>
+			<th>Date</th>
 			<th>Tables</th>
-			<th>Data source</th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
-			<th>Online map objects; Online Sanborn atlases; Online gmd.mar objects; Online vs Not Online objects; Maps, by Collection</th>
-			<th>Recently added or updated, gmd.mar</th>
-		</tr>
-		<tr>
+			<th>Online map objects</th>
 			<th><code>{% include lm-map-facets-daily.html %}</code></th>
-			<th><code>{% include lm-gmdmar-recent-monthly.html %}</code></th>
 		</tr>
 		<tr>
-			<th>https://www.loc.gov/maps/?fo=json&at=facets</th>
-			<th>https://www.loc.gov/search/?all=true&sb=shelf-id&sq=group:gmd.mar+AND+number_source_modified:[YYYY-MM-DD TO YYYY-MM-DD]&fo=json&at=facets</th>
+			<th>Online Sanborn atlases</th>
+			<th><code>{% include lm-map-facets-daily.html %}</code></th>
+		</tr>
+		<tr>
+			<th>Online gmd.mar objects</th>
+			<th><code>{% include lm-map-facets-daily.html %}</code></th>
+		</tr>
+		<tr>
+			<th>Online Sanborn atlases</th>
+			<th><code>{% include lm-map-facets-daily.html %}</code></th>
+		</tr>
+		<tr>
+			<th>Online gmd.mar objects</th>
+			<th><code>{% include lm-map-facets-daily.html %}</code></th>
+		</tr>
+		<tr>
+			<th>Online vs Not Online objects</th>
+			<th><code>{% include lm-map-facets-daily.html %}</code></th>
+		</tr>
+		<tr>
+			<th>Maps, by Collection</th>
+			<th><code>{% include lm-map-facets-daily.html %}</code></th>
+		</tr>
+		<tr>
+			<th>Recently added or updated, gmd.mar</th>
+			<th><code>{% include lm-gmdmar-recent-monthly.html %}</code></th>
 		</tr>
 	</tbody>
 </table>
