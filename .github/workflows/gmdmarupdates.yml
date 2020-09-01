@@ -10,9 +10,11 @@ jobs:
         with:
           persist-credentials: false
           
-      - name: Set env
+      - name: Set TIMESTAMP env
         run: echo ::set-env name=TIMESTAMP::$(date +"%Y%m%d")
+      - name: Set TODAY env
         run: echo ::set-env name=TODAY::$(date +"%Y-%m-%d")
+      - name: Set YESTEDAY env
         run: echo ::set-env name=YESTERDAY::$(date -d "yesterday 13:00" '+%Y-%m-%d')
   
       - name: Fetch API Data 📦
