@@ -1,7 +1,7 @@
 ---
 layout: none
 ---
-{% assign date_list = '' %}
+[{% assign date_list = '' %}
 
 {% for file in site.data.map-facets-daily %}
   {% assign file_date = file[0] | slice: -8, 8 %}
@@ -18,5 +18,5 @@ layout: none
 {% assign month = last_modified | slice: 4,2 %}
 {% assign day = last_modified | slice: 6,2 %}
 
-{{ month }}/{{ day }}/{{ year }}
+{{ month }}/{{ day }}/{{ year }}]
 
