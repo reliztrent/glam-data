@@ -17,5 +17,5 @@ layout: none
 {% assign year = last_modified | slice: 0,4 %}
 {% assign month = last_modified | slice: 4,2 %}
 
-{{ month +1 }}/01/{{ year }}
+{{ month }}/01/{{ year }}
 
