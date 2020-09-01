@@ -10,7 +10,7 @@ title: loc.gov Maps Dashboard
 <div class="clearfix">
 	<div class="col-4 sm-width-full left">
 		<h3>Online map objects</h3>
-		<p>{{site.data.maps-facets-daily.map-facets-{{ 'now' | date: "%Y%m%d" }}.facets[0].filters[0].count}}</p>
+		<p>{{site.data.maps-facets-daily.map-facets- | append: 'now' | date: "%Y%m%d" | append:.facets[0].filters[0].count}}</p>
 	</div>
 	<div class="col-4 sm-width-full left">
 		<h3> Online Sanborns atlases</h3>
@@ -18,7 +18,7 @@ title: loc.gov Maps Dashboard
 	</div>
 	<div class="col-4 sm-width-full left">
 		<h3> Online gmd.mar</h3>
-		<p>{{site.data.gmdmar-facets-daily.gmdmar-facets--{{ 'now' | date: "%Y%m%d" }}.facets[0].filters[0].count}}</p>
+		<p>{{site.data.gmdmar-facets-daily.gmdmar-facets-{{ 'now' | date: "%Y%m%d" }}.facets[0].filters[0].count}}</p>
 	</div>
 	<p>&nbsp;</p>
 </div>
