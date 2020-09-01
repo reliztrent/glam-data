@@ -1,7 +1,7 @@
 ---
 layout: none
 ---
-{% assign date_list = '' %}
+{% assign date_list = '' | split: ',' %}
 
 {% for file in site.data.gmdmar-facets-daily %}
   {% assign file_date = file[0] | slice: -8, 8 %}
