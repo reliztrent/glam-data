@@ -1,6 +1,6 @@
 ---
 layout: none
 ---
-{% for image in site.static_files %}
+{% for image in site.data.gmdmar-facets-daily %}
   {{ image.path }}
 {% endfor %}
