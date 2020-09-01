@@ -14,7 +14,7 @@
 {% assign year = last_modified | slice: 0,4 %}
 {% assign prev_month = last_modified | slice: 4,2 %}
 {% assign month = prev_month | plus: 1 %}
-{{ date_array_sorted }}
+{{ date_array }}
 
 {{ month }}/01/{{ year }}
 
