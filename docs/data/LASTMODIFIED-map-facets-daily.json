@@ -1,0 +1,7 @@
+---
+layout: none
+---
+[{% for file in site.data.map-facets-daily %}
+	last_modified: {% file.last_modified_at %}
+
+{% endfor %}]
