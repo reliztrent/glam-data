@@ -11,12 +11,14 @@ layout: none
   {% endif %}
 {% endfor %}
 
-{% assign date_list = date_list | split: ',' %}
-{% assign date_list = date_list | sort: date_list %}
-{% assign last_modified = date_list | first %}
-{% assign year = last_modified | slide: 1,4 %}
-{% assign month = last_modified | slide: 5,6 %}
-{% assign day = last_modified | slide: 7,8 %}
+{% assign date_array = date_list | split: ',' %}
+{{ date_array }}
+{% assign date_array_sorted = date_array | sort: date_list %}
+{{ date_array_sorted }}
+{% assign last_modified = date_array_sorted | first %}
+{% assign year = last_modified | slice: 1,4 %}
+{% assign month = last_modified | slice: 5,6 %}
+{% assign day = last_modified | slice: 7,8 %}
 
 {{ year }}
 {{ month }}
