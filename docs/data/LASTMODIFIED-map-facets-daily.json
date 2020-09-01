@@ -5,7 +5,7 @@ layout: none
 
 {% for file in site.data.gmdmar-facets-daily %}
   {% assign file_date = file[0] | slice: -8, 8 %}
-  {% assign date_list = date_list | append: file_date %}
+  {% assign date_list = date_list | concat: file_date %}
 {% endfor %}
 
 {{ date_list }}
