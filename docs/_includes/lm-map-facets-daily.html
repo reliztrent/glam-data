@@ -14,9 +14,7 @@
 {% assign year = last_modified | slice: 0,4 %}
 {% assign month = last_modified | slice: 4,2 %}
 {% assign day = last_modified | slice: 6,2 %}
-{{ date_list | last }}
-{{ "Ground control to Major Tom." | split: " " | last }}
-test
+{{ date_list | split: ',' | first}}
 
 
 {{ month }}/{{ day }}/{{ year }}
