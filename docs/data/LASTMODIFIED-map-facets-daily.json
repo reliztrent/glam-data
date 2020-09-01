@@ -1,6 +1,6 @@
 ---
 layout: none
 ---
-{% raw%}{% for image in site.static_files %}
+{% for image in site.static_files %}
   {{ image.path }}
 {% endfor %}
