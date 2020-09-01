@@ -1,6 +1,7 @@
 name: Daily get loc.gov map facets
 on:
-  push
+  schedule:
+    - cron: '5 4 * * *'
 
 jobs:
   refresh-feed:
