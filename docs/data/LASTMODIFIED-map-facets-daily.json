@@ -1,11 +1,14 @@
 ---
 layout: none
 ---
-{% assign date_list = '' | split: ',' %}
+{% assign date_list = '' %}
 
 {% for file in site.data.gmdmar-facets-daily %}
   {% assign file_date = file[0] | slice: -8, 8 %}
-  {% assign date_list = date_list | concat: file_date %}
+  {% assign date_list = date_list | append: file_date %}
+  {% if forloop.last == false %}
+    {% assign date_list = date_list | append: ',' %}
+  {% endif %}
 {% endfor %}
 
 {{ date_list }}
