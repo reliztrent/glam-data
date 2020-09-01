@@ -1,6 +1,10 @@
 ---
 layout: none
 ---
-{% for image in site.data.gmdmar-facets-daily %}
-  {{ image[0] }}
+{% for file in site.data.gmdmar-facets-daily %}
+  {{ file[0] }}
 {% endfor %}
+
+
+{{ site.data.mydata_2020-08-31.somefield }}
+{{ site.data.mydata_2020-08-31.somefield }}
