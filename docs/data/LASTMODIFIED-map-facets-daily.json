@@ -2,5 +2,5 @@
 layout: none
 ---
 {% for image in site.data.gmdmar-facets-daily %}
-  {{ image }}
+  {{ image.id }}
 {% endfor %}
