@@ -61,8 +61,8 @@ gmdmar_recent.selectAll("mybar")
     .attr("y", function(d) { return y(0); })
   .on("mousemove", function(d){
       tooltip
-        .style("left", d3.event.pageX - 50 + "px")
-        .style("top", d3.event.pageY - 70 + "px")
+        .style("left", d3.event.pageX - 5 + "px")
+        .style("top", d3.event.pageY - 5 + "px")
         .style("display", "inline-block")
         .html((d.count));
   })
