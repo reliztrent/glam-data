@@ -1,6 +1,7 @@
 name: New gmd.mar updates
 on:
   push
+  
 jobs:
   refresh-feed:
     runs-on: ubuntu-latest
