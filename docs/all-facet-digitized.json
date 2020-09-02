@@ -1,0 +1,15 @@
+---
+layout: none
+---
+{{ 'now' | date: "%Y%m%d" }}
+[{% for facet in site.data.map-facets-daily.map-facets-{{ 'now' | date: "%Y%m%d" }}.facets %}
+  {% if facet.type == "digitized"%}
+  {% for filter in facet.filters %}
+  {
+    "count": "{{ filter.count }}",
+    "facet": "{{ filter.title }}"
+  }{% if forloop.last == false %},{% endif %}
+  {% endfor %}
+  {% break %}
+  {% endif %}
+{% endfor %}]
