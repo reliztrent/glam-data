@@ -54,7 +54,7 @@ maps_online_donut
         .style("left", d3.event.pageX - 30 + "px")
         .style("top", d3.event.pageY - 40 + "px")
         .style("display", "inline-block")
-        .html((d.count));
+        .html((d.data.count));
     })
     .on("mouseout", function(d){ tooltip.style("display", "none");})
 
