@@ -1,3 +1,13 @@
+<style>
+.toolTip {
+  position: absolute;
+  display: none;
+  min-width: 50px;
+  height: auto;
+  background: none repeat scroll 0 0 #ffffff;
+  text-align: center;
+}
+</style>
 <script>
 
 
@@ -14,6 +24,8 @@ var gmdmar_recent = d3.select("#d3-gmdmar-recent")
   .append("g")
     .attr("transform",
           "translate(" + gmdmar_recent_margin.left + "," + gmdmar_recent_margin.top + ")");
+
+var tooltip = d3.select("body").append("div").attr("class", "toolTip");
 
 // Parse the Data
 d3.json("https://reliztrent.github.io/glam-data/data/gmdmar-recent.json", function(data) {
@@ -47,6 +59,14 @@ gmdmar_recent.selectAll("mybar")
     // no bar at the beginning thus:
     .attr("height", function(d) { return gmdmar_recent_height - y(0); }) // always equal to 0
     .attr("y", function(d) { return y(0); })
+  .on("mousemove", function(d){
+      tooltip
+        .style("left", d3.event.pageX - 50 + "px")
+        .style("top", d3.event.pageY - 70 + "px")
+        .style("display", "inline-block")
+        .html((d.count));
+  })
+  .on("mouseout", function(d){ tooltip.style("display", "none");})
 
 // Animation
 gmdmar_recent.selectAll("rect")
