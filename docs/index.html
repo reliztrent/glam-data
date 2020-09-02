@@ -7,8 +7,9 @@ title: LOC Maps Dashboard
 
 <style>
 	.h0 {font-size:80px !important; padding-top:30px; padding-bottom:35px;}
-	rect {fill: #8CD3DD;}
-	rect:hover {fill: #69b3a2;}
+	rect {fill: #69b3a2;}
+	rect:hover {fill: #8CD3DD;}
+	path:hover {}
 	.toolTip {
 	  position: absolute;
 	  display: none;
@@ -60,58 +61,12 @@ title: LOC Maps Dashboard
 		<dl><dt>Online</dt><dd>digitized materials, webpages, finding aids, e-resources, other online resources</dd><dt>Not online</dt><dd>links to catalog records, other metadata records (e.g., Sanborn records where Sanborn is not available online)<dd></dl>
 	</div>
 </div>
-
-
-
-<!--<div>
-	<h4>Original Format</h4>
-	<p>Online items in loc.gov/maps, by Original Format</p>
-	<div id="d3-maps-original-format-donut"></div>
-</div> 
-if you uncomment this, add back in the js script include at the bottom-->
-<br>
-<h3>Data Freshness</h3>
-<table class="small">
-	<thead>
-		<tr>
-			<th>Title</th>
-			<th>Data last updated</th>
-			<th>Data source</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>Online map objects</td>
-			<td><code>{% include lm-map-facets-daily.html %}</code></td>
-			<td><code><a href="https://github.com/reliztrent/glam-data/tree/master/docs/_data/map-facets-daily">_data/map-facets-daily/</a></code></td>
-		</tr>
-		<tr>
-			<td>Online Sanborn atlases</td>
-			<td><code>{% include lm-map-facets-daily.html %}</code></td>
-			<td><code><a href="https://github.com/reliztrent/glam-data/tree/master/docs/_data/map-facets-daily">_data/map-facets-daily/</a></code></td>
-		</tr>
-		<tr>
-			<td>Online gmd.mar objects</td>
-			<td><code>{% include lm-map-facets-daily.html %}</code></td>
-			<td><code><a href="https://github.com/reliztrent/glam-data/tree/master/docs/_data/map-facets-daily">_data/map-facets-daily/</a></code></td>
-		</tr>
-		<tr>
-			<td>Recently added or updated, gmd.mar</td>
-			<td><code>{% include lm-gmdmar-recent-monthly.html %}</code></td>
-			<td><code><a href="https://github.com/reliztrent/glam-data/tree/master/docs/_data/gmdmar-recent-monthly">_data/gmdmar-recent-monthly/</a></code></td>
-		</tr>
-		<tr>
-			<td>Maps, by Collection</td>
-			<td><code>{% include lm-map-facets-daily.html %}</code></td>
-			<td><code><a href="https://github.com/reliztrent/glam-data/tree/master/docs/_data/map-facets-daily">_data/map-facets-daily/</a></code></td>
-		</tr>
-		<tr>
-			<td>Online vs Not Online objects</td>
-			<td><code>{% include lm-map-facets-daily.html %}</code></td>
-			<td><code><a href="https://github.com/reliztrent/glam-data/tree/master/docs/_data/map-facets-daily">_data/map-facets-daily/</a></code></td>
-		</tr>
-	</tbody>
-</table>
+<p>&nbsp;</p>
+<div class="clearfix">
+	<div class="col-12 sm-width-full">
+		{% include data-freshness.html %}
+	</div>
+</div>
 
 
 <script src="//d3js.org/d3.v4.min.js"></script>
