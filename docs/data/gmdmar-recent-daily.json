@@ -1,6 +1,7 @@
 ---
 layout: none
 ---
+.
 [
 {% for file in site.data.gmdmar-recent-daily %}
 {% assign count = file[1].facets[0].filters[0].count %}
