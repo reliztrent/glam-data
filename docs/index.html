@@ -7,6 +7,12 @@ title: LOC Maps Dashboard
 
 <style>
 	.h0 {font-size:80px !important; padding-top:30px; padding-bottom:35px;}
+	#d3-gmdmar-recent.bar {
+    fill: #8CD3DD;
+	  }
+	#d3-gmdmar-recent.bar:hover {
+	    fill: #F56C4E;
+	  }
 </style>
 
 <p>Data about publicly-availalable maps from the <a href='https://loc.gov/maps'>Library of Congress online map collections</a>. Last updated: <code>{{ site.time | date: "%B %d, %Y" }} 00:12 AM</code>.
@@ -63,7 +69,7 @@ if you uncomment this, add back in the js script include at the bottom-->
 	<thead>
 		<tr>
 			<th>Title</th>
-			<th>Date last updated</th>
+			<th>Data last updated</th>
 			<th>Data source</th>
 		</tr>
 	</thead>
