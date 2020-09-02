@@ -16,7 +16,7 @@ jobs:
       - name: Set TODAY env
         run: echo ::set-env name=TODAY::$(date +"%Y-%m-%d")
       - name: Set YESTEDAY env
-        run: echo ::set-env name=YESTERDAY::$(date -d "yesterday" +"%Y-%m-%d")
+        run: echo ::set-env name=YESTERDAY::$(date -d "1 day ago" +"%Y-%m-%d")
   
       - name: Fetch API Data 📦
         uses: JamesIves/fetch-api-data-action@1.0.15
