@@ -48,6 +48,14 @@ maps_partof.selectAll("mybar")
     // no bar at the beginning thus:
     .attr("height", function(d) { return maps_partof_height - y(0); }) // always equal to 0
     .attr("y", function(d) { return y(0); })
+  .on("mousemove", function(d){
+    tooltip
+      .style("left", d3.event.pageX - 30 + "px")
+      .style("top", d3.event.pageY - 40 + "px")
+      .style("display", "inline-block")
+      .html((d.count));
+  })
+  .on("mouseout", function(d){ tooltip.style("display", "none");})
 
 // Animation
 maps_partof.selectAll("rect")
