@@ -6,7 +6,7 @@
   height: auto;
   background: none repeat scroll 0 0 #ffffff;
   text-align: center;
-  font-size:8em;
+  font-size:10px;
 }
 </style>
 <script>
@@ -63,7 +63,7 @@ gmdmar_recent.selectAll("mybar")
   .on("mousemove", function(d){
       tooltip
         .style("left", d3.event.pageX - 50 + "px")
-        .style("top", d3.event.pageY - 50 + "px")
+        .style("top", d3.event.pageY - 90 + "px")
         .style("display", "inline-block")
         .html((d.count));
   })
