@@ -1,7 +1,6 @@
 name: New gmd.mar updates
 on:
-  schedule:
-    - cron: '10 4 * * *'
+  push
 jobs:
   refresh-feed:
     runs-on: ubuntu-latest
@@ -16,7 +15,7 @@ jobs:
       - name: Set TODAY env
         run: echo ::set-env name=TODAY::$(date +"%Y-%m-%d")
       - name: Set YESTEDAY env
-        run: echo ::set-env name=YESTERDAY::$(date -d "yesterday 13:00" '+%Y-%m-%d')
+        run: echo ::set-env name=YESTERDAY::$(date -d "yesterday 13:00" +"%Y-%m-%d")
   
       - name: Fetch API Data 📦
         uses: JamesIves/fetch-api-data-action@1.0.15
