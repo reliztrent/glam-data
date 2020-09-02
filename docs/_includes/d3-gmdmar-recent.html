@@ -2,12 +2,10 @@
 .toolTip {
   position: absolute;
   display: none;
+  min-width: 50px;
   height: auto;
-  padding:6px;
-  min-width:30px;
   background: none repeat scroll 0 0 #ffffff;
   text-align: center;
-  font-size:.8em;
 }
 </style>
 <script>
@@ -63,8 +61,8 @@ gmdmar_recent.selectAll("mybar")
     .attr("y", function(d) { return y(0); })
   .on("mousemove", function(d){
       tooltip
-        .style("left", d3.event.pageX - 40 + "px")
-        .style("top", d3.event.pageY - 40 + "px")
+        .style("left", d3.event.pageX - 50 + "px")
+        .style("top", d3.event.pageY - 70 + "px")
         .style("display", "inline-block")
         .html((d.count));
   })
