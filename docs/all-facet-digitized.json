@@ -1,7 +1,6 @@
 ---
 layout: none
 ---
-{% site.data.map-facets-daily.maps-facets-{{ 'now' | date: "%Y%m%d" }}.facets %}
 test
 {{ 'now' | date: "%Y%m%d" }}
 [{% for facet in site.data.map-facets-daily.maps-facets-{{ 'now' | date: "%Y%m%d" }}.facets %}
