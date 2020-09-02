@@ -1,17 +1,8 @@
 ---
 layout: none
 ---
-.
 [
-{% for file in site.data.gmdmar-recent-daily %}
-{% assign count = file[1].facets[0].filters[0].count %}
-{% assign year = file[0] | slice: -8, 4 %}
-{% assign month = file[0] | slice: -4, 2 %}
-{% assign day = file[0] | slice: -2, 2 %}
 {
-	"count": "{{ count }}", 
-	"facet": "{{year}}-{{month}}-{{day}}"
-}{% if forloop.last == false %},{% endif %}
-
-{% endfor %}
-]
+	"test":"test",
+	"test2":"test2"
+}]
