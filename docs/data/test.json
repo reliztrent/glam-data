@@ -31,8 +31,8 @@ test 3
   {% endif %}
 {% endfor %}]
 
-test 4
-[{% for facet in site.data.gmdmar-facets-daily.gmdmar-facets-20200831.facets%}
+test 4 .
+[{% for facet in site.data.gmdmar-facets-daily.gmdmar-facets-20200902.facets%}
   {% if facet.type == "digitized"%}
   {% for filter in facet.filters %}
   {
@@ -54,7 +54,7 @@ test 7
 {% capture filename2 %}
 gmdmar-facets.facets
 {% endcapture %}
-{{ filename1=2 }}
+{{ filename2 }}
 
 test 8 
 [{% for facet in site.data.filename2 %}
