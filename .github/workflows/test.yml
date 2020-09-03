@@ -1,0 +1,17 @@
+name: Today file gmdmar-facets
+on:
+  push
+jobs:
+  refresh-feed:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set env
+        run: echo ::set-env name=TIMESTAMP::$(date +"%Y%m%d")
+        
+      - name: Copy file
+        uses: canastro/copy-action@0.0.2
+        with:
+          # Source file
+          source: "/docs/_data/gmdmar-facets-daily/gmdmar-facets-${{ env.TIMESTAMP }}.json"
+          # Target file
+          target: "/docs/_data/gmdmar-facets-daily/gmdmar-facets-today.json"

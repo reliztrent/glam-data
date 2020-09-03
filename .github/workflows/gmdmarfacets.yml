@@ -1,7 +1,6 @@
 name: Daily get loc.gov map facets
 on:
-  schedule:
-    - cron: '5 4 * * *'
+  push
 jobs:
   refresh-feed:
     runs-on: ubuntu-latest
@@ -28,6 +27,7 @@ jobs:
           RETRY: true
           SAVE_NAME: gmdmar-facets-TODAY
           
+          
       - name: Build and Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
@@ -35,4 +35,3 @@ jobs:
           BRANCH: master # Pushes the updates to the master branch.
           FOLDER: fetch-api-data-action # Must maintain this variable, appears to be ignored
           TARGET_FOLDER: docs/_data/gmdmar-facets-daily # Saves the data into the 'docs/_data' directory on the master branch.
-
