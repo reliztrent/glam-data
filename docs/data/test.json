@@ -44,9 +44,9 @@ test 4 .
   {% endif %}
 {% endfor %}]
 
-test5
+test5 .
 {% capture filename1 %}
-site.data.map-facets-daily.map-facets-{{ 'now' | date: "%Y%m%d" }}
+site.data.gmdmar-facets-daily.gmdmar-facets-{{ 'now' | date: "%Y%m%d" }}
 {% endcapture %}
 {{ filename1 }}
 
