@@ -12,6 +12,6 @@ jobs:
         uses: canastro/copy-action@0.0.2
         with:
           # Source file
-          source: "docs/_data/gmdmar-facets-daily/gmdmar-facets-${{ env.TIMESTAMP }}.json"
+          source: "/docs/_data/gmdmar-facets-daily/gmdmar-facets-${{ env.TIMESTAMP }}.json"
           # Target file
-          target: "docs/_data/gmdmar-facets-daily/gmdmar-facets-today.json"
+          target: "/docs/_data/gmdmar-facets-daily/gmdmar-facets-today.json"
