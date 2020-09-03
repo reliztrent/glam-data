@@ -43,3 +43,10 @@ test 4
   {% break %}
   {% endif %}
 {% endfor %}]
+
+test5
+{% capture filename %}
+site.data.map-facets-daily.map-facets-{{ 'now' | date: "%Y%m%d" }}
+{% endcapture %}
+{{ filename }}
+
