@@ -4,7 +4,8 @@ plugins:
   - jekyll-remote-theme
 remote_theme: broccolini/swiss
 
-timezone: America/New_York 
+timezone: America/New_York
+today: 'now' | date: "%Y%m%d" 
 
 
 # Site settings
