@@ -1,0 +1,15 @@
+---
+layout: none
+---
+test
+[{% for facet in site.data.gmdmar-facets%}
+  {% if facet.type == "digitized"%}
+  {% for filter in facet.filters %}
+  {
+    "count": "{{ filter.count }}",
+    "facet": "{{ filter.title }}"
+  }{% if forloop.last == false %},{% endif %}
+  {% endfor %}
+  {% break %}
+  {% endif %}
+{% endfor %}]
