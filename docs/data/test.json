@@ -45,10 +45,10 @@ test 4 .
 {% endfor %}]
 
 test5 .
-{% capture filename1 %}
+{% capture filename %}
 site.data.gmdmar-facets-daily.gmdmar-facets-{{ 'now' | date: "%Y%m%d" }}
 {% endcapture %}
-{{ filename1 }}
+{{ filename }}
 
 test 7
 {% capture filename2 %}
@@ -57,7 +57,6 @@ gmdmar-facets.facets
 {{ filename2 }}
 
 test 8 .
-for facet in filename1.facets
 [{% for facet in filename1.facets%}
   {% if facet.type == "digitized"%}
   {% for filter in facet.filters %}
@@ -70,5 +69,7 @@ for facet in filename1.facets
   {% endif %}
 {% endfor %}]
 
+test9 
+{{ site.data.gmdmar-facets-daily.gmdmar-facets-20200902 }}
 
 
