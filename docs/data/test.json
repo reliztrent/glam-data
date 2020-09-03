@@ -56,8 +56,9 @@ gmdmar-facets.facets
 {% endcapture %}
 {{ filename2 }}
 
-test 8 
-[{% for facet in site.data.filename2 %}
+test 8 .
+for facet in filename1.facets
+[{% for facet in filename1.facets%}
   {% if facet.type == "digitized"%}
   {% for filter in facet.filters %}
   {
