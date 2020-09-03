@@ -10,11 +10,6 @@ jobs:
         with:
           persist-credentials: false
           
-      - name: Remove File
-        uses: JesseTG/rm@v1.0.0
-        with:
-          path: docs/_data/gmdmar-facets-daily/gmdmar-facets-TODAY.json #this file will be deleted
-          
       - name: Set env
         run: echo ::set-env name=TIMESTAMP::$(date +"%Y%m%d")
   
@@ -32,13 +27,6 @@ jobs:
           RETRY: true
           SAVE_NAME: gmdmar-facets-TODAY
           
-      - name: Copy file
-        uses: canastro/copy-action@0.0.2
-        with:
-          # Source file
-          source: "docs/_data/gmdmar-facets-daily/gmdmar-facets-${{ env.TIMESTAMP }}.json"
-          # Target file
-          target: "docs/_data/gmdmar-facets-daily/gmdmar-facets-today.json"
           
       - name: Build and Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@releases/v3
