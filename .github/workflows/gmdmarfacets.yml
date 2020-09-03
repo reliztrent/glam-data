@@ -23,16 +23,13 @@ jobs:
         with:
           ENDPOINT: https://www.loc.gov/maps/?sq=group:gmd.mar&fo=json&at=facets
           RETRY: true
-          SAVE_LOCATION: docs/_data/gmdmar-facets-daily
           SAVE_NAME: gmdmar-facets-${{ env.TIMESTAMP }}
-          
-                
+      
       - name: Fetch API Data 📦
         uses: JamesIves/fetch-api-data-action@1.0.15
         with:
           ENDPOINT: https://www.loc.gov/maps/?sq=group:gmd.mar&fo=json&at=facets
           RETRY: true
-          SAVE_LOCATION: docs/_data/gmdmar-facets-daily
           SAVE_NAME: gmdmar-facets-TODAY
           
       - name: Build and Deploy 🚀
@@ -40,6 +37,5 @@ jobs:
         with:
           ACCESS_TOKEN: ${{ secrets.BUILD_AND_DEPLOY_ACTION_ACCESS_TOKEN }}
           BRANCH: master # Pushes the updates to the master branch.
-          FOLDER: docs/_data/gmdmar-facets-daily # Must maintain this variable, appears to be ignored
+          FOLDER: fetch-api-data-action # Must maintain this variable, appears to be ignored
           TARGET_FOLDER: docs/_data/gmdmar-facets-daily # Saves the data into the 'docs/_data' directory on the master branch.
-
