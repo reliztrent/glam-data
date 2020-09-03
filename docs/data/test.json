@@ -51,9 +51,23 @@ site.data.map-facets-daily.map-facets-{{ 'now' | date: "%Y%m%d" }}
 {{ filename1 }}
 
 test 7
-{% capture filename1 %}
+{% capture filename2 %}
 gmdmar-facets.facets
 {% endcapture %}
-{{ filename1 }}
+{{ filename1=2 }}
+
+test 8 
+[{% for facet in site.data.filename2 %}
+  {% if facet.type == "digitized"%}
+  {% for filter in facet.filters %}
+  {
+    "count": "{{ filter.count }}",
+    "facet": "{{ filter.title }}"
+  }{% if forloop.last == false %},{% endif %}
+  {% endfor %}
+  {% break %}
+  {% endif %}
+{% endfor %}]
+
 
 
