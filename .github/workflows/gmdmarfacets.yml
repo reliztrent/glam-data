@@ -1,7 +1,6 @@
 name: Daily get loc.gov map facets
 on:
-  schedule:
-    - cron: '5 4 * * *'
+  push
 
 jobs:
   refresh-feed:
@@ -21,6 +20,13 @@ jobs:
           ENDPOINT: https://www.loc.gov/maps/?sq=group:gmd.mar&fo=json&at=facets
           RETRY: true
           SAVE_NAME: gmdmar-facets-${{ env.TIMESTAMP }}
+      
+      - name: Fetch API Data 📦
+        uses: JamesIves/fetch-api-data-action@1.0.15
+        with:
+          ENDPOINT: https://www.loc.gov/maps/?sq=group:gmd.mar&fo=json&at=facets
+          RETRY: true
+          SAVE_NAME: gmdmar-facets-TODAY
           
       - name: Build and Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@releases/v3
