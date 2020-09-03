@@ -15,14 +15,14 @@ jobs:
       - name: Set env
         run: echo ::set-env name=TIMESTAMP::$(date +"%Y%m%d")
   
-      - name: Fetch API Data 📦
+      - name: Fetch API Data - ${{ env.TIMESTAMP }} 📦
         uses: JamesIves/fetch-api-data-action@1.0.15
         with:
           ENDPOINT: https://www.loc.gov/maps/?sq=group:gmd.mar&fo=json&at=facets
           RETRY: true
           SAVE_NAME: gmdmar-facets-${{ env.TIMESTAMP }}
       
-      - name: Fetch API Data 📦
+      - name: Fetch API Data - TODAY 📦
         uses: JamesIves/fetch-api-data-action@1.0.15
         with:
           ENDPOINT: https://www.loc.gov/maps/?sq=group:gmd.mar&fo=json&at=facets
