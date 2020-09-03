@@ -74,6 +74,11 @@ test9
 
 {{ filenamethree }}
 
+test10 
+{% assign today_data = 'now' | date: "%Y-%m-%d" | prepend: 'site.data.gmdmar-facets-daily.gmdmar-facets-' %}
+
+{{ today_data }}
+
 test last
 {{ site.data.gmdmar-facets-daily.gmdmar-facets-20200902 }}
 
