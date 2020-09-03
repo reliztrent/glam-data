@@ -50,6 +50,6 @@ site.data.map-facets-daily.map-facets-{{ 'now' | date: "%Y%m%d" }}
 {% endcapture %}
 {{ filename1 }}
 
-test 6
+test 6 .
 [{% include site.data.gmdmar-facets-daily.gmdmar-facets-20200831.facets %}]
 
