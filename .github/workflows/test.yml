@@ -1,5 +1,4 @@
-
-name: Today file: gmdmar-facets
+name: Today file gmdmar-facets
 on:
   push
 jobs:
