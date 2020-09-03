@@ -32,6 +32,14 @@ jobs:
           RETRY: true
           SAVE_NAME: gmdmar-facets-TODAY
           
+      - name: Copy file
+        uses: canastro/copy-action@0.0.2
+        with:
+          # Source file
+          source: "docs/_data/gmdmar-facets-daily/gmdmar-facets-${{ env.TIMESTAMP }}.json"
+          # Target file
+          target: "docs/_data/gmdmar-facets-daily/gmdmar-facets-today.json"
+          
       - name: Build and Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
