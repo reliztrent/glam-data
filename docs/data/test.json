@@ -69,7 +69,12 @@ test 8 .
   {% endif %}
 {% endfor %}]
 
-test9 
+test9
+{% assign filenamethree = site.data.gmdmar-facets-daily.gmdmar-facets-{{ 'now' | date: "%Y%m%d" }} %}
+
+{{ filenamethree }}
+
+test last
 {{ site.data.gmdmar-facets-daily.gmdmar-facets-20200902 }}
 
 
