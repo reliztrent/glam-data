@@ -1,7 +1,10 @@
 ---
 layout: none
 ---
-[{% for facet in site.data.map-facets-daily.map-facets-TODAY.facets %}
+[{
+    "count": "5666",
+    "facet": "test"
+  },{% for facet in site.data.map-facets-daily.map-facets-TODAY.facets %}
   {% if facet.type == "partof"%}
   {% for filter in facet.filters %}
   {
