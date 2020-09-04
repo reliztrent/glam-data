@@ -1,11 +1,14 @@
 {% assign date_list = '' %}
 
-{% for file in site.data.map-facets-daily %}
+{% for file in site.data.map-facets-daily %}{% console.log(file) %}
+{% assign len = file | size %}
+ {% if len ==  20 %}
   {% assign file_date = file[0] | slice: -8, 8 %}
   {% assign date_list = date_list | append: file_date %}
   {% if forloop.last == false %}
     {% assign date_list = date_list | append: ',' %}
   {% endif %}
+ {% endif %}
 {% endfor %}
 
 {% assign date_array = date_list | split: ',' %}
