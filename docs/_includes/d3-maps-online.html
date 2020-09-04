@@ -15,7 +15,7 @@ var maps_online_donut = d3.select("#d3-maps-online-donut")
   .append("g")
     .attr("transform", "translate(" + maps_online_donut_width / 2 + "," + maps_online_donut_height / 2 + ")");
  
-d3.json("/data/all-facet-digitized.json", function(data) {
+d3.json("/data/maps-online.json", function(data) {
 
 // set the color scale
 var color = d3.scaleOrdinal()
@@ -25,7 +25,7 @@ var color = d3.scaleOrdinal()
 // Compute the position of each group on the pie:
 var pie = d3.pie()
   .sort(null) // Do not sort group by size
-  .value(function(d) {return d.count; })
+  .value(function(d) {return d.data.count; })
 var data_ready = pie(data)
 
 // The arc generator
