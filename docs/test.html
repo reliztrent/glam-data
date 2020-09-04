@@ -58,8 +58,8 @@ title: test
 		<h3>Online vs Not Online objects</h3>
 		<p>Included are all map objects in loc.gov/maps. </p>
 		<div id="d3-maps-online-donut"></div>
-		<p>online: {{ data.map-facets-daily.map-facets-TODAY }}</p>
-		<p>not online: {{ data.map-facets-daily.map-facets-TODAY.facets[0].filters[1s].count }}</p>
+		<p>online: {{ site.data.map-facets-daily.map-facets-TODAY.facets[0].filters[0].count }}</p>
+		<p>not online: {{ site.data.map-facets-daily.map-facets-TODAY.facets[0].filters[1s].count }}</p>
 		<dl><dt>Online</dt><dd>digitized materials, webpages, finding aids, e-resources, other online resources</dd><dt>Not online</dt><dd>links to catalog records, other metadata records (e.g., Sanborn records where Sanborn is not available online)<dd></dl>
 
 	</div>
