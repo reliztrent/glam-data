@@ -1,11 +1,7 @@
 ---
 layout: none
 ---
-[{
-    "count": "60000",
-    "facet": "FAKE"
-  },
-  {% for facet in site.data.map-facets-daily.map-facets-TODAY.facets %}
+[{% for facet in site.data.map-facets-daily.map-facets-TODAY.facets %}
   {% if facet.type == "partof"%}
   {% for filter in facet.filters %}
   {
