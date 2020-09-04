@@ -19,7 +19,7 @@ d3.json("https://reliztrent.github.io/glam-data/data/maps-online.json", function
 
 // set the color scale
 var color = d3.scaleOrdinal()
-  .domain(["Online","Not online"])
+  .domain(["true","false"])
   .range(d3.schemeCategory10);
 
 // Compute the position of each group on the pie:
