@@ -46,16 +46,17 @@ maps_online_donut
   .enter()
   .append('path')
     .attr('d', arc)
-    .attr('fill', function(d,i){ console.log(d.data.facet); return(color(d.data.facet)) })
+    .attr('fill', function(d,i){ return(color(d.data.facet)) })
     .attr("stroke", "white")
     .style("stroke-width", "2px")
     .style("opacity", 0.7)
     .on("mousemove", function(d){
+      console.log(d.data.count);
       tooltip
         .style("left", d3.event.pageX - 30 + "px")
         .style("top", d3.event.pageY - 40 + "px")
         .style("display", "inline-block")
-        .html((d.count));
+        .html((d.data.count));
     })
     .on("mouseout", function(d){ tooltip.style("display", "none");})
 
