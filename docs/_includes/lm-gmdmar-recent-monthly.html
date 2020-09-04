@@ -1,7 +1,6 @@
 {% assign date_list = '' %}
 
 {% for file in site.data.gmdmar-recent-monthly %}
-{{file[0]}},
   {% assign file_date = file[0] | slice: -6, 6 %}
   {% assign date_list = date_list | append: file_date %}
   {% if forloop.last == false %}
@@ -15,9 +14,8 @@
 {% assign year = last_modified | slice: 0,4 %}
 {% assign prev_month = last_modified | slice: 4,2 %}
 {% assign month = prev_month | plus: 1 %}
-.. {{date_array_sorted}}
 
 
-{{ month | plus: 1 }}/01/{{ year }}
+{{ month }}/01/{{ year }}
 
 
