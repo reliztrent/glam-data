@@ -1,7 +1,7 @@
 ---
 layout: none
 ---
-[{% for facet in site.data.maps-facets-daily.map-facets-{{ 'now' | date: "%Y%m%d" }}.facets %}
+[{% for facet in site.data.maps-facets-daily.map-facets-TODAY.facets %}
   {% if facet.type == "original-format"%}
   {% for filter in facet.filters %}
   {
