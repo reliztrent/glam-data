@@ -1,7 +1,7 @@
 {% assign date_list = '' %}
 
 {% for file in site.data.map-facets-daily %}
-{% assign len = file | size %}
+{% assign len = file[0] | size %}
 {{ len }}
  {% if len ==  20 %}
   {% assign file_date = file[0] | slice: -8, 8 %}
