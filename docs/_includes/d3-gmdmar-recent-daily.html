@@ -30,6 +30,7 @@ d3.json("https://reliztrent.github.io/glam-data/data/gmdmar-recent-daily.json", 
     gmdmar_daily.append("g")
       .attr("transform", "translate(0," + gmdmar_daily_height + ")")
       .call(d3.axisBottom(x));
+      console.log(x);
 
     // Add Y axis
     var y = d3.scaleLinear()
