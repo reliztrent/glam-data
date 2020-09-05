@@ -47,7 +47,7 @@ d3.json("https://reliztrent.github.io/glam-data/data/gmdmar-recent-daily.json", 
       .data(data)
       .enter()
       .append("path")
-        .attr("d", function(d){ return line(d.facet) } )
+        .attr("d", function(d){ return line(d.numbers) } )
         .attr("stroke", function(d){ return myColor(d.type) })
         .style("stroke-width", 4)
         .style("fill", "none")
