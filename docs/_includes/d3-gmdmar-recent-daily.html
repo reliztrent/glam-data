@@ -27,27 +27,27 @@ d3.json("https://reliztrent.github.io/glam-data/data/gmdmar-recent-daily.json", 
       .range([ 0, gmdmar_daily_width ])
       .domain(data.map(function(d) { return d.numbers; }));
     console.log(data[0].numbers)
-    svg.append("g")
-      .attr("transform", "translate(0," + height + ")")
+    gmdmar_daily.append("g")
+      .attr("transform", "translate(0," + gmdmar_daily_height + ")")
       .call(d3.axisBottom(x));
 
     // Add Y axis
     var y = d3.scaleLinear()
       .domain( [0,20])
-      .range([ height, 0 ]);
-    svg.append("g")
+      .range([ gmdmar_daily_height, 0 ]);
+    gmdmar_daily.append("g")
       .call(d3.axisLeft(y));
 
     // Add the lines
     var line = d3.line()
-      .x(function(d) { return x(+d.time) })
-      .y(function(d) { return y(+d.value) })
-    svg.selectAll("myLines")
-      .data(dataReady)
+      .x(function(d) { return x(+d.facet) })
+      .y(function(d) { return y(+d.count) })
+    gmdmar_daily.selectAll("myLines")
+      .data(data)
       .enter()
       .append("path")
         .attr("d", function(d){ return line(d.values) } )
-        .attr("stroke", function(d){ return myColor(d.name) })
+        .attr("stroke", function(d){ return myColor(d.type) })
         .style("stroke-width", 4)
         .style("fill", "none")
 
