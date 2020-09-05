@@ -23,19 +23,6 @@ d3.json("https://reliztrent.github.io/glam-data/data/gmdmar-recent-daily.json", 
       .domain(["online", "notonline"])
       .range(d3.schemeCategory10);
 
-    var allGroups =['online','notonline']
-    var allDates = allGroups.map( function(d) { // .map allows to do something for each element of the list
-      return 
-        data.map(function(d) {
-          return d;
-        })
-      ;
-    });
-    console.log("allGroups:")
-    console.log(allGroups)
-    console.log("allDates ..:")
-    console.log(allDates)
-
     // Add X axis --> it is a date format
     var x = d3.scaleLinear()
       .domain(data.map(function(d) { return d.numbers; }))
@@ -43,7 +30,7 @@ d3.json("https://reliztrent.github.io/glam-data/data/gmdmar-recent-daily.json", 
     gmdmar_daily.append("g")
       .attr("transform", "translate(0," + gmdmar_daily_height + ")")
       .call(d3.axisBottom(x));
-    console.log(data.map(function(d) { return d.numbers.facet; }))
+    console.log(data.map(function(d) { return d.numbers[0].facet; }))
 
     // Add Y axis
     var y = d3.scaleLinear()
