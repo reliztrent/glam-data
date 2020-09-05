@@ -15,7 +15,7 @@ var gmdmar_daily = d3.select("#d3-gmdmar-recent-daily")
           "translate(" + gmdmar_daily_margin.left + "," + gmdmar_daily_margin.top + ")");
 
 //Read the data
-d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/data_connectedscatter.csv", function(data) {
+d3.json("https://reliztrent.github.io/glam-data/data/gmdmar-recent-daily.json", function(data) {
 
     // List of groups (here I have one group per column)
     var allGroup = ["valueA", "valueB", "valueC"]
@@ -30,7 +30,7 @@ d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/da
       };
     });
     // I strongly advise to have a look to dataReady with
-    console.log(dataReady)
+    console.log(data)
 
     // A color scale: one color for each group
     var myColor = d3.scaleOrdinal()
