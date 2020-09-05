@@ -24,8 +24,8 @@ d3.json("https://reliztrent.github.io/glam-data/data/gmdmar-recent-daily.json", 
       .range(d3.schemeCategory10);
 
     // Add X axis --> it is a date format
-    var x = d3.scaleTime()
-      .domain([new Date(2020,9,1),new Date(2020,9,5)])
+    var x = d3.scaleBand()
+      .domain(data.map(function(d) { return d.numbers.facet; }))
       .range([ 0, gmdmar_daily_width ]);
     gmdmar_daily.append("g")
       .attr("transform", "translate(0," + gmdmar_daily_height + ")")
@@ -40,7 +40,7 @@ d3.json("https://reliztrent.github.io/glam-data/data/gmdmar-recent-daily.json", 
 
     // Add the lines
     var line = d3.line()
-      .x(function(d) { return x(+d3.timeParse("%Y-%m-%d")(d.facet)) })
+      .x(function(d) { return x(+d.facet) })
       .y(function(d) { return y(+d.count) })
     gmdmar_daily.selectAll("myLines")
       .data(data)
