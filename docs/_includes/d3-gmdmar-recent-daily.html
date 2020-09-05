@@ -16,6 +16,7 @@ var gmdmar_daily = d3.select("#d3-gmdmar-recent-daily")
 
 //Read the data
 d3.json("https://reliztrent.github.io/glam-data/data/gmdmar-recent-daily.json", function(data) { 
+    console.log(data)
 
     // A color scale: one color for each group
     var myColor = d3.scaleOrdinal()
@@ -26,7 +27,7 @@ d3.json("https://reliztrent.github.io/glam-data/data/gmdmar-recent-daily.json", 
     var x = d3.scaleLinear()
       .range([ 0, gmdmar_daily_width ])
       .domain(data.map(function(d) { return d.numbers; }));
-    console.log(data[0].numbers)
+    
     gmdmar_daily.append("g")
       .attr("transform", "translate(0," + gmdmar_daily_height + ")")
       .call(d3.axisBottom(x));
@@ -46,7 +47,7 @@ d3.json("https://reliztrent.github.io/glam-data/data/gmdmar-recent-daily.json", 
       .data(data)
       .enter()
       .append("path")
-        .attr("d", function(d){ return line(d.values) } )
+        .attr("d", function(d){ return line(d.facet) } )
         .attr("stroke", function(d){ return myColor(d.type) })
         .style("stroke-width", 4)
         .style("fill", "none")
