@@ -37,12 +37,12 @@ d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/da
       };
     });
     // I strongly advise to have a look to dataReady with
-    // console.log(dataReady)
+    console.log(dataReady)
 
     // A color scale: one color for each group
     var myColor = d3.scaleOrdinal()
       .domain(allGroup)
-      .range(d3.schemeSet2);
+      .range(d3.schemeCategory10);
 
     // Add X axis --> it is a date format
     var x = d3.scaleLinear()
