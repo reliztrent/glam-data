@@ -25,16 +25,15 @@ d3.json("https://reliztrent.github.io/glam-data/data/gmdmar-recent-daily.json", 
 
     var allGroups =['online','notonline']
     var allDates = allGroups.map( function(d) { // .map allows to do something for each element of the list
-      console.log(function(d) { return d; });
       return 
         data.map(function(d) {
-          return d.numbers;
+          return d;
         })
       ;
     });
     console.log("allGroups:")
     console.log(allGroups)
-    console.log("allDates .:")
+    console.log("allDates ..:")
     console.log(allDates)
 
     // Add X axis --> it is a date format
