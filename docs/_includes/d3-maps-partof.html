@@ -38,7 +38,7 @@ maps_partof.append("g")
   .call(d3.axisLeft(y));
 
 // Bars
-maps_partof.selectAll("mybar")
+maps_partof.selectAll("bar")
   .data(data)
   .enter()
   .append("rect")
@@ -63,7 +63,7 @@ maps_partof.selectAll("rect")
   .duration(900)
   .attr("y", function(d) { return y(d.count); })
   .attr("height", function(d) { return maps_partof_height - y(d.count); })
-  .delay(function(d,i){console.log(i) ; return(i*200)})
+  .delay(function(d,i){console.log(i) ; return(i*100)})
 
 })
 
