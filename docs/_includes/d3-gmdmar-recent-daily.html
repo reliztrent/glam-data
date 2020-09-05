@@ -24,7 +24,7 @@ d3.json("https://reliztrent.github.io/glam-data/data/gmdmar-recent-daily.json", 
       .range(d3.schemeCategory10);
 
     var allGroups =['online','notonline']
-    var allDates = allGroups.map( function(grpName) { // .map allows to do something for each element of the list
+    var allDates = allGroups.map( function(d) { // .map allows to do something for each element of the list
       return 
         data.map(function(d) {
           return d.numbers;
