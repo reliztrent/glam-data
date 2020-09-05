@@ -63,7 +63,7 @@ maps_partof.selectAll("rect")
   .duration(800)
   .attr("y", function(d) { return y(d.count); })
   .attr("height", function(d) { return maps_partof_height - y(d.count); })
-  .delay(function(d,i){console.log(i) ; return(i*400)})
+  .delay(function(d,i){console.log(i) ; return(i*2000)})
 
 })
 
