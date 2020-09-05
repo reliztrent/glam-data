@@ -15,7 +15,7 @@ layout: none
 	}{% if forloop.last == false %},{% endif %}
 	{% endif %}
 	{% endfor %}
-  ]},{"notonline":{
+  ]},{"notonline":[
 	{% for file in site.data.gmdmar-recent-daily %}
 	{% if file[0].size == 28 %}
 	{% assign notonline = file[1].facets[0].filters[1].count %}
