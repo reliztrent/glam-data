@@ -27,7 +27,6 @@ var pie = d3.pie()
   .sort(null) // Do not sort group by size
   .value(function(d) {return d.count; })
 var data_ready = pie(data)
-console.log(data_ready)
 
 // The arc generator
 var arc = d3.arc()
