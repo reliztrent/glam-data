@@ -49,39 +49,39 @@ d3.json("https://reliztrent.github.io/glam-data/data/gmdmar-recent-daily.json", 
       .append("path")
         .attr("d", function(d){ return line(d.numbers) } )
         .attr("stroke", function(d){ return myColor(d.type) })
-        .style("stroke-width", 4)
+        .style("stroke-width", 2)
         .style("fill", "none")
 
     // Add the points
-    svg
+    gmdmar_daily
       // First we need to enter in a group
       .selectAll("myDots")
-      .data(dataReady)
+      .data(data)
       .enter()
         .append('g')
-        .style("fill", function(d){ return myColor(d.name) })
+        .style("fill", function(d){ return myColor(d.type) })
       // Second we need to enter in the 'values' part of this group
       .selectAll("myPoints")
-      .data(function(d){ return d.values })
+      .data(function(d){ return d.numbers })
       .enter()
       .append("circle")
-        .attr("cx", function(d) { return x(d.time) } )
-        .attr("cy", function(d) { return y(d.value) } )
+        .attr("cx", function(d) { return x(d.facet) } )
+        .attr("cy", function(d) { return y(d.count) } )
         .attr("r", 5)
         .attr("stroke", "white")
 
     // Add a legend at the end of each line
-    svg
+    gmdmar_daily
       .selectAll("myLabels")
-      .data(dataReady)
+      .data(data)
       .enter()
         .append('g')
         .append("text")
-          .datum(function(d) { return {name: d.name, value: d.values[d.values.length - 1]}; }) // keep only the last value of each time series
-          .attr("transform", function(d) { return "translate(" + x(d.value.time) + "," + y(d.value.value) + ")"; }) // Put the text at the position of the last point
+          .datum(function(d) { return {type: d.type, value: d.numbers[d.numbers.length - 1]}; }) // keep only the last value of each time series
+          .attr("transform", function(d) { return "translate(" + x(d.numbers.facet) + "," + y(d.count.count) + ")"; }) // Put the text at the position of the last point
           .attr("x", 12) // shift the text a bit more right
-          .text(function(d) { return d.name; })
-          .style("fill", function(d){ return myColor(d.name) })
+          .text(function(d) { return d.type; })
+          .style("fill", function(d){ return myColor(d.type) })
           .style("font-size", 15)
 
 })
