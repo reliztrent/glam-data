@@ -60,10 +60,10 @@ maps_partof.selectAll("mybar")
 // Animation
 maps_partof.selectAll("rect")
   .transition()
-  .duration(800)
+  .duration(900)
   .attr("y", function(d) { return y(d.count); })
   .attr("height", function(d) { return maps_partof_height - y(d.count); })
-  .delay(function(d,i){console.log(i) ; return(i*100)})
+  .delay(function(d,i){console.log(i) ; return(i*200)})
 
 })
 
