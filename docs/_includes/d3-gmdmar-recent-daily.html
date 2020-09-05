@@ -40,7 +40,7 @@ d3.json("https://reliztrent.github.io/glam-data/data/gmdmar-recent-daily.json", 
 
     // Add the lines
     var line = d3.line()
-      .x(function(d) { return x(+d.facet) })
+      .x(function(d) { return x(+d3.timeParse("%Y-%m-%d")(d.facet)) })
       .y(function(d) { return y(+d.count) })
     gmdmar_daily.selectAll("myLines")
       .data(data)
