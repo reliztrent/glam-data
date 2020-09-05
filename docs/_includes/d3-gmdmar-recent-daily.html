@@ -25,7 +25,7 @@ d3.json("https://reliztrent.github.io/glam-data/data/gmdmar-recent-daily.json", 
 
     // Add X axis --> it is a date format
     var x = d3.scaleTime()
-      .domain(['2020-09-01','2020-09-05'])
+      .domain([new Date(2020,9,1),new Date(2020,9,5)])
       .range([ 0, gmdmar_daily_width ]);
     gmdmar_daily.append("g")
       .attr("transform", "translate(0," + gmdmar_daily_height + ")")
