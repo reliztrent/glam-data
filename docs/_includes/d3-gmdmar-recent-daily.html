@@ -25,12 +25,12 @@ d3.json("https://reliztrent.github.io/glam-data/data/gmdmar-recent-daily.json", 
 
     // Add X axis --> it is a date format
     var x = d3.scaleLinear()
-      .range([ 0, gmdmar_daily_width ])
       .domain(data.map(function(d) { return d.numbers; }));
-    
+      .range([ 0, gmdmar_daily_width ])
     gmdmar_daily.append("g")
       .attr("transform", "translate(0," + gmdmar_daily_height + ")")
       .call(d3.axisBottom(x));
+    console.log(data.map(function(d) { return d.numbers; }))
 
     // Add Y axis
     var y = d3.scaleLinear()
@@ -71,7 +71,18 @@ d3.json("https://reliztrent.github.io/glam-data/data/gmdmar-recent-daily.json", 
         .attr("stroke", "white")
 
     // Add a legend at the end of each line
-
+    gmdmar_daily
+      .selectAll("myLabels")
+      .data(data)
+      .enter()
+        .append('g')
+        .append("text")
+          .datum(function(d) { return {type: d.type, value: d.numbers[d.numbers.length - 1]}; }) // keep only the last value of each time series
+          .attr("transform", function(d) { return "translate(" + x(d.count.facet) + "," + y(d.count.count) + ")"; }) // Put the text at the position of the last point
+          .attr("x", 12) // shift the text a bit more right
+          .text(function(d) { return d.type; })
+          .style("fill", function(d){ return myColor(d.type) })
+          .style("font-size", 15)
 
 })
 
