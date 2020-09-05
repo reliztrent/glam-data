@@ -15,32 +15,18 @@ var gmdmar_daily = d3.select("#d3-gmdmar-recent-daily")
           "translate(" + gmdmar_daily_margin.left + "," + gmdmar_daily_margin.top + ")");
 
 //Read the data
-d3.json("https://reliztrent.github.io/glam-data/data/gmdmar-recent-daily.json", function(data) {
-
-    // List of groups (here I have one group per column)
-    var allGroup = ["valueA", "valueB", "valueC"]
-
-    // Reformat the data: we need an array of arrays of {x, y} tuples
-    var dataReady = allGroup.map( function(grpName) { // .map allows to do something for each element of the list
-      return {
-        name: grpName,
-        values: data.map(function(d) {
-          return {time: d.time, value: +d[grpName]};
-        })
-      };
-    });
-    // I strongly advise to have a look to dataReady with
-    console.log(data)
+d3.json("https://reliztrent.github.io/glam-data/data/gmdmar-recent-daily.json", function(data) { 
 
     // A color scale: one color for each group
     var myColor = d3.scaleOrdinal()
-      .domain(allGroup)
+      .domain(["online", "notonline"])
       .range(d3.schemeCategory10);
 
     // Add X axis --> it is a date format
     var x = d3.scaleLinear()
-      .domain([0,10])
-      .range([ 0, width ]);
+      .range([ 0, width ])
+      .domain(data.map(function(d) { return d[0].numbers; }));
+    console.log(data[0].numbers)
     svg.append("g")
       .attr("transform", "translate(0," + height + ")")
       .call(d3.axisBottom(x));
