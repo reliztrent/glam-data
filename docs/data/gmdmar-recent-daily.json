@@ -3,6 +3,7 @@ layout: none
 ---
 [
 {% for file in site.data.gmdmar-recent-daily %}
+{% if file[0].size == 28 %}
 {% assign online = file[1].facets[0].filters[0].count %}
 {% assign notonline = file[1].facets[0].filters[1].count %}
 {% assign year = file[0] | slice: -8, 4 %}
@@ -13,6 +14,7 @@ layout: none
 	"online": "{{ online | default: 0 }}", 
 	"facet": "{{year}}-{{month}}-{{day}}"
 }{% if forloop.last == false %},{% endif %}
-
+{% endif %}
 {% endfor %}
 ]
+
