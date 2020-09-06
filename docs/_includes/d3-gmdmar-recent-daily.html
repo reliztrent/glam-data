@@ -1,7 +1,7 @@
 <script>
 
 // set the dimensions and margins of the graph
-var gmdmar_daily_margin = {top: 10, right: 100, bottom: 30, left: 30},
+var gmdmar_daily_margin = {top: 10, right: 100, bottom: 100, left: 30},
     gmdmar_daily_width = 450 - gmdmar_daily_margin.left - gmdmar_daily_margin.right,
     gmdmar_daily_height = 350 - gmdmar_daily_margin.top - gmdmar_daily_margin.bottom;
 
@@ -59,16 +59,19 @@ d3.json("https://reliztrent.github.io/glam-data/data/gmdmar-recent-daily.json", 
     gmdmar_daily.append("path")
         .data([data])
         .attr("class", "line")
-        .attr("d", line1);
+        .attr("d", line1)
+        .attr("fill", "none");
 
     // Add second line
     gmdmar_daily.append("path")
         .data([data])
         .attr("class", "line")
-        .attr("d", line2);  
+        .attr("d", line2)
+        .attr("fill", "none");  
 
     // Add Y Axis
     gmdmar_daily.append("g")
+        .attr("class", "axis")
         .call(d3.axisLeft(y));
 
 
