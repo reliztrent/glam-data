@@ -79,7 +79,7 @@ d3.json("https://reliztrent.github.io/glam-data/data/gmdmar-recent-daily.json", 
     gmdmar_daily.append("text")
         .data([data])
         .text("blahdeblah22222")
-        .attr("transform", "translate("+ gmdmar_daily_width +"," + gmdmar_daily_height + ")");
+        .attr("transform", "translate("+ gmdmar_daily_width +"," + y(2) + ")");
 
     // Add Y Axis
     gmdmar_daily.append("g")
