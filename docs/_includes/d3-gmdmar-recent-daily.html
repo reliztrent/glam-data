@@ -63,12 +63,6 @@ d3.json("https://reliztrent.github.io/glam-data/data/gmdmar-recent-daily.json", 
         .attr("fill", "none")
         .attr("stroke", "#8CD3DD");
 
-    gmdmar_daily.append("text")
-        .data([data])
-        .text("blahdeblah")
-        ;
-
-
     // Add second line
     gmdmar_daily.append("path")
         .data([data])
@@ -76,6 +70,14 @@ d3.json("https://reliztrent.github.io/glam-data/data/gmdmar-recent-daily.json", 
         .attr("d", line2)
         .attr("fill", "none")
         .attr("stroke", "#69b3a2");
+
+    // Add labels
+    gmdmar_daily.append("text")
+        .data([data])
+        .text("blahdeblah");
+    gmdmar_daily.append("text")
+        .data([data])
+        .text("blahdeblah");
 
     // Add Y Axis
     gmdmar_daily.append("g")
@@ -99,6 +101,9 @@ d3.json("https://reliztrent.github.io/glam-data/data/gmdmar-recent-daily.json", 
     console.log([data])
     console.log([data][0][5])
     console.log([data][0][5].online)
+    console.log(data[5].online)
+    console.log([data][0][[data][0].length])
+    console.log(data[[data].length])
     }
 )
 
