@@ -71,7 +71,18 @@ d3.json("https://reliztrent.github.io/glam-data/data/gmdmar-recent-daily.json", 
         .attr("fill", "none")
         .attr("stroke", "#69b3a2");
 
-    // Add labels
+    // Add Y Axis
+    gmdmar_daily.append("g")
+        .attr("class", "axis")
+        .call(d3.axisLeft(y));
+
+    // Add X Axis
+    gmdmar_daily.append("g")
+        .attr("class", "axis")
+        .attr("transform", "translate(0," + gmdmar_daily_height + ")")
+        .call(d3.axisBottom(x));
+
+    // Add line labels
     gmdmar_daily.append("text")
         .data([data])
         .text("online")
@@ -87,22 +98,6 @@ d3.json("https://reliztrent.github.io/glam-data/data/gmdmar-recent-daily.json", 
         .attr("x", 12)
         .attr("y", 8)//move down a bit;
 
-    // Add Y Axis
-    gmdmar_daily.append("g")
-        .attr("class", "axis")
-        .call(d3.axisLeft(y));
-
-    // Add X Axis
-    gmdmar_daily.append("g")
-        .attr("class", "axis")
-        .attr("transform", "translate(0," + gmdmar_daily_height + ")")
-        .call(d3.axisBottom(x)
-          .tickFormat(d3.timeFormat("%a %b %d")))
-        .selectAll("text") 
-          .style("text-anchor", "end")
-          .attr("dx", "-.8em")
-          .attr("dy", ".15em")
-          .attr("transform", "rotate(-65)");
 
     console.log("test1")
     console.log(data)
