@@ -1,21 +1,21 @@
 <script>
 
-// set the dimensions and margins of the graph
-var gmdmar_daily_margin = {top: 10, right: 100, bottom: 100, left: 30},
-    gmdmar_daily_width = 450 - gmdmar_daily_margin.left - gmdmar_daily_margin.right,
-    gmdmar_daily_height = 350 - gmdmar_daily_margin.top - gmdmar_daily_margin.bottom;
+// Dimensions and margins
+var margin = {top: 20, right: 100, bottom: 100, left: 30},
+    width = 450 - margin.left - margin.right,
+    height = 350 - margin.top - margin.bottom;
 
-// append the svg object to the body of the page
-var gmdmar_daily = d3.select("#d3-gmdmar-recent-daily")
+// Append to body
+var svg = d3.select("#myLineChart")
   .append("svg")
-    .attr("width", gmdmar_daily_width + gmdmar_daily_margin.left + gmdmar_daily_margin.right)
-    .attr("height", gmdmar_daily_height + gmdmar_daily_margin.top + gmdmar_daily_margin.bottom)
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
   .append("g")
     .attr("transform",
-          "translate(" + gmdmar_daily_margin.left + "," + gmdmar_daily_margin.top + ")");
+          "translate(" + margin.left + "," + margin.top + ")");
 
-//Read the data
-d3.json("https://reliztrent.github.io/glam-data/data/gmdmar-recent-daily.json", function(data) { 
+//R Read the data
+d3.json("data.json", function(data) { 
 
     // A color scale: one color for each group
     var myColor = d3.scaleOrdinal()
@@ -26,8 +26,8 @@ d3.json("https://reliztrent.github.io/glam-data/data/gmdmar-recent-daily.json", 
     var parseTime = d3.timeParse("%Y-%m-%d");
 
     // set the ranges
-    var x = d3.scaleTime().range([0, gmdmar_daily_width]);
-    var y = d3.scaleLinear().range([gmdmar_daily_height, 0]);
+    var x = d3.scaleTime().range([0, width]);
+    var y = d3.scaleLinear().range([height, 0]);
 
     // define the first line
     var line1 = d3.line()
@@ -47,16 +47,16 @@ d3.json("https://reliztrent.github.io/glam-data/data/gmdmar-recent-daily.json", 
 
     // sort years ascending
     data.sort(function(a, b){
-      return a["facet"]-b["facet"]; //maybe replace facet with Date
+      return a["facet"]-b["facet"]; 
     })
 
     // Scale the range of the data
-    x.domain(d3.extent(data, function(d) { return d.facet; })); //list of all dates
+    x.domain(d3.extent(data, function(d) { return d.facet; })); //list of all facets
     y.domain([0, d3.max(data, function(d) {
-      return Math.max(d.online, d.not_online); })]); //zero to max of either online or not online
+      return Math.max(d.online, d.not_online); })]); 
 
     // Add first line
-    gmdmar_daily.append("path")
+    svg.append("path")
         .data([data])
         .attr("class", "line")
         .attr("d", line1)
@@ -64,7 +64,7 @@ d3.json("https://reliztrent.github.io/glam-data/data/gmdmar-recent-daily.json", 
         .attr("stroke", "#8CD3DD");
 
     // Add second line
-    gmdmar_daily.append("path")
+    svg.append("path")
         .data([data])
         .attr("class", "line")
         .attr("d", line2)
@@ -72,14 +72,14 @@ d3.json("https://reliztrent.github.io/glam-data/data/gmdmar-recent-daily.json", 
         .attr("stroke", "#69b3a2");
 
     // Add Y Axis
-    gmdmar_daily.append("g")
+    svg.append("g")
         .attr("class", "axis")
         .call(d3.axisLeft(y));
 
     // Add X Axis
-    gmdmar_daily.append("g")
+    svg.append("g")
         .attr("class", "axis")
-        .attr("transform", "translate(0," + gmdmar_daily_height + ")")
+        .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x)
           .tickFormat(d3.timeFormat("%a %b %d")))
         .selectAll("text") 
@@ -89,49 +89,51 @@ d3.json("https://reliztrent.github.io/glam-data/data/gmdmar-recent-daily.json", 
           .attr("transform", "rotate(-65)");
 
     // Add line labels
-    gmdmar_daily.append("text")
+    svg.append("text")
         .data([data])
         .text("online")
-        .attr("transform", "translate(" + gmdmar_daily_width + "," + y(data[data.length-1].online) + ")")
+        .attr("transform", "translate(" + width + "," + y(data[data.length-1].online) + ")")
         .style("fill","#8CD3DD")
         .attr("x", 12)
         .attr("y", -8)//move up a bit;
-    gmdmar_daily.append("text")
+    svg.append("text")
         .data([data])
-        .text("not online")
-        .attr("transform", "translate(" + gmdmar_daily_width + "," + y(data[data.length-1].not_online) + ")")
+        .text("not_online")
+        .attr("transform", "translate(" + width + "," + y(data[data.length-1].not_online) + ")")
         .style("fill","#69b3a2")
         .attr("x", 12)
-        .attr("y", 8)//move down a bit;
+        .attr("y", 8);
 
-
-    console.log("test1")
-    console.log(data)
-    console.log("test2")
-    console.log([data])
-    console.log("test3")
-    console.log([data][0][5])
-    console.log("test4")
-    console.log([data][0][5].online)
-    console.log("test5")
-    console.log(data[5].online)
-    console.log("test6")
-    console.log([data][0][[data][0].length])
-    console.log("test7")
-    console.log(data[[data].length].online)
-    console.log("test8")
-    console.log(data[data.length-1].online)
-    console.log("test9")
-    console.log([data].online)
-    console.log("test10")
-    console.log(Math.max(data.online, data.not_online))
-    console.log("test11")
-    console.log(Math.max(9, 10))
-    console.log("test12")
-    console.log(d3.extent(data, function(d) { return d.facet; }))
-
-    console.log("end tests")
-    }
+    // Add the points
+    svg
+      .selectAll("points")
+      .data(data)
+      .enter()
+        .append("circle")
+          .attr("cx", function(d) { return x(d.facet) } )
+          .attr("cy", function(d) { return y(d.online) } )
+          .attr("r", 4)
+          .attr("stroke", "white")
+          .style("fill", "#8CD3DD");
+    svg
+      .selectAll("points")
+      .data(data)
+      .enter()
+        .append("circle")
+          .attr("cx", function(d) { return x(d.facet) } )
+          .attr("cy", function(d) { return y(d.not_online) } )
+          .attr("r", 4)
+          .attr("stroke", "white")
+          .style("fill", "#69b3a2")
+          .on("mousemove", function(d){
+            tooltip
+              .style("left", d3.event.pageX - 30 + "px")
+              .style("top", d3.event.pageY - 40 + "px")
+              .style("display", "inline-block")
+              .html((d.not_online));
+          })
+          .on("mouseout", function(d){ tooltip.style("display", "none");});
+}
 )
 
 
