@@ -47,7 +47,7 @@ d3.json("https://reliztrent.github.io/glam-data/data/gmdmar-recent-daily.json", 
 
     // sort years ascending
     data.sort(function(a, b){
-      return a["Date"]-b["Date"]; //maybe replace facet with Date
+      return a["facet"]-b["facet"]; //maybe replace facet with Date
     })
 
     // Scale the range of the data
@@ -70,8 +70,7 @@ d3.json("https://reliztrent.github.io/glam-data/data/gmdmar-recent-daily.json", 
     // Add X Axis
     gmdmar_daily.append("g")
         .attr("transform", "translate(0," + gmdmar_daily_height + ")")
-        .call(d3.axisBottom(x))
-          .tickFormat(d3.time.format("%Y-%m-%d"));
+        .call(d3.axisBottom(x));
 
     // Add Y Axis
     gmdmar_daily.append("g")
