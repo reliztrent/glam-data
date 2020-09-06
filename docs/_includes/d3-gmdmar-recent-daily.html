@@ -90,8 +90,7 @@ d3.json("https://reliztrent.github.io/glam-data/data/gmdmar-recent-daily.json", 
     // Add Y Axis
     gmdmar_daily.append("g")
         .attr("class", "axis")
-        .call(d3.axisLeft(y))
-        .ticks();
+        .call(d3.axisLeft(y));
 
 
     // Add X Axis
