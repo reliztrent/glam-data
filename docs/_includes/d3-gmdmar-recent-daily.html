@@ -66,8 +66,6 @@ d3.json("https://reliztrent.github.io/glam-data/data/gmdmar-recent-daily.json", 
     gmdmar_daily.append("text")
         .data([data])
         .text("blahdeblah")
-        .datum(function(d) { return {name: d.name, value: d.values[d.values.length - 1]}; }) // keep only the last value of each time series
-        .attr("transform", function(d) { return "translate(" + x(d.value.time) + "," + y(d.value.value) + ")"; }) // Put the text at the position of the last point
         ;
 
 
