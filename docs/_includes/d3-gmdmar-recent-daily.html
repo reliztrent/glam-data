@@ -65,15 +65,6 @@ d3.json("https://reliztrent.github.io/glam-data/data/gmdmar-recent-daily.json", 
           .append("text")
           .text('online');
 
-    // Add second line
-    gmdmar_daily.append("path")
-        .data([data])
-        .attr("class", "line")
-        .attr("d", line2)
-        .attr("fill", "none")
-        .attr("stroke", "#69b3a2")
-          .append("text")
-          .text('online');
 
     // Add Y Axis
     gmdmar_daily.append("g")
