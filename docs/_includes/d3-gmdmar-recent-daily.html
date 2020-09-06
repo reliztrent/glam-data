@@ -52,7 +52,8 @@ d3.json("https://reliztrent.github.io/glam-data/data/gmdmar-recent-daily.json", 
 
     // Scale the range of the data
     x.domain(d3.extent(data, function(d) { return d.facet; })); //list of all dates
-    y.domain([0, 2]); //zero to max of either online or not online
+    y.domain([0, d3.max(data, function(d) {
+      return Math.max(d.online, d.not_online); })]); //zero to max of either online or not online
 
     // Add first line
     gmdmar_daily.append("path")
@@ -126,7 +127,7 @@ d3.json("https://reliztrent.github.io/glam-data/data/gmdmar-recent-daily.json", 
     console.log("test11")
     console.log(Math.max(9, 10))
     console.log("test12")
-    console.log(d3.max(data, function(d) {return Math.max(d.Imports, d.Exports); }))
+    console.log(d3.extent(data, function(d) { return d.facet; }))
 
     console.log("end tests")
     }
