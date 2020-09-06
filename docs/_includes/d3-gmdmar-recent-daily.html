@@ -52,8 +52,7 @@ d3.json("https://reliztrent.github.io/glam-data/data/gmdmar-recent-daily.json", 
 
     // Scale the range of the data
     x.domain(d3.extent(data, function(d) { return d.facet; })); //list of all dates
-    y.domain([0, d3.max(data, function(d) {
-      return Math.max(d.online, d.not_online); })]); //zero to max of either online or not online
+    y.domain([0, 2]); //zero to max of either online or not online
 
     // Add first line
     gmdmar_daily.append("path")
@@ -70,19 +69,6 @@ d3.json("https://reliztrent.github.io/glam-data/data/gmdmar-recent-daily.json", 
         .attr("d", line2)
         .attr("fill", "none")
         .attr("stroke", "#69b3a2");
-
-    // Add the points
-    gmdmar_daily
-      .selectAll("points")
-      .data([data])
-      .enter()
-      // Second we need to enter in the 'values' part of this group
-        .append("circle")
-          .attr("cx", function(d) { return x(d.facet) } )
-          .attr("cy", function(d) { return y(d.online) } )
-          .attr("r", 4)
-          .attr("stroke", "white")
-          .style("fill", "#000");
 
     // Add labels
     gmdmar_daily.append("text")
