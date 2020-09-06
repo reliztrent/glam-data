@@ -71,10 +71,7 @@ d3.json("https://reliztrent.github.io/glam-data/data/gmdmar-recent-daily.json", 
     gmdmar_daily.append("g")
         .attr("transform", "translate(0," + gmdmar_daily_height + ")")
         .call(d3.axisBottom(x))
-        .tickFormat(d3.time.format("%A %Y-%m-%d"))
-        .selectAll("text")
-          .attr("transform", "translate(-10,0)rotate(-45)")
-          .style("text-anchor", "end");
+        .tickFormat(d3.time.format("%A %Y-%m-%d"));
 
     // Add Y Axis
     gmdmar_daily.append("g")
