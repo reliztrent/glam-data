@@ -16,7 +16,7 @@ var gmdmar_daily = d3.select("#d3-gmdmar-recent-daily")
 
 //Read the data
 d3.json("https://reliztrent.github.io/glam-data/data/gmdmar-recent-daily.json", function(data) { 
-    console.log(data)
+    console.log(data.map(function(d) { return d.numbers.facet; }));
 
     // A color scale: one color for each group
     var myColor = d3.scaleOrdinal()
