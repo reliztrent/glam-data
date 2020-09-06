@@ -6,7 +6,7 @@ var margin = {top: 20, right: 100, bottom: 100, left: 30},
     height = 350 - margin.top - margin.bottom;
 
 // Append to body
-var svg = d3.select("#myLineChart")
+var svg = d3.select("#d3-gmdmar-recent-daily")
   .append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
@@ -14,7 +14,7 @@ var svg = d3.select("#myLineChart")
     .attr("transform",
           "translate(" + margin.left + "," + margin.top + ")");
 
-//R Read the data
+//Read the data
 d3.json("https://reliztrent.github.io/glam-data/data/gmdmar-recent-daily.json", function(data) { 
 
     // A color scale: one color for each group
@@ -98,7 +98,7 @@ d3.json("https://reliztrent.github.io/glam-data/data/gmdmar-recent-daily.json", 
         .attr("y", -8)//move up a bit;
     svg.append("text")
         .data([data])
-        .text("not_online")
+        .text("not online")
         .attr("transform", "translate(" + width + "," + y(data[data.length-1].not_online) + ")")
         .style("fill","#69b3a2")
         .attr("x", 12)
