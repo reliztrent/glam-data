@@ -47,16 +47,13 @@ d3.json("https://reliztrent.github.io/glam-data/data/gmdmar-recent-daily.json", 
 
     // sort years ascending
     data.sort(function(a, b){
-      return a["facet"]-b["facet"]; //maybe replace facet with Date
+      return a["Date"]-b["Date"]; //maybe replace facet with Date
     })
 
     // Scale the range of the data
     x.domain(d3.extent(data, function(d) { return d.facet; })); //list of all dates
     y.domain([0, d3.max(data, function(d) {
       return Math.max(d.online, d.not_online); })]); //zero to max of either online or not online
-    console.log(data)
-    console.log(x)
-    console.log(y)
 
     // Add first line
     gmdmar_daily.append("path")
@@ -73,7 +70,8 @@ d3.json("https://reliztrent.github.io/glam-data/data/gmdmar-recent-daily.json", 
     // Add X Axis
     gmdmar_daily.append("g")
         .attr("transform", "translate(0," + gmdmar_daily_height + ")")
-        .call(d3.axisBottom(x));
+        .call(d3.axisBottom(x))
+          .tickFormat(d3.time.format("%Y-%m-%d"));
 
     // Add Y Axis
     gmdmar_daily.append("g")
