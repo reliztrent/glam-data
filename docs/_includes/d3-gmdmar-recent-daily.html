@@ -76,13 +76,13 @@ d3.json("https://reliztrent.github.io/glam-data/data/gmdmar-recent-daily.json", 
       .selectAll("points")
       .data([data])
       .enter()
-        .style("fill", "#000")
       // Second we need to enter in the 'values' part of this group
         .append("circle")
           .attr("cx", function(d) { return x(d.facet) } )
           .attr("cy", function(d) { return y(d.online) } )
           .attr("r", 4)
-          .attr("stroke", "white");
+          .attr("stroke", "white")
+          .style("fill", "#000");
 
     // Add labels
     gmdmar_daily.append("text")
