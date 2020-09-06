@@ -63,9 +63,8 @@ d3.json("https://reliztrent.github.io/glam-data/data/gmdmar-recent-daily.json", 
         .attr("fill", "none")
         .attr("stroke", "#8CD3DD")
           .append("text")
-            .datum(function(d) { return {name: "online", value: d[d.length - 1]}; })
-            .text("blahdeblah");
-    console.log([data].online[5])
+            .text("blahdeblah")
+            .attr("transform","translate(100,100)");
 
 
     // Add second line
