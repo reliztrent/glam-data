@@ -55,6 +55,8 @@ d3.json("https://reliztrent.github.io/glam-data/data/gmdmar-recent-daily.json", 
     y.domain([0, d3.max(data, function(d) {
       return Math.max(d.online, d.not_online); })]); //zero to max of either online or not online
     console.log(data)
+    console.log(x)
+    console.log(y)
 
     // Add first line
     gmdmar_daily.append("path")
