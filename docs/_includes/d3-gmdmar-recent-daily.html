@@ -115,6 +115,14 @@ d3.json("https://reliztrent.github.io/glam-data/data/gmdmar-recent-daily.json", 
           .attr("r", 4)
           .attr("stroke", "white")
           .style("fill", "#8CD3DD");
+          .on("mousemove", function(d){
+            tooltip
+              .style("left", d3.event.pageX - 30 + "px")
+              .style("top", d3.event.pageY - 40 + "px")
+              .style("display", "inline-block")
+              .html((d.online));
+          })
+          .on("mouseout", function(d){ tooltip.style("display", "none");});
     svg
       .selectAll("points")
       .data(data)
