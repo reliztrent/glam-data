@@ -60,14 +60,16 @@ d3.json("https://reliztrent.github.io/glam-data/data/gmdmar-recent-daily.json", 
         .data([data])
         .attr("class", "line")
         .attr("d", line1)
-        .attr("fill", "none");
+        .attr("fill", "none")
+        .attr("stroke-width", "2");
 
     // Add second line
     gmdmar_daily.append("path")
         .data([data])
         .attr("class", "line")
         .attr("d", line2)
-        .attr("fill", "none");  
+        .attr("fill", "none")
+        .attr("stroke-width", "2");  
 
     // Add Y Axis
     gmdmar_daily.append("g")
