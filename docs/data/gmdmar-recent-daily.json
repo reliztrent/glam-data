@@ -2,32 +2,18 @@
 layout: none
 ---
 [
-  {"type":"online","numbers":[
-	{% for file in site.data.gmdmar-recent-daily %}
-	{% if file[0].size == 28 %}
-	{% assign online = file[1].facets[0].filters[0].count %}
-	{% assign year = file[0] | slice: -8, 4 %}
-	{% assign month = file[0] | slice: -4, 2 %}
-	{% assign day = file[0] | slice: -2, 2 %}
-	{
-		"count": "{{ online | default: 0 }}", 
-		"facet": "{{year}}-{{month}}-{{day}}"
-	}{% if forloop.last == false %},{% endif %}
-	{% endif %}
-	{% endfor %}
-  ]},{"type":"notonline","numbers":[
-	{% for file in site.data.gmdmar-recent-daily %}
-	{% if file[0].size == 28 %}
-	{% assign notonline = file[1].facets[0].filters[1].count %}
-	{% assign year = file[0] | slice: -8, 4 %}
-	{% assign month = file[0] | slice: -4, 2 %}
-	{% assign day = file[0] | slice: -2, 2 %}
-	{
-		"count": "{{ notonline | default: 0 }}", 
-		"facet": "{{year}}-{{month}}-{{day}}"
-	}{% if forloop.last == false %},{% endif %}
-	{% endif %}
-	{% endfor %}
-  ]}
+{% for file in site.data.gmdmar-recent-daily %}
+{% if file[0].size == 28 %}
+{% assign online = file[1].facets[0].filters[0].count %}
+{% assign year = file[0] | slice: -8, 4 %}
+{% assign month = file[0] | slice: -4, 2 %}
+{% assign day = file[0] | slice: -2, 2 %}
+{
+	"facet": "{{year}}-{{month}}-{{day}}",
+	"online": "{{ online | default: 0 }}", 
+	"not_online": "{{ online | default: 0 }}" 	
+}{% if forloop.last == false %},{% endif %}
+{% endif %}
+{% endfor %}
 ]
 
