@@ -62,9 +62,9 @@ d3.json("https://reliztrent.github.io/glam-data/data/gmdmar-recent-daily.json", 
         .attr("d", line1)
         .attr("fill", "none")
         .attr("stroke", "#8CD3DD")
-          .datum(function(d) { return {name: "online", value: d.online[d.length - 1]}; })
           .append("text")
-          .text("blahdeblah");
+            .datum(function(d) { return {name: "online", value: d[d.length - 1]}; })
+            .text("blahdeblah");
     console.log([data].online[5])
 
 
