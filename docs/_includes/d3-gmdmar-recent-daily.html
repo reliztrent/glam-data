@@ -76,8 +76,8 @@ d3.json("https://reliztrent.github.io/glam-data/data/gmdmar-recent-daily.json", 
     gmdmar_daily.append("g")
         .attr("class", "axis")
         .attr("transform", "translate(0," + gmdmar_daily_height + ")")
-        .call(d3.axisBottom(x))
-          .tickFormat(d3.timeFormat("%Y-%m-%d"));
+        .call(d3.axisBottom(x)
+          .tickFormat(d3.timeFormat("%Y-%m-%d")));
 
     }
 )
