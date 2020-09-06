@@ -24,6 +24,8 @@ var svg = d3.select("#my_dataviz")
 //Read the data
 d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/data_connectedscatter.csv", function(data) {
 
+  console.log(data.map(function(d) { return d.numbers.facet; }));
+
     // List of groups (here I have one group per column)
     var allGroup = ["valueA", "valueB", "valueC"]
 
