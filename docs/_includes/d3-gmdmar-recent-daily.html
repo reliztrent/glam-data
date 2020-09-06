@@ -16,60 +16,68 @@ var gmdmar_daily = d3.select("#d3-gmdmar-recent-daily")
 
 //Read the data
 d3.json("https://reliztrent.github.io/glam-data/data/gmdmar-recent-daily.json", function(data) { 
-    console.log(data.map(function(d) { return d.numbers.facet; }));
 
     // A color scale: one color for each group
     var myColor = d3.scaleOrdinal()
-      .domain(["online", "notonline"])
+      .domain(["online", "not_online"])
       .range(d3.schemeCategory10);
 
-    // Add X axis --> it is a date format
-    var x = d3.scaleLinear()
-      .domain([0,10])
-      .range([ 0, width ]);
+    // parse the date / time
+    var parseTime = d3.timeParse("%Y-%m-%d");
+
+    // set the ranges
+    var x = d3.scaleTime().range([0, gmdmar_daily_width]);
+    var y = d3.scaleLinear().range([gmdmar_daily_height, 0]);
+
+    // define the first line
+    var line1 = d3.line()
+        .x(function(d) { return x(d.facet); })
+        .y(function(d) { return y(d.online); });
+    // define the second line
+    var line2 = d3.line()
+        .x(function(d) { return x(d.facet); })
+        .y(function(d) { return y(d.not_online); });
+
+    // format the data
+    data.forEach(function(d) {
+        d.facet = parseTime(d.facet);
+        d.online = +d.online;
+        d.not_online = +d.not_online;
+    });
+
+    // sort years ascending
+    data.sort(function(a, b){
+      return a["facet"]-b["facet"]; //maybe replace facet with Date
+    })
+
+    // Scale the range of the data
+    x.domain(d3.extent(data, function(d) { return d.facet; })); //list of all dates
+    y.domain([0, d3.max(data, function(d) {
+      return Math.max(d.online, d.not_online); })]); //zero to max of either online or not online
+    console.log(data)
+
+    // Add first line
+    gmdmar_daily.append("path")
+        .data([data])
+        .attr("class", "line")
+        .attr("d", line1);
+
+    // Add second line
+    gmdmar_daily.append("path")
+        .data([data])
+        .attr("class", "line")
+        .attr("d", line2);  
+
+    // Add X Axis
     gmdmar_daily.append("g")
-      .attr("transform", "translate(0," + height + ")")
-      .call(d3.axisBottom(x));
+        .attr("transform", "translate(0," + height + ")")
+        .call(d3.axisBottom(x));
 
-    // Add Y axis
-    var y = d3.scaleLinear()
-      .domain( [0,20])
-      .range([ gmdmar_daily_height, 0 ]);
+    // Add Y Axis
     gmdmar_daily.append("g")
-      .call(d3.axisLeft(y));
-
-    // Add the lines
-    var line = d3.line()
-      .x(function(d) { return x(+d.facet) })
-      .y(function(d) { return y(+d.count) })
-    gmdmar_daily.selectAll("myLines")
-      .data(data)
-      .enter()
-      .append("path")
-        .attr("d", function(d){ return line(d.numbers) } )
-        .attr("stroke", function(d){ return myColor(d.type) })
-        .style("stroke-width", 2)
-        .style("fill", "none")
-
-    // Add the points
-    gmdmar_daily
-      // First we need to enter in a group
-      .selectAll("myDots")
-      .data(data)
-      .enter()
-        .append('g')
-        .style("fill", function(d){ return myColor(d.type) })
-      // Second we need to enter in the 'values' part of this group
-      .selectAll("myPoints")
-      .data(function(d){ return d.numbers })
-      .enter()
-      .append("circle")
-        .attr("cx", function(d) { return x(d.facet) } )
-        .attr("cy", function(d) { return y(d.count) } )
-        .attr("r", 5)
-        .attr("stroke", "white")
-
-})
+        .call(d3.axisLeft(y));
+    }
+)
 
 
 </script>
