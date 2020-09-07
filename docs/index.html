@@ -2,8 +2,6 @@
 layout: page
 title: LOC Maps Dashboard
 ---
-{% assign TODAY = site.time | date: "%Y%m%d" %}
-{% assign MAPFACETSTODAY = site.data.map-facets-daily.map-facets-[ TODAY ] %}
 
 <style>
 	.h0 {font-size:80px !important; padding-top:30px; padding-bottom:35px;}
@@ -47,7 +45,7 @@ title: LOC Maps Dashboard
 
 <div class="clearfix">
 	<div class="col-7 sm-width-full left">
-		<h3>Maps, by Collection</h3>
+		<h3>Online Maps, by Collection</h3>
 		<p>Online objects in loc.gov/maps, by "Part of" facet</p>
 		<div id="d3-maps-partof"></div>
 
