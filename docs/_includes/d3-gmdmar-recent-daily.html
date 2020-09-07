@@ -90,6 +90,7 @@ d3.json("https://reliztrent.github.io/loc-maps-dashboard/data/gmdmar-recent-dail
           .attr("dx", "-.8em")
           .attr("dy", ".15em")
           .attr("transform", "rotate(-65)");
+    console.log(data.map(function(d){return d.date}))
 
     // Add line labels
     svg.append("text")
