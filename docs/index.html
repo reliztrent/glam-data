@@ -23,16 +23,13 @@ title: LOC Maps Dashboard
 	}
 </style>
 
-{% assign online-map-objects = site.data.map-facets-daily.map-facets-TODAY.facets[0].filters[0].count | plus: 0 %}
-
 <p><small>Data about publicly-availalable maps from the <a href='https://loc.gov/maps'>Library of Congress online map collections</a>. Data last refreshed : <code>{{ site.time | date: "%B %d, %Y" }} 00:15 AM</small></code>.
 
 
 <div class="clearfix">
 	<div class="col-4 sm-width-full left">
 		<h3>Online map objects</h3>
-		{{ online-map-objects }}
-		<code></code>
+		<code>{{site.data.map-facets-daily.map-facets-TODAY.facets[0].filters[0].count}}</code>
 	
 	</div>
 	<div class="col-4 sm-width-full left">
