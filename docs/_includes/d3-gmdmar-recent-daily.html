@@ -1,21 +1,21 @@
 <script>
 
-// Dimensions and maps_online_daily_margins
-var maps_online_daily_margin = {top: 20, right: 100, bottom: 100, left: 50},
-    maps_online_daily_width = 450 - maps_online_daily_margin.left - maps_online_daily_margin.right,
-    maps_online_daily_height = 350 - maps_online_daily_margin.top - maps_online_daily_margin.bottom;
+// Dimensions and margins
+var margin = {top: 20, right: 100, bottom: 100, left: 30},
+    width = 450 - margin.left - margin.right,
+    height = 350 - margin.top - margin.bottom;
 
 // Append to body
-var maps_online_daily_svg = d3.select("#d3-maps-online-daily")
+var svg = d3.select("#d3-gmdmar-recent-daily")
   .append("svg")
-    .attr("width", maps_online_daily_width + maps_online_daily_margin.left + maps_online_daily_margin.right)
-    .attr("height", maps_online_daily_height + maps_online_daily_margin.top + maps_online_daily_margin.bottom)
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
   .append("g")
     .attr("transform",
-          "translate(" + maps_online_daily_margin.left + "," + maps_online_daily_margin.top + ")");
+          "translate(" + margin.left + "," + margin.top + ")");
 
 //Read the data
-d3.json("https://reliztrent.github.io/glam-data/data/maps-online-daily.json", function(data) { 
+d3.json("https://reliztrent.github.io/loc-maps-dashboard/data/gmdmar-recent-daily.json", function(data) { 
 
     // A color scale: one color for each group
     var myColor = d3.scaleOrdinal()
@@ -26,19 +26,25 @@ d3.json("https://reliztrent.github.io/glam-data/data/maps-online-daily.json", fu
     var parseTime = d3.timeParse("%Y-%m-%d");
 
     // set the ranges
-    var x = d3.scaleTime().range([0, maps_online_daily_width]);
-    var y = d3.scaleLinear().range([maps_online_daily_height, 0]);
+    var x = d3.scaleTime().range([0, width]);
+    var y = d3.scaleLinear().range([height, 0]);
 
     // define the first line
     var line1 = d3.line()
         .x(function(d) { return x(d.facet); })
         .y(function(d) { return y(d.online); })
         .curve(d3.curveMonotoneX) ;
+    // define the second line
+    var line2 = d3.line()
+        .x(function(d) { return x(d.facet); })
+        .y(function(d) { return y(d.not_online); })
+        .curve(d3.curveMonotoneX);
 
     // format the data
     data.forEach(function(d) {
         d.facet = parseTime(d.facet);
         d.online = +d.online;
+        d.not_online = +d.not_online;
     });
 
     // sort years ascending
@@ -49,25 +55,33 @@ d3.json("https://reliztrent.github.io/glam-data/data/maps-online-daily.json", fu
     // Scale the range of the data
     x.domain(d3.extent(data, function(d) { return d.facet; })); //list of all facets
     y.domain([0, d3.max(data, function(d) {
-      return Math.max(d.online); })]); //structured to handle multiple lines
+      return Math.max(d.online, d.not_online); })]); 
 
     // Add first line
-    maps_online_daily_svg.append("path")
+    svg.append("path")
         .data([data])
         .attr("class", "line")
         .attr("d", line1)
         .attr("fill", "none")
         .attr("stroke", "#8CD3DD");
 
+    // Add second line
+    svg.append("path")
+        .data([data])
+        .attr("class", "line")
+        .attr("d", line2)
+        .attr("fill", "none")
+        .attr("stroke", "#69b3a2");
+
     // Add Y Axis
-    maps_online_daily_svg.append("g")
+    svg.append("g")
         .attr("class", "axis")
         .call(d3.axisLeft(y));
 
     // Add X Axis
-    maps_online_daily_svg.append("g")
+    svg.append("g")
         .attr("class", "axis")
-        .attr("transform", "translate(0," + maps_online_daily_height + ")")
+        .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x)
           .tickFormat(d3.timeFormat("%a %b %d"))
           .tickValues(data.map(function(d){return d.facet})))
@@ -76,18 +90,26 @@ d3.json("https://reliztrent.github.io/glam-data/data/maps-online-daily.json", fu
           .attr("dx", "-.8em")
           .attr("dy", ".15em")
           .attr("transform", "rotate(-65)");
+    console.log(data.map(function(d){return d.facet}))
 
     // Add line labels
-    maps_online_daily_svg.append("text")
+    svg.append("text")
         .data([data])
         .text("online")
-        .attr("transform", "translate(" + maps_online_daily_width + "," + y(data[data.length-1].online) + ")")
+        .attr("transform", "translate(" + width + "," + y(data[data.length-1].online) + ")")
         .style("fill","#8CD3DD")
         .attr("x", 12)
         .attr("y", -8)//move up a bit;
+    svg.append("text")
+        .data([data])
+        .text("not online")
+        .attr("transform", "translate(" + width + "," + y(data[data.length-1].not_online) + ")")
+        .style("fill","#69b3a2")
+        .attr("x", 12)
+        .attr("y", 8);
 
     // Add the points
-    maps_online_daily_svg
+    svg
       .selectAll("points")
       .data(data)
       .enter()
@@ -105,7 +127,24 @@ d3.json("https://reliztrent.github.io/glam-data/data/maps-online-daily.json", fu
               .html((d.online));
           })
           .on("mouseout", function(d){ tooltip.style("display", "none");});
-
+    svg
+      .selectAll("points")
+      .data(data)
+      .enter()
+        .append("circle")
+          .attr("cx", function(d) { return x(d.facet) } )
+          .attr("cy", function(d) { return y(d.not_online) } )
+          .attr("r", 4)
+          .attr("stroke", "white")
+          .style("fill", "#69b3a2")
+          .on("mousemove", function(d){
+            tooltip
+              .style("left", d3.event.pageX - 30 + "px")
+              .style("top", d3.event.pageY - 40 + "px")
+              .style("display", "inline-block")
+              .html((d.not_online));
+          })
+          .on("mouseout", function(d){ tooltip.style("display", "none");});
 }
 )
 
