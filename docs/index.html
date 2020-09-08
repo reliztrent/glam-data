@@ -23,28 +23,35 @@ title: LOC Maps Dashboard
 	}
 </style>
 
+{% assign online-map-objects = site.data.map-facets-daily.map-facets-TODAY.facets[0].filters[0].count | plus: 0 %}
+
 <p><small>Data about publicly-availalable maps from the <a href='https://loc.gov/maps'>Library of Congress online map collections</a>. Data last refreshed : <code>{{ site.time | date: "%B %d, %Y" }} 00:15 AM</small></code>.
 
 
 <div class="clearfix">
 	<div class="col-4 sm-width-full left">
 		<h3>Online map objects</h3>
-		<p>{{site.data.map-facets-daily.map-facets-TODAY.facets[0].filters[0].count}}</p>
+		{{ online-map-objects }}
+		<code></code>
 	
 	</div>
 	<div class="col-4 sm-width-full left">
 		<h3> Online Sanborns atlases</h3>
-		<p>{{site.data.map-facets-daily.map-facets-TODAY.facets[5].filters[1].count}}</p>
+		<code>{{site.data.map-facets-daily.map-facets-TODAY.facets[5].filters[1].count}}</code>
 	</div>
 	<div class="col-4 sm-width-full left">
 		<h3> Online gmd.mar objects</h3>
-		<p>{{site.data.gmdmar-facets-daily.gmdmar-facets-TODAY.facets[0].filters[0].count}}</p>
+		<code>{{site.data.gmdmar-facets-daily.gmdmar-facets-TODAY.facets[0].filters[0].count}}</code>
 	</div>
 	<p>&nbsp;</p>
 </div>
 
 <div class="clearfix">
 	<div class="col-7 sm-width-full left">
+		<h3>Total Online Maps, by Collection</h3>
+		<p>All online map objects currently in loc.gov/maps, by "Part of" facet</p>
+		<div id="d3-maps-partof"></div>
+
 		<h3>GMD.MAR Last Modified, by Month</h3>
 		<p>All map objects currently in gmd.mar, by month most recently modified (created and/or updated). </p>
 		<div id="d3-gmdmar-recent"></div>
@@ -60,9 +67,6 @@ title: LOC Maps Dashboard
 		<p>All map objects currently in loc.gov/maps, online (true) vs. not online (false). </p>
 		<div id="d3-maps-online-donut"></div>
 		<br>
-		<h3>Total Online Maps, by Collection</h3>
-		<p>All online map objects currently in loc.gov/maps, by "Part of" facet</p>
-		<div id="d3-maps-partof"></div>
 		<h3>Total Maps, by Day and Online Status</h3>
 		<p>All map objects in loc.gov/maps, by daily count, online vs. not online</p>
 		<div id="d3-maps-online-daily"></div>
