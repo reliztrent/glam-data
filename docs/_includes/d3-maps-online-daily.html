@@ -2,14 +2,14 @@
 
 // Dimensions and maps_online_daily_margins
 var maps_online_daily_margin = {top: 20, right: 100, bottom: 100, left: 30},
-    maps_online_daily_width = 450 - maps_online_daily_margin.left - maps_online_daily_margin.right,
+    maps_online_daily_width = 450 - margin.left - maps_online_daily_margin.right,
     maps_online_daily_height = 350 - maps_online_daily_margin.top - maps_online_daily_margin.bottom;
 
 // Append to body
 var maps_online_daily_svg = d3.select("#d3-maps-online-daily")
-  .append("maps_online_daily_svg")
-    .attr("maps_online_daily_width", maps_online_daily_width + maps_online_daily_margin.left + maps_online_daily_margin.right)
-    .attr("maps_online_daily_height", maps_online_daily_height + maps_online_daily_margin.top + maps_online_daily_margin.bottom)
+  .append("svg")
+    .attr("width", maps_online_daily_width + maps_online_daily_margin.left + maps_online_daily_margin.right)
+    .attr("height", maps_online_daily_height + maps_online_daily_margin.top + maps_online_daily_margin.bottom)
   .append("g")
     .attr("transform",
           "translate(" + maps_online_daily_margin.left + "," + maps_online_daily_margin.top + ")");
