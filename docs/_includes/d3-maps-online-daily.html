@@ -49,8 +49,8 @@ d3.json("https://reliztrent.github.io/glam-data/data/maps-online-daily.json", fu
     // Scale the range of the data
     x.domain(d3.extent(data, function(d) { return d.facet; })); //list of all facets
     y.domain([d3.min(data, function(d) {
-      return Math.min(d.online); }), d3.max(data, function(d) {
-      return Math.max(d.online); })]); //structured to handle multiple lines
+      return Math.min(d.online); })-100, d3.max(data, function(d) {
+      return Math.max(d.online); })+100]); //structured to handle multiple lines
 
     // Add first line
     maps_online_daily_svg.append("path")
