@@ -21,7 +21,7 @@ var tooltip = d3.select("body").append("div").attr("class", "toolTip");
 d3.json("https://reliztrent.github.io/loc-maps-dashboard/data/gmdmar-recent-daily.json", function(data) {
 
   // X axis
-  var x = d3.scaleBand()
+  var x = d3.scaleTime()
     .range([ 0, gmdmar_recent_daily_width ])
     .domain(data.map(function(d) { return d.facet; }))
     .padding(0.2);
