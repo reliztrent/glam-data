@@ -34,13 +34,15 @@ d3.json("https://reliztrent.github.io/loc-maps-dashboard/data/gmdmar-recent-dail
 
   // X axis
   var x = d3.scaleTime()
-    .range([ 0, gmdmar_recent_daily_width ])
+    .range([ 0, gmdmar_recent_width ])
     .domain(data.map(function(d) { return d.facet; }))
+    .padding(0.2);
 
   gmdmar_recent_daily.append("g")
     .attr("transform", "translate(0," + gmdmar_recent_daily_height + ")")
     .call(d3.axisBottom(x)
-      .tickFormat(d3.timeFormat("%a %b %d")))
+      .tickFormat(d3.timeFormat("%a %b %d"))
+      .tickValues(data.map(function(d){return d.facet})))
     .selectAll("text")
       .attr("transform", "translate(-10,0)rotate(-45)")
       .style("text-anchor", "end");
