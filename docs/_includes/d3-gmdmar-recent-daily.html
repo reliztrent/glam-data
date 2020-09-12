@@ -19,25 +19,12 @@ var tooltip = d3.select("body").append("div").attr("class", "toolTip");
 
 // Parse the Data
 d3.json("https://reliztrent.github.io/loc-maps-dashboard/data/gmdmar-recent-daily.json", function(data) {
-  
-  console.log(data)
-
-  // parse the date / time
-  var parseTime = d3.timeParse("%Y-%m-%d");
-  // format the data
-  data.forEach(function(d) {
-      d.facet = parseTime(d.facet);
-      d.online = +d.online;
-  });
-
-  console.log(data)
 
   // X axis
-  var x = d3.scaleTime()
-    .range([ 0, gmdmar_recent_width ])
+  var x = d3.scaleBand()
+    .range([ 0, gmdmar_recent_daily_width ])
     .domain(data.map(function(d) { return d.facet; }))
     .padding(0.2);
-
   gmdmar_recent_daily.append("g")
     .attr("transform", "translate(0," + gmdmar_recent_daily_height + ")")
     .call(d3.axisBottom(x)
