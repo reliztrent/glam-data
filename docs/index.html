@@ -28,7 +28,7 @@ title: Maps Dashboard
 
 <div class="clearfix">
 	<div class="col-4 sm-width-full left">
-		<h3>Online map objects</h3>
+		<h3>Online Map objects</h3>
 		<code>{{site.data.map-facets-daily.map-facets-TODAY.facets[0].filters[0].count}}</code>
 	
 	</div>
@@ -37,7 +37,7 @@ title: Maps Dashboard
 		<code>{{site.data.map-facets-daily.map-facets-TODAY.facets[5].filters[1].count}}</code>
 	</div>
 	<div class="col-4 sm-width-full left">
-		<h3> Online gmd.mar objects</h3>
+		<h3> Online GMD.MAR objects</h3>
 		<code>{{site.data.gmdmar-facets-daily.gmdmar-facets-TODAY.facets[0].filters[0].count}}</code>
 	</div>
 	<p>&nbsp;</p>
@@ -45,31 +45,35 @@ title: Maps Dashboard
 
 <div class="clearfix">
 	<div class="col-7 sm-width-full left">
-		<h3>GMD.MAR Last Modified, by Month</h3>
+		<h3>GMD.MAR objects Last Modified, by Month</h3>
 		<p>All map objects currently in gmd.mar, by month most recently modified (created and/or updated). </p>
 		<div id="d3-gmdmar-recent"></div>
 		
-		<h3>GMD.MAR Modified, by Day and Online Status</h3>
+		<h3>GMD.MAR objects Modified, by Day</h3>
 		<p>Number of gmd.mar map objects modified per day (created and/or updated).</p>
 		<div id="d3-gmdmar-recent-daily"></div>
 
-		<h3>Total GMD.MAR, by Day</h3>
+		<h3>Total GMD.MAR objects, by Day</h3>
 		<p>All map objects currently in gmd.mar, by daily count</p>
 		<div id="d3-gmdmar-total-daily"></div>
 
 	</div>
 
 	<div class="col-5 sm-width-full left">
-		<h3>Total Maps, by Online Status</h3>
-		<p>All map objects currently in loc.gov/maps, online (true) vs. not online (false). </p>
+		<h3>Total Map objects, by Online Status</h3>
+		<p>All map objects currently in loc.gov/maps, online (true) vs. not online<a href="#notes">&#42;</a> (false). </p>
 		<div id="d3-maps-online-donut"></div>
 		
 		<br>
-		<h3>Total Online Maps, by Day</h3>
+		<h3>Total Online Map objects, by Day</h3>
 		<p>All online map objects in loc.gov/maps, by daily count</p>
 		<div id="d3-maps-online-daily"></div>
+
+		<h3>Total Map records (not online<a href="#notes">&#42;</a>), by Day</h3>
+		<p>All map objects that are not onlinea href="#notes">&#42;</a> in loc.gov/maps, by daily count</p>
+		<div id="d3-maps-not-online-daily"></div>
 		
-		<h3>Total Online Maps, by Collection</h3>
+		<h3>Total Online Map objects, by Collection</h3>
 		<p>All online map objects currently in loc.gov/maps, by "Part of" facet</p>
 		<div id="d3-maps-partof"></div>
 
@@ -77,17 +81,18 @@ title: Maps Dashboard
 </div>
 <p>&nbsp;</p>
 <div class="clearfix">
+	<div class="col-6 sm-width-full">
+		<h3 id="notes">&#42; Definitions</h3>
+		<dl><dt>Online</dt><dd>digitized materials, webpages, finding aids, e-resources, other online resources</dd><dt>Not online</dt><dd>links to catalog records, other metadata records (e.g., Sanborn records where Sanborn is not available online)</dd></dl>
+	</div>
+</div>
+<div class="clearfix">
 	<div class="col-12 sm-width-full">
 		<h3>Data Freshness</h3>
 		{% include data_freshness.html %}
 	</div>
 </div>
-<div class="clearfix">
-	<div class="col-6 sm-width-full">
-		<h3>Notes</h3>
-		<dl><dt>Online</dt><dd>digitized materials, webpages, finding aids, e-resources, other online resources</dd><dt>Not online</dt><dd>links to catalog records, other metadata records (e.g., Sanborn records where Sanborn is not available online)</dd></dl>
-	</div> 
-</div>
+
 
 
 <script src="//d3js.org/d3.v4.min.js"></script>
@@ -97,3 +102,4 @@ title: Maps Dashboard
 {% include d3-gmdmar-recent-daily.html %}
 {% include d3-maps-online-daily.html %}
 {% include d3-gmdmar-total-daily.html %}
+{% include d3-maps-not-online-daily.html %}
