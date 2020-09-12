@@ -23,7 +23,7 @@ d3.json("https://reliztrent.github.io/loc-maps-dashboard/data/gmdmar-recent-dail
   var parseTime = d3.timeParse("%Y-%m-%d");
 
   // X axis
-  var x = d3.scaleBand()
+  var x = d3.scaleTime()
     .range([ 0, gmdmar_recent_daily_width ])
     .domain(data.map(function(d) { return d.facet; }))
     .padding(0.2);
