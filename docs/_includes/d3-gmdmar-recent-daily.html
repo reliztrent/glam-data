@@ -19,8 +19,13 @@ var tooltip = d3.select("body").append("div").attr("class", "toolTip");
 
 // Parse the Data
 d3.json("https://reliztrent.github.io/loc-maps-dashboard/data/gmdmar-recent-daily.json", function(data) {
-  // parse the date / time
-  var parseTime = d3.timeParse("%Y-%m-%d");
+  console.log(data)
+
+  // order the data
+  data.sort(function(a, b){
+      return a["facet"]-b["facet"]; 
+    })
+  console.log(data)
 
   // X axis
   var x = d3.scaleBand()
@@ -37,7 +42,7 @@ d3.json("https://reliztrent.github.io/loc-maps-dashboard/data/gmdmar-recent-dail
   // Add Y axis
   var y = d3.scaleLinear()
     .domain([0, d3.max(data, function(d) {
-        return Math.max(d.online); })+10])
+          return Math.max(d.online); })+10])
     .range([ gmdmar_recent_daily_height, 0]);
   gmdmar_recent_daily.append("g")
     .call(d3.axisLeft(y));
