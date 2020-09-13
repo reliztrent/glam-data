@@ -21,6 +21,12 @@ var tooltip = d3.select("body").append("div").attr("class", "toolTip");
 d3.json("https://reliztrent.github.io/loc-maps-dashboard/data/gmdmar-recent-daily.json", function(data) {
   console.log(data)
 
+  // format the data
+  data.forEach(function(d) {
+        d.facet = parseTime(d.facet);
+        d.online = +d.online;
+    });
+
   // order the data
   data.sort(function(a, b){
       return a["facet"]-b["facet"]; 
