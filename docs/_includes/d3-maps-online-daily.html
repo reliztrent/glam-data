@@ -52,13 +52,13 @@ d3.json("https://reliztrent.github.io/glam-data/data/maps-online-daily.json", fu
       return Math.min(d.online); })-10, d3.max(data, function(d) {
       return Math.max(d.online); })+10]); //structured to handle multiple lines
 
-    // Add first line
+    // Add (first) line
     maps_online_daily_svg.append("path")
         .data([data])
         .attr("class", "line")
         .attr("d", line1)
         .attr("fill", "none")
-        .attr("stroke", "#8CD3DD");
+        .attr("stroke", "#1f77b4");
 
     // Add Y Axis
     maps_online_daily_svg.append("g")
@@ -78,16 +78,16 @@ d3.json("https://reliztrent.github.io/glam-data/data/maps-online-daily.json", fu
           .attr("dy", ".15em")
           .attr("transform", "rotate(-65)");
 
-    // Add line labels
+    // Add line label(s)
     maps_online_daily_svg.append("text")
         .data([data])
         .text("online")
         .attr("transform", "translate(" + maps_online_daily_width + "," + y(data[data.length-1].online) + ")")
-        .style("fill","#8CD3DD")
+        .style("fill","#1f77b4")
         .attr("x", 12)
         .attr("y", -8)//move up a bit;
 
-    // Add the points
+    // Add the point(s)
     maps_online_daily_svg
       .selectAll("points")
       .data(data)
@@ -97,7 +97,7 @@ d3.json("https://reliztrent.github.io/glam-data/data/maps-online-daily.json", fu
           .attr("cy", function(d) { return y(d.online) } )
           .attr("r", 4)
           .attr("stroke", "white")
-          .style("fill", "#8CD3DD")
+          .style("fill", "#1f77b4")
           .on("mousemove", function(d){
             tooltip
               .style("left", d3.event.pageX - 30 + "px")
