@@ -21,6 +21,9 @@ var tooltip = d3.select("body").append("div").attr("class", "toolTip");
 d3.json("https://reliztrent.github.io/loc-maps-dashboard/data/gmdmar-recent-daily.json", function(data) {
   console.log(data)
 
+  // parse the date / time
+  var parseTime = d3.timeParse("%Y-%m-%d");
+
   // format the data
   data.forEach(function(d) {
         d.facet = parseTime(d.facet);
