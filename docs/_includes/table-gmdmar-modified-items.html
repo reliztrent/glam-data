@@ -2,7 +2,7 @@
 
 {% for file in site.data.modified_items | sort_natural %}
 	{% if file[0].size == 26 %}
-		<code><a href="https://github.com/reliztrent/{{ site.github_repo }}/_data/modified_items/{{ file[0] }}">
+		<code><a href="https://github.com/reliztrent/{{ site.github_repo }}/tree/master/docs/_data/modified_items/{{ file[0] }}.json">
 			See JSON file on GitHub
 		</a></code>
 		{% assign len = file[1].size %}
@@ -14,7 +14,8 @@
 
 		{% if len == 0 %}
 			<p>Updated objects: 0</p>
-		{% elsif len > 0 %}
+		{% endif %}
+		{% if len > 0 %}
 			<p>Updated objects: {{ len }}</p>
 			<table>
 				<thead>
