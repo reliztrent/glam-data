@@ -2,9 +2,6 @@
 
 {% for file in site.data.modified_items | sort_natural %}
 	{% if file[0].size == 26 %}
-		<code><a href="https://github.com/reliztrent/{{ site.github_repo }}/tree/master/docs/_data/modified_items/{{ file[0] }}.json">
-			See JSON file on GitHub
-		</a></code>
 		{% assign len = file[1].size %}
 		{{ len }}
 		{% assign year = file[0] | slice: -10, 4 %}
@@ -17,6 +14,7 @@
 		{% endif %}
 		{% if len > 0 %}
 			<p>Updated objects: {{ len }}</p>
+			<p>See original <a href="https://github.com/reliztrent/{{ site.github_repo }}/tree/master/docs/_data/modified_items/{{ file[0] }}.json">JSON file on GitHub</a></p>
 			<table>
 				<thead>
 					<tr>
