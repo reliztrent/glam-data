@@ -1,8 +1,5 @@
 name: Daily get loc.gov map facets
 on:
-  push:
-    branches:
-      - master
   schedule:
     - cron: '5 4 * * *'
 
