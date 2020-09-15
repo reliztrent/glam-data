@@ -4,28 +4,23 @@
 	 {% assign filenames = filenames | push: file[0] %}
 	{% endif %}
 {% endfor %}
-<p>{{ filenames }}</p>
 {% assign sorted_filenames  = filenames | sort %}
-<p>{{ sorted_filenames }}</p>
-<p>{{ filenames | sort }}
 
 
-{% for filename in filenames | sort %}
-<p>a {{filename}}</p>
+{% for filename in sorted_filenames %}
 	{% for file in site.data.modified_items %}
-	<p>b {{file[0]}}</p>
 		{% if file[0] == filename %}
 			{% assign len = file[1].size %}
 			{% assign year = file[0] | slice: -10, 4 %}
 			{% assign month = file[0] | slice: -5, 2 %}
 			{% assign day = file[0] | slice: -2, 2 %}
-			<h4>Items updated: {{ year }}-{{ month }}-{{ day }}</h4>
+			<p><code>{{ year }}-{{ month }}-{{ day }}</code>:
 
 			{% if len == 0 %}
-				<p>Updated objects: 0</p>
+				0 objects</p>
 			{% endif %}
 			{% if len > 0 %}
-				<p>Updated objects: {{ len }}</p>
+				{{ len }} objects</p>
 				<p>See original <a href="https://github.com/reliztrent/{{ site.github_repo }}/tree/master/docs/_data/modified_items/{{ file[0] }}.json">JSON file on GitHub</a></p>
 				<table>
 					<thead>
