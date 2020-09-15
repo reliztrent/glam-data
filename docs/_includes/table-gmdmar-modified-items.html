@@ -1,6 +1,7 @@
 
 {{ site.data.modified_items }}
-{% for file in site.data.modified_items %}
+{{ site.data.modified_items | sort_natural }}
+{% for file in site.data.modified_items | sort_natural %}
 	{% if file[0].size == 26 %}
 		{% assign len = file[1].size %}
 		{% assign year = file[0] | slice: -10, 4 %}
