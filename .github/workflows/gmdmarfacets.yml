@@ -1,5 +1,6 @@
 name: Daily get loc.gov map facets
 on:
+  push
   schedule:
     - cron: '5 4 * * *'
 
@@ -31,7 +32,7 @@ jobs:
           
           
       - name: Build and Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@releases/v3.6
+        uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           ACCESS_TOKEN: ${{ secrets.BUILD_AND_DEPLOY_ACTION_ACCESS_TOKEN }}
           BRANCH: master # Pushes the updates to the master branch.
