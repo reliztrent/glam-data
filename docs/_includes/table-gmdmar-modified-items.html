@@ -5,12 +5,12 @@
 	{% endif %}
 {% endfor %}
 <p>{{ filenames }}</p>
-{% assign sorted_filenames  = filenames | sorted %}
+{% assign sorted_filenames  = filenames | sort %}
 <p>{{ sorted_filenames }}</p>
-<p>{{ filenames | sorted }}
+<p>{{ filenames | sort }}
 
 
-{% for filename in filenames | sorted %}
+{% for filename in filenames | sort %}
 <p>a {{filename}}</p>
 	{% for file in site.data.modified_items %}
 	<p>b {{file[0]}}</p>
