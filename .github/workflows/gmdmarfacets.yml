@@ -31,9 +31,10 @@ jobs:
           
           
       - name: Build and Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@releases/v3
+        uses: JamesIves/github-pages-deploy-action@releases/v3.6
         with:
           ACCESS_TOKEN: ${{ secrets.BUILD_AND_DEPLOY_ACTION_ACCESS_TOKEN }}
           BRANCH: master # Pushes the updates to the master branch.
           FOLDER: fetch-api-data-action # Must maintain this variable, appears to be ignored
           TARGET_FOLDER: docs/_data/gmdmar-facets-daily # Saves the data into the 'docs/_data' directory on the master branch.
+          CLEAN: false
