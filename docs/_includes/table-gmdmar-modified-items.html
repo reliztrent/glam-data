@@ -14,6 +14,7 @@
 <p>{{ sorted_filenames }}</p>
  
 <p>{{ sorted_filenames | sort_natural }}</p>
+<p>{{ sorted_filenames[0] }}</p>
 
 {% for file in site.data.modified_items | sort_natural %}
 	{% if file[0].size == 26 %}
