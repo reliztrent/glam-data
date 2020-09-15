@@ -1,13 +1,15 @@
-{% assign sorted_filenames = '' | split: ',' %}
+{% assign filenames = '' | split: ',' %}
 {% for file in site.data.modified_items | sort_natural %}
 	{% if file[0].size == 26 %}
-	 {% assign sorted_filenames = sorted_filenames | push: file[0] %}
+	 {% assign filenames = filenames | push: file[0] %}
 	{% endif %}
 {% endfor %}
-{% assign sorted_filenames = sorted filenames | sorted %}
+{{ filenames }}
+{% assign sorted_filenames  = filenames | sorted %}
+{{ sorted_filenames }}
 
 
-{% for filename in sorted_filenames %}
+{% for filename in filenames | sorted %}
 {{filename}}
 	{% for file in site.data.modified_items %}
 	{{file[0]}}
