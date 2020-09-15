@@ -4,7 +4,7 @@
 	 {% assign filenames = filenames | push: file[0] %}
 	{% endif %}
 {% endfor %}
-{% assign sorted_filenames  = filenames | sort %}
+{% assign sorted_filenames  = filenames | sort | reverse %}
 
 
 {% for filename in sorted_filenames %}
