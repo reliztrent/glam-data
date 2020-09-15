@@ -4,15 +4,15 @@
 	 {% assign filenames = filenames | push: file[0] %}
 	{% endif %}
 {% endfor %}
-{{ filenames }}
+<p>{{ filenames }}</p>
 {% assign sorted_filenames  = filenames | sorted %}
-{{ sorted_filenames }}
+<p>{{ sorted_filenames }}</p>
 
 
 {% for filename in filenames | sorted %}
-{{filename}}
+<p>{{filename}}</p>
 	{% for file in site.data.modified_items %}
-	{{file[0]}}
+	<p>{{file[0]}}</p>
 		{% if file[0] == filename %}
 			{% assign len = file[1].size %}
 			{% assign year = file[0] | slice: -10, 4 %}
