@@ -13,6 +13,8 @@
  
 <p>{{ sorted_filenames }}</p>
 
+<p>{{ sorted_filenames | sort_natural }}</p>
+
 {% for file in site.data.modified_items | sort_natural %}
 	{% if file[0].size == 26 %}
 		{% assign len = file[1].size %}
