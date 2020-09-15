@@ -10,7 +10,7 @@ layout: none
 {% assign sorted_filenames  = filenames | sort | reverse %}
 [
 {% for filename in sorted_filenames %}
-	{% for file in site.data.gmdmar-facets-daily %}
+	{% for file in site.data.sanborn-facets-daily %}
 	{% if file[0] == filename %}
 	{% assign online = file[1].facets[0].filters[0].count %}
 	{% assign not_online = file[1].facets[0].filters[1].count %}
