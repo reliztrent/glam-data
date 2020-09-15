@@ -1,6 +1,17 @@
 
-{{ site.data.modified_items }}
-{{ site.data.modified_items | sort_natural }}
+<p>{{ site.data.modified_items }}</p>
+<p>{{ site.data.modified_items | sort_natural }}</p>
+
+{% assign sorted_filenames = '' | split: '' %}
+{% for file in site.data.modified_items | sort_natural %}
+	{% if file[0].size == 26 %}
+	{% assign sorted_filenames = sorted_filenames | append: file[0] %}
+
+	{% endif %}
+{% endfor %}
+
+<p>{{ sorted_filenames }}</p>
+
 {% for file in site.data.modified_items | sort_natural %}
 	{% if file[0].size == 26 %}
 		{% assign len = file[1].size %}
