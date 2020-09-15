@@ -1,7 +1,9 @@
 
-
+{{ site.data.modified_items }}
 {% for file in site.data.modified_items %}
+a
 	{% if file[0].size == 26 %}
+b
 		{% assign len = file[1].size %}
 		{% assign year = file[0] | slice: -10, 4 %}
 		{% assign month = file[0] | slice: -5, 2 %}
@@ -9,9 +11,11 @@
 		<h4>Items updated: {{ year }}-{{ month }}-{{ day }}</h4>
 
 		{% if len == 0 %}
-			<p>Updated objects: 0</p>
+c			<p>Updated objects: 0</p>
 		{% endif %}
+d
 		{% if len > 0 %}
+e
 			<p>Updated objects: {{ len }}</p>
 			<p>See original <a href="https://github.com/reliztrent/{{ site.github_repo }}/tree/master/docs/_data/modified_items/{{ file[0] }}.json">JSON file on GitHub</a></p>
 			<table>
@@ -29,7 +33,7 @@
 				</thead>
 				<tbody>	
 			{% for result in file[1] %}
-				{% assign title = result.item.title %}
+f				{% assign title = result.item.title %}
 				{% assign date = result.item.date %}
 				{% assign call_number = result.item.call_number %}
 				{% assign resource_count = result.resources.size %}
@@ -44,16 +48,22 @@
 						<td>{{ resource_count }}</td>
 						<td>
 							{% for hdl in hdls %}
+g
 								<a href="{{ hdl }}">{{ hdl }}</a>
 							{% endfor %}
+h
 						</td>
 						<td><a href="{{ item_url }}">{{ item_url }}</a></td>
 						<td><img src="{{ thumbnail }}"></td>
 					<tr>
 			{% endfor %}
+i
 		{% endif %}
+j
 	{% endif %}
+l
 {% endfor %}
+m
 	</tbody>
 </table>
 
