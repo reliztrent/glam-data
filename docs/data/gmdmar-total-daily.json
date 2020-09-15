@@ -8,8 +8,6 @@ layout: none
 	{% endif %}
 {% endfor %}
 {% assign sorted_filenames  = filenames | sort | reverse %}
-
-
 [
 {% for filename in sorted_filenames %}
 	{% for file in site.data.gmdmar-facets-daily %}
@@ -23,8 +21,6 @@ layout: none
 		"facet": "{{year}}-{{month}}-{{day}}",
 		"online": {{ online | default: 0 }}, 
 		"not_online": {{ not_online | default: 0 }} 	
-	}{% if forloop.last == false %},{% endif %}
-	{% endif %}
-	{% endfor %}
+	}{% endif %}{% endfor %}{% if forloop.last == false %},{% endif %}
 {% endfor %}
 ]
