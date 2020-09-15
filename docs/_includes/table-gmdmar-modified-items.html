@@ -12,7 +12,7 @@
 {% endfor %}
  
 <p>{{ sorted_filenames }}</p>
-
+ 
 <p>{{ sorted_filenames | sort_natural }}</p>
 
 {% for file in site.data.modified_items | sort_natural %}
