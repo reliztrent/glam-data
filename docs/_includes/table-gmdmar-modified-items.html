@@ -3,18 +3,19 @@
 
 <p>{{ site.data.modified_items | sort_natural }}</p>
 
-{% assign sorted_filenames = '' | split: '' %}
+{% assign sorted_filenames = '' | split: ',' %}
 {% for file in site.data.modified_items | sort_natural %}
 	{% if file[0].size == 26 %}
-	{% assign sorted_filenames = sorted_filenames | append: file[0] %}
-
+	 {% assign sorted_filenames = sorted_filenames | push: file[0] %}
 	{% endif %}
 {% endfor %}
  
 <p>{{ sorted_filenames }}</p>
+<p>{{ sorted_filenames[1] }}</p>
  
 <p>{{ sorted_filenames | sort_natural }}</p>
-<p>{{ sorted_filenames[0] }}</p>
+<p>{{ sorted_filenames | sort }}</p>
+
 
 {% for file in site.data.modified_items | sort_natural %}
 	{% if file[0].size == 26 %}
