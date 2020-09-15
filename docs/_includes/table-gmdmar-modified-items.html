@@ -1,6 +1,8 @@
 
 
 {% assign sorted_files = site.data.modified_items | sort_natural %}
+{{ site.data.modified_items }}
+{{ sorted_files }}
 {% for file in sorted_files %}
 	{% if file[0].size == 26 %}
 		{% assign len = file[1].size %}
