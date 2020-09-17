@@ -70,12 +70,14 @@ def main(argv):
     with open(directory + '/gmdmar-modified-' + end_date + '.json', 'w', encoding='utf-8') as f:
         json.dump(items, f, ensure_ascii=False, indent=4)
     
-    modified = pd.DataFrame(items)
-    baseline = pd.read_json('docs/_data/gmdmar-all-items.json')
-    match = pd.merge(baseline,modified,on='id',how='left',indicator=True)
-    new=match[match['_merge']=="right_only"]
-    if len(new) > 0:
+    if len(items) > 0:
+        modified = pd.DataFrame(items)
+        baseline = pd.read_json('docs/_data/gmdmar-all-items.json')
+        match = pd.merge(baseline,modified,on='id',how='left',indicator=True)
+        new=match[match['_merge']=="right_only"]
         new.to_json(directory + 'new_gmdmar_items_' + end_date + '.json')
+    else:
+        print('No new items: ' + url)
 
 
 if __name__ == "__main__":
