@@ -6,6 +6,7 @@ import getopt
 import time
 import json
 import requests
+import pandas as pd
 
 def generate_output_folder(directory):
     if not os.path.isdir(directory):
@@ -65,18 +66,16 @@ def main(argv):
     print("Query URL is: ", url)
     items = query (url,[])
 
-    print(directory)
-
     generate_output_folder(directory)
     with open(directory + '/gmdmar-modified-' + end_date + '.json', 'w', encoding='utf-8') as f:
         json.dump(items, f, ensure_ascii=False, indent=4)
     
-
-    
-'''
-start_date = '2020-09-11'
-end_date = '2020-09-12'
-'''
+    modified = pd.DataFrame(items)
+    baseline = pd.read_json('docs/_data/gmdmar-all-items.json')
+    match = pd.merge(baseline,modified,on='id',how='left',indicator=True)
+    new=match[match['_merge']=="right_only"]
+    if len(new) > 0:
+        new.to_json(directory + 'new_gmdmar_items_' + end_date + '.json')
 
 
 if __name__ == "__main__":
