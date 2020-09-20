@@ -17,6 +17,10 @@ p {
 	width:auto !important;
 }
 
+.prose p, .prose ol, .prose ul {
+    color: #83868c;
+}
+
 .h0 {
 	font-size:70px;
 	padding-top:20px; 
@@ -47,6 +51,7 @@ header.clearfix .link-primary:hover {
 	border:1px solid #e5e9f2;
 	border-radius: 0.25rem;
 	padding: 1.75rem;
+	shadow-box: 0 0.125rem 0.25rem rgba(0,0,0,0.075);
 }
 
 .card-mini h1, .card-mini h2, .card-mini h3 {
@@ -55,7 +60,6 @@ header.clearfix .link-primary:hover {
 }
 
 .card .subtitle {
-	color:#6a6a6a;
 	font-size:1.1em;
 }
 
