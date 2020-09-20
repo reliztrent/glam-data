@@ -8,6 +8,13 @@
         "theme-{{ site.theme_color | default: "black" }}.scss"
 ;
 
-body {
-	color:purple;
+.card {
+	word-wrap: break-word;
+	background-color: #ffffff;
+	border:1px solid #e5e9f2;
+	border-radius: 0.25rem;
+	padding: 1.63rem;
+}
+
+.card-body {
 }
