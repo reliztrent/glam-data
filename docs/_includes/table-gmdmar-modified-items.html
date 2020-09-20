@@ -25,7 +25,9 @@
 					<table>
 						<thead>
 							<tr>
-								<th>Date updated</th>
+								<th>Bib record updated</th>
+								<th>timestamp</th>
+								<th>extract_timestamp</th>
 								<th>Title</th>
 								<th>Date</th>
 								<th>Call number</th>
@@ -37,6 +39,8 @@
 						</thead>
 						<tbody>	
 					{% for result in file[1] %}
+						{% assign timestamp = result.item.timestamp %}
+						{% assign extract_timestamp = result.item.extract_timestamp %}
 						{% assign title = result.item.title %}
 						{% assign date = result.item.date %}
 						{% assign call_number = result.item.call_number %}
@@ -46,6 +50,8 @@
 						{% assign thumbnail = result.image_url[0] %}
 							<tr>
 								<td>{{ year }}-{{ month }}-{{ day }}</td>
+								<td>{{ timestamp }}</td>
+								<td>{{ extract_timestamp }}</td>
 								<td>{{ title }}</td>
 								<td>{{ date }}</td>
 								<td>{{ call_number }}</td>
