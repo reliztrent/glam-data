@@ -10,6 +10,7 @@
 
 body {
 	background-color:#f5f6fa;
+	color:#353946;
 }
 
 p {
@@ -20,6 +21,20 @@ p {
 	font-size:80px;
 	padding-top:30px; 
 	padding-bottom:35px;
+}
+
+header.clearfix {
+ background-color:#353946;
+ color:white
+}
+header.clearfix .text-accent {
+ color:#acb4cc;
+}
+header.clearfix .text-accent:hover {
+ color:#acb4cc;
+}
+header.clearfix .link-primary:hover {
+ color:#d1d8ee;
 }
 
 .container {
@@ -77,11 +92,3 @@ path:hover {}
 	stroke-width: 4px;
 }
 
-header.clearfix {
-	background-color:#353535;
-	color:white;
-}
-
-header.clearfix .text-accent {
-	color:#CCC;
-}
