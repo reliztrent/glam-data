@@ -58,9 +58,10 @@ path:hover {}
   stroke-width: 4px;
 }
 
-header {
+header.clearfix {
 	background-color:#353535;
+	color:white;
 }
-header .text-accent {
+header.clearfix .text-accent {
 	color:#CCC;
 }
