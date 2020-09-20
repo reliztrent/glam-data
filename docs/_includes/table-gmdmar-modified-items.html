@@ -14,7 +14,7 @@
 			{% assign year = file[0] | slice: -10, 4 %}
 			{% assign month = file[0] | slice: -5, 2 %}
 			{% assign day = file[0] | slice: -2, 2 %}
-			<p>{{ year }}-{{ month }}-{{ day }}:
+			<p class="small">{{ year }}-{{ month }}-{{ day }}:
 
 			{% if len == 0 %}
 				<code>0 objects</code></p>
