@@ -8,6 +8,9 @@
         "theme-{{ site.theme_color | default: "black" }}.scss"
 ;
 
+body {
+	background-color:#f0f0f0;
+}
 .card {
 	word-wrap: break-word;
 	background-color: #ffffff;
