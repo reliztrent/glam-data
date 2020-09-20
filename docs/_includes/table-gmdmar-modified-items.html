@@ -39,8 +39,8 @@
 						</thead>
 						<tbody>	
 					{% for result in file[1] %}
-						{% assign timestamp = result.item.timestamp %}
-						{% assign extract_timestamp = result.item.extract_timestamp %}
+						{% assign timestamp = result.timestamp %}
+						{% assign extract_timestamp = result.extract_timestamp %}
 						{% assign title = result.item.title %}
 						{% assign date = result.item.date %}
 						{% assign call_number = result.item.call_number %}
