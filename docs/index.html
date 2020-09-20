@@ -12,6 +12,7 @@ title: Maps Dashboard
 		<div class="card card-mini mr-2 mb-2">
 			<p class="h3">Online Map objects</p>
 			<h3>{{site.data.map-facets-daily.map-facets-TODAY.facets[0].filters[0].count}}</h3>
+			<h3 id="online-map-objects"></h3>
 	    </div>
 	</div>
 	<div class="col-4 sm-width-full left">
@@ -115,3 +116,10 @@ title: Maps Dashboard
 {% include d3-gmdmar-total-daily.html %}
 {% include d3-maps-not-online-daily.html %}
 {% include d3-sanborn-total-daily.html %}
+<script>
+	var n = {{site.data.map-facets-daily.map-facets-TODAY.facets[0].filters[0].count}};
+	n_formatted = Number(n).toLocaleString('en');
+	document.getElementById('online-map-objects').innerHTML = n_formatted;
+
+</script>
+
