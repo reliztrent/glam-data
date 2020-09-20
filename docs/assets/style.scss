@@ -43,15 +43,24 @@ rect {fill: #69b3a2;}
 rect:hover {fill: #8CD3DD;}
 path:hover {}
 .toolTip {
-  position: absolute;
-  display: none;
-  padding:4px 10px;
-  height: auto;
-  background: none repeat scroll 0 0 rgba(0, 0, 0, 0.5);
-  color:white;
-  text-align: center;
-  font-size:12px;
+ position:absolute;
+ display:none;
+ padding:5px 12px;
+ height:auto;
+ background:none repeat scroll 0 0 rgba(252,252,252,0.9);
+ border:1px solid #d9d8d8;
+ border-radius:.25em;
+ color:#4d4d4d;
+ text-align:center;
+ font-size:14px;
 }
 .line {
   stroke-width: 4px;
+}
+
+.header {
+	background-color:#353535;
+}
+.header .text-accent {
+	color:#CCC;
 }
