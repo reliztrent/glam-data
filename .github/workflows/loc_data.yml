@@ -28,6 +28,8 @@ jobs:
       run: echo ::set-env name=TODAY::$(date +"%Y-%m-%d") #offset due to timing of catalog/P1 updates 
     - name: Set YESTERDAY env
       run: echo ::set-env name=YESTERDAY::$(date -d "1 day ago" +"%Y-%m-%d") #offset due to timing of catalog/P1 updates 
+    - name: Set TWOWEEKSAGO env
+      run: echo ::set-env name=TWOWEEKSAGO::$(date -d "14 days ago" +"%Y-%m-%d") #offset due to timing of catalog/P1 updates 
 
     # Run using Python 3.8 for consistency and aiohttp
     - name: Set up Python 3.8
@@ -49,11 +51,20 @@ jobs:
       run: |
         python3 -m pip install --upgrade pip setuptools wheel
         python3 -m pip install -r requirements.txt
-    # Generate all json
+    
+    # Run loc_json.py for list of modified gmd.mar items
     - name: Generate json
       run: |
         python3 --version
         python3 loc_json.py -s ${{ env.YESTERDAY }} -e ${{ env.TODAY }} -d "docs/_data/modified_items"
+      env:
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+    
+    # Run new_gmdmar.py for list of new gmd.mar items
+    - name: Generate json
+      run: |
+        python3 --version
+        python3 loc_json.py -s ${{ env.TWOWEEKSAGO }} -e ${{ env.TODAY }} -d "docs/_data/new_items"
       env:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
 
