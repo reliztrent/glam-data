@@ -19,13 +19,24 @@ body {
 	background-color: #ffffff;
 	border:1px solid #e5e9f2;
 	border-radius: 0.25rem;
-	padding: 1rem;
+	padding: 1.75rem;
 }
 
 .card-mini h1, .card-mini h2, .card-mini h3 {
 	margin-top:0px;
 	padding-top:0px;
 }
+
+.card .subtitle {
+  color:#6a6a6a;
+  font-size:1em;
+}
+
+.card p {
+	width:auto;
+}
+
+
 
 .h0 {font-size:80px !important; padding-top:30px; padding-bottom:35px;}
 rect {fill: #69b3a2;}
