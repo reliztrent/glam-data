@@ -25,7 +25,8 @@ p {
 
 header.clearfix {
  background-color:#353946;
- color:white
+ color:white;
+ display:none;
 }
 header.clearfix .text-accent {
  color:#acb4cc;
@@ -90,5 +91,8 @@ path:hover {}
 
 .line {
 	stroke-width: 4px;
+}
+h2.subtle {
+	color:#9ba1b5;
 }
 
