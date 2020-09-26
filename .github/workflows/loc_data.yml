@@ -64,7 +64,7 @@ jobs:
     - name: Generate json
       run: |
         python3 --version
-        python3 loc_json.py -s ${{ env.TWOWEEKSAGO }} -e ${{ env.TODAY }} -d "docs/_data/new_items"
+        python3 new_gmdmar.py -s ${{ env.TWOWEEKSAGO }} -e ${{ env.TODAY }} -d "docs/_data/new_items"
       env:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
 
