@@ -41,7 +41,7 @@ def query(url, items=[],x=0):
     else:
         return items
 
-def json_output(items,directory): 
+def json_output(items,directory,end_date): 
     print('Making a json file of new gmd.mar items at: '+ 
         directory + 'new_gmdmar_items_' + end_date + '.json')
     #Create df from items
@@ -103,7 +103,7 @@ def main(argv):
     items = query (url,[])
 
     if len(items) > 0:
-    	json_output(items,directory)
+    	json_output(items,directory,end_date)
 
     
 
