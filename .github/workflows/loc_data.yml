@@ -4,10 +4,9 @@ name: Generate loc.gov JSON
 
 # Controls when the action will run. Triggers the workflow on push events
 on:
-  push:
-    branches: [ master ]
   schedule:
     - cron: "0 6 * * *"
+  #Do not run this more than once per day. Data may be lost. 
 
 # A workflow run is made up of one or more jobs that can run sequentially or in
 # parallel
