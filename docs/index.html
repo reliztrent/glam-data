@@ -131,9 +131,11 @@ title: Maps Dashboard
 
 	//Charts and graphs
 	var total_online_maps = {{site.data.map-facets-daily.map-facets-TODAY.facets[0].filters[0].count}};
-	document.getElementById('total_online_maps').insertAdjacentHTML("afterbegin", total_online_maps);
+	total_online_maps_formatted = Number(total_online_maps).toLocaleString('en');
+	document.getElementById('total_online_maps_formatted').insertAdjacentHTML("afterbegin", total_online_maps);
 
 	var total_notonline_maps = {{site.data.map-facets-daily.map-facets-TODAY.facets[0].filters[1].count}};
+	total_notonline_maps_formatted = Number(total_notonline_maps).toLocaleString('en');
 	document.getElementById('total_notonline_maps').insertAdjacentHTML("afterbegin", total_notonline_maps);
 
 
