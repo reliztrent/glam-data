@@ -3,19 +3,22 @@ layout: default
 title: Maps Dashboard
 ---
 
-<div class = "container-fluid p-4">
-	<div class = "row">
+<div class="container-fluid p-4">
+	<div class="row">
 		<div class="col-md-12">
-			<h1>{{ page.title }}</h1>
+			<h1 class="h0">{{ page.title }}</h1>
 		</div>
 	</div>
-	<div class = "row">
+	<div class="row">
+		<div class="col-md-6"><hr></div>
+	</div>
+	<div class="row">
 		<div class="col-md-12">
-			<p>Publicly available data about maps and map catalog records online at the the <a href='https://loc.gov/maps'>Library of Congress</a>. Made with the <a href="https://libraryofcongress.github.io/data-exploration/">loc.gov API</a>, GitHub <a href="https://pages.github.com/">pages</a> and <a href="https://docs.github.com/en/actions">actions</a>, <a href="https://jekyllrb.com/">Jekyll</a>, <a href="https://shopify.github.io/liquid/">Liquid</a>, and <a href="https://d3js.org/">D3</a>. Code <a href="https://github.com/reliztrent/loc-maps-dashboard">on GitHub</a>. Just for fun, not an official product of the Library of Congress. Data last refreshed : <code>{{ site.time | date: "%B %d, %Y" }} 00:15 am</code>.</p>
+			<p>Publicly available data about maps and map catalog records online at the the <a href='https://loc.gov/maps'>Library of Congress</a>. Made with the <a href="https://libraryofcongress.github.io/data-exploration/">loc.gov API</a>, GitHub <a href="https://pages.github.com/">pages</a> and <a href="https://docs.github.com/en/actions">actions</a>, <a href="https://jekyllrb.com/">Jekyll</a>, <a href="https://shopify.github.io/liquid/">Liquid</a>, and <a href="https://d3js.org/">D3</a>. Code <a href="https://github.com/reliztrent/loc-maps-dashboard">on GitHub</a>. Data last refreshed : <code>{{ site.time | date: "%B %d, %Y" }} 00:15 am</code>.</p>
 		</div>
 	</div>
 
-<div class = "row">
+<div class="row">
 	<div class="col-md-4 p-1">
 		<div class="card card-mini mb-2">
 			<p class="h3 pop" id="online-map-objects"></p>
@@ -56,20 +59,6 @@ title: Maps Dashboard
 	</div>
 
 	<div class="col-4 mt-3">
-		<h2 class="ml-2">Sanborns</h2>
-		<div class="card card-mini mb-2">
-			<span id="total_online_sanborns" class="h3 pop"></span>
-			<h3>Sanborn Objects Online</h3>
-			<div id="d3-sanborn-total-daily" class="svg-container"></div>
-		</div>
-		<!--<div class="card card-mini mb-2">
-			<h3>Sanborn Object Records (not online<a href="#notes">&#42;</a>)</h3>
-			<span id="total_notonline_sanborns" class="h3"></span>
-			<div id="d3-sanborn-total-daily-notonline" class="svg-container"></div>
-		</div>-->
-	</div>
-
-	<div class="col-4 mt-3">
 		<h2 class="ml-2">Maps</h2>
 		<div class="card card-mini mb-2">
 			<h3>Map Objects: Online vs. Not Online</h3>
@@ -91,6 +80,21 @@ title: Maps Dashboard
 			<div id="d3-maps-partof" class="svg-container"></div>
 		</div>
 	</div>
+
+	<div class="col-4 mt-3">
+		<h2 class="ml-2">Sanborns</h2>
+		<div class="card card-mini mb-2">
+			<span id="total_online_sanborns" class="h3 pop"></span>
+			<h3>Sanborn Objects Online</h3>
+			<div id="d3-sanborn-total-daily" class="svg-container"></div>
+		</div>
+		<!--<div class="card card-mini mb-2">
+			<h3>Sanborn Object Records (not online<a href="#notes">&#42;</a>)</h3>
+			<span id="total_notonline_sanborns" class="h3"></span>
+			<div id="d3-sanborn-total-daily-notonline" class="svg-container"></div>
+		</div>-->
+	</div>
+	
 </div>
 <!--<div class="clearfix">
 	<div class="col-12 sm-width-full">

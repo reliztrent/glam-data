@@ -3,7 +3,7 @@
 
 body {
 	background-color:#f5f6fa;
-	color:#353946;
+	color:#83868c;
 }
 
 p {
@@ -15,18 +15,10 @@ p.small {
   margin-bottom:1px;
 }
 
-.prose p, .prose ol, .prose ul {
-    color: #83868c;
+.h0 {
+	font-size:3.2rem; 
 }
 
-.h0 {
-	font-size:70px;
-	padding-top:20px; 
-	padding-bottom:25px;
-}
-h2,h3,h4,h5,h6,h7,h8 {
-  font-weight:500;
-}
 h2.subtle {
 	color:#9ba1b5;
 }
