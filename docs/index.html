@@ -98,9 +98,12 @@ title: Maps Dashboard
 </div>-->
 
 <br>
-<h2 class="h0 py-4 mt-3">Notes</h2>
 
-<div class="clearfix">
+
+<div class="row">
+	<div class="col-12">
+		<h2 class="h0 py-4 mt-3">Notes</h2>
+	</div>
 	<div class="col-6 sm-width-full">
 		<div class="card card-mini mr-3 mb-3">
 			<h3 id="notes">&#42; Definitions</h3>
@@ -119,15 +122,7 @@ title: Maps Dashboard
 </div>-->
 
 
-<script src="//d3js.org/d3.v4.min.js"></script>
-{% include d3-maps-online.html %}
-{% include d3-maps-partof.html %}
-{% include d3-gmdmar-recent.html %}
-{% include d3-gmdmar-recent-daily.html %}
-{% include d3-maps-online-daily.html %}
-{% include d3-gmdmar-total-daily.html %}
-{% include d3-maps-not-online-daily.html %}
-{% include d3-sanborn-total-daily.html %}
+
 <script>
 	//Top row
 	var num1 = {{site.data.map-facets-daily.map-facets-TODAY.facets[0].filters[0].count| default: 0}};
@@ -160,8 +155,14 @@ title: Maps Dashboard
 	total_notonline_sanborns_formatted = Number(total_notonline_sanborns).toLocaleString('en');
 	document.getElementById('total_notonline_sanborns').insertAdjacentHTML("afterbegin", total_notonline_sanborns_formatted);
 
-
-
-
 </script>
+
+{% include d3-maps-online.html %}
+{% include d3-maps-partof.html %}
+{% include d3-gmdmar-recent.html %}
+{% include d3-gmdmar-recent-daily.html %}
+{% include d3-maps-online-daily.html %}
+{% include d3-gmdmar-total-daily.html %}
+{% include d3-maps-not-online-daily.html %}
+{% include d3-sanborn-total-daily.html %}
 
