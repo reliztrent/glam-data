@@ -61,13 +61,13 @@ title: Maps Dashboard
 			<div id="d3-maps-online-donut" class="svg-container"></div>
 		</div>
 		<div class="card card-mini mr-3 mb-3">
-			<h3 id = "total_online_maps"></h3>
-			<p class="subtitle">Total Online Map objects</p>
+			<h3>Online Map Objects</h3>
+			<p id="total_online_maps" class="subtitle"></p>
 			<div id="d3-maps-online-daily" class="svg-container"></div>
 		</div>
 		<div class="card card-mini mr-3 mb-3">
-			<h3>Total Map records (not online<a href="#notes">&#42;</a>), by Day</h3>
-			<p class="subtitle">All map objects that are not online<a href="#notes">&#42;</a> in loc.gov/maps, by daily count</p>
+			<h3>Bibliographic Map Records (not online<a href="#notes">&#42;</a>)</h3>
+			<p id="total_notonline_maps" class="subtitle"></p>
 			<div id="d3-maps-not-online-daily" class="svg-container"></div>
 		</div>
 		<div class="card card-mini mr-3 mb-3">
@@ -132,6 +132,13 @@ title: Maps Dashboard
 	//Charts and graphs
 	var total_online_maps = {{site.data.map-facets-daily.map-facets-TODAY.facets[0].filters[0].count}};
 	document.getElementById('total_online_maps').insertAdjacentHTML("afterbegin", total_online_maps);
+
+	var total_online_maps = {{site.data.map-facets-daily.map-facets-TODAY.facets[0].filters[2].count}};
+	document.getElementById('total_notonline_maps').insertAdjacentHTML("afterbegin", total_online_maps);
+
+
+
+
 
 
 </script>
