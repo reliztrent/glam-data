@@ -3,7 +3,12 @@ layout: default
 title: Maps Dashboard
 ---
 
-<div class = "container-fluid">
+<div class = "container-fluid p-4">
+	<div class = "row">
+		<div class="col-md-12">
+			<h1>{{ page.title }}</h1>h1>
+		</div>
+	</div>
 	<div class = "row">
 		<div class="col-md-12">
 			<p><small>Publicly available data about maps and map catalog records online at the the <a href='https://loc.gov/maps'>Library of Congress</a>. Made with the <a href="https://libraryofcongress.github.io/data-exploration/">loc.gov API</a>, GitHub <a href="https://pages.github.com/">pages</a> and <a href="https://docs.github.com/en/actions">actions</a>, <a href="https://jekyllrb.com/">Jekyll</a>, <a href="https://shopify.github.io/liquid/">Liquid</a>, and <a href="https://d3js.org/">D3</a>. Code <a href="https://github.com/reliztrent/loc-maps-dashboard">on GitHub</a>. Just for fun, not an official product of the Library of Congress. Data last refreshed : <code>{{ site.time | date: "%B %d, %Y" }} 00:15 am</code>.</small></p>
@@ -13,8 +18,8 @@ title: Maps Dashboard
 <div class = "row">
 	<div class="col-md-4">
 		<div class="card card-mini mr-2 mb-2">
-			<p class="h3">Online Map objects</p>
 			<h3 id="online-map-objects"></h3>
+			<p class="h4">Online Map objects</p>
 	    </div>
 	</div>
 	<div class="col-md-4">
@@ -32,7 +37,7 @@ title: Maps Dashboard
 </div>
 
 
-<div class="clearfix">
+<div class="row">
 	<div class="col-6 sm-width-full left">
 		<h2 class="ml-2 pop">GMD.MAR</h2>
 		<div class="card card-mini mr-3 mb-3">
