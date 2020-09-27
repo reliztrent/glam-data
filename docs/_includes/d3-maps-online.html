@@ -83,11 +83,12 @@ maps_online_donut
   .enter()
   .append('text')
     .text( function(d) { 
-      if d.data.facet =='true'
-        var label = 'online'
-      else
-        var label = 'not online'
-      return label 
+      if (d.data.facet =='true') {
+        var label = 'online';
+      } else {
+        var label = 'not online';
+      }
+      return label
     } )
     .attr('transform', function(d) {
         var pos = outerArc.centroid(d);
