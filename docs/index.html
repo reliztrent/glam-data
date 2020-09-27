@@ -11,35 +11,35 @@ title: Maps Dashboard
 	</div>
 	<div class = "row">
 		<div class="col-md-12">
-			<p><small>Publicly available data about maps and map catalog records online at the the <a href='https://loc.gov/maps'>Library of Congress</a>. Made with the <a href="https://libraryofcongress.github.io/data-exploration/">loc.gov API</a>, GitHub <a href="https://pages.github.com/">pages</a> and <a href="https://docs.github.com/en/actions">actions</a>, <a href="https://jekyllrb.com/">Jekyll</a>, <a href="https://shopify.github.io/liquid/">Liquid</a>, and <a href="https://d3js.org/">D3</a>. Code <a href="https://github.com/reliztrent/loc-maps-dashboard">on GitHub</a>. Just for fun, not an official product of the Library of Congress. Data last refreshed : <code>{{ site.time | date: "%B %d, %Y" }} 00:15 am</code>.</small></p>
+			<p>Publicly available data about maps and map catalog records online at the the <a href='https://loc.gov/maps'>Library of Congress</a>. Made with the <a href="https://libraryofcongress.github.io/data-exploration/">loc.gov API</a>, GitHub <a href="https://pages.github.com/">pages</a> and <a href="https://docs.github.com/en/actions">actions</a>, <a href="https://jekyllrb.com/">Jekyll</a>, <a href="https://shopify.github.io/liquid/">Liquid</a>, and <a href="https://d3js.org/">D3</a>. Code <a href="https://github.com/reliztrent/loc-maps-dashboard">on GitHub</a>. Just for fun, not an official product of the Library of Congress. Data last refreshed : <code>{{ site.time | date: "%B %d, %Y" }} 00:15 am</code>.</p>
 		</div>
 	</div>
 
 <div class = "row">
 	<div class="col-md-4">
 		<div class="card card-mini mr-2 mb-2">
-			<h3 id="online-map-objects"></h3>
-			<p class="h4">Online Map objects</p>
+			<p class="h3 pop" id="online-map-objects"></p>
+			<h3 class="h4">Online Map objects</h3>
 	    </div>
 	</div>
 	<div class="col-md-4">
 		<div class="card card-mini mr-2 mb-2">
-			<p class="h3"> Online Sanborns atlases</p>
-			<h3 id ="online-sanborn-atlases"></h3>
+			<p class="h3 pop" id ="online-sanborn-atlases"></p>
+			<h3 class="h4"> Online Sanborns atlases</h3>
 		</div>
 	</div>
 	<div class="col-md-4">
  		<div class="card card-mini mr-2 mb-2">
-			<p class="h3"> Online GMD.MAR<a href="#notes">&#42;</a> objects</p>
-			<h3 id="online-gmd-mar"></h3>
+			<p class="h3 pop" id="online-gmd-mar"></p>
+			<h3 class="h4"> Online GMD.MAR<a href="#notes">&#42;</a> objects</h3>
 		</div>
 	</div>
 </div>
 
 
-<div class="row">
-	<div class="col-6 sm-width-full left">
-		<h2 class="ml-2 pop">GMD.MAR</h2>
+<div class="row mt-4">
+	<div class="col-4 sm-width-full left">
+		<h2 class="ml-2">GMD.MAR</h2>
 		<div class="card card-mini mr-3 mb-3">
 			<h3>GMD.MAR Objects Modified</h3>
 			<div id="d3-gmdmar-recent-daily" class="svg-container"></div>
@@ -53,7 +53,9 @@ title: Maps Dashboard
 			<h3>GMD.MAR Objects, Month Last Modified</h3>
 			<div id="d3-gmdmar-recent" class="svg-container"></div>
 		</div>
-		<h2 class="ml-2 pop">Sanborns</h2>
+	</div>
+	<div class="col-4 sm-width-full left">
+		<h2 class="ml-2">Sanborns</h2>
 		<div class="card card-mini mr-3 mb-3">
 			<h3>Sanborn Objects Online</h3>
 			<span id="total_online_sanborns" class="h3"></span>
@@ -66,8 +68,8 @@ title: Maps Dashboard
 		</div>-->
 	</div>
 
-	<div class="col-6 sm-width-full left">
-		<h2 class="ml-2 pop">Maps</h2>
+	<div class="col-4 sm-width-full left">
+		<h2 class="ml-2">Maps</h2>
 		<div class="card card-mini mr-3 mb-3">
 			<h3>Map Objects: Online vs. Not Online</h3>
 			<div id="d3-maps-online-donut" class="svg-container"></div>
