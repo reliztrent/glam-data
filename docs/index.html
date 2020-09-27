@@ -32,13 +32,8 @@ title: Maps Dashboard
 	<div class="col-6 sm-width-full left">
 		<h2 class="ml-2 pop">GMD.MAR</h2>
 		<div class="card card-mini mr-3 mb-3">
-			<h3>GMD.MAR objects Last Modified, by Month</h3>
-			<p class="subtitle">All map objects currently in gmd.mar, by month most recently modified (created and/or updated). </p>
-			<div id="d3-gmdmar-recent" class="svg-container"></div>
-		</div>
-		<div class="card card-mini mr-3 mb-3">
-			<h3>GMD.MAR objects Modified, by Day</h3>
-			<p class="subtitle">Number of gmd.mar map objects modified per day (created and/or updated).</p>
+			<h3>GMD.MAR objects Modified</h3>
+			<span id="gmdmar_recent_daily" class="h3">Yesterday: </p>
 			<div id="d3-gmdmar-recent-daily" class="svg-container"></div>
 		</div>
 		<div class="card card-mini mr-3 mb-3">
@@ -46,6 +41,12 @@ title: Maps Dashboard
 			<p class="subtitle">All map objects currently in gmd.mar, by daily count</p>
 			<div id="d3-gmdmar-total-daily" class="svg-container"></div>
 		</div>
+		<div class="card card-mini mr-3 mb-3">
+			<h3>GMD.MAR objects Last Modified, by Month</h3>
+			<p class="subtitle">All gmd.mar objects currently in gmd.mar, by month most recently modified (created and/or updated). </p>
+			<div id="d3-gmdmar-recent" class="svg-container"></div>
+		</div>
+		<h2 class="ml-2 pop">Sanborn</h2>
 		<div class="card card-mini mr-3 mb-3">
 			<h3>Total Sanborn objects, by Day</h3>
 			<p class="subtitle">All Sanborn objects, by daily count</p>
@@ -62,12 +63,12 @@ title: Maps Dashboard
 		</div>
 		<div class="card card-mini mr-3 mb-3">
 			<h3>Online Map Objects</h3>
-			<p id="total_online_maps" class="subtitle"></p>
+			<span id="total_online_maps" class="h3"></span>
 			<div id="d3-maps-online-daily" class="svg-container"></div>
 		</div>
 		<div class="card card-mini mr-3 mb-3">
 			<h3>Bibliographic Map Records (not online<a href="#notes">&#42;</a>)</h3>
-			<p id="total_notonline_maps" class="subtitle"></p>
+			<span id="total_notonline_maps" class="h3"></span>
 			<div id="d3-maps-not-online-daily" class="svg-container"></div>
 		</div>
 		<div class="card card-mini mr-3 mb-3">
@@ -130,6 +131,11 @@ title: Maps Dashboard
 	document.getElementById('online-gmd-mar').innerHTML = num3_formatted;
 
 	//Charts and graphs
+	var total_online_maps = {{site.data.gmdmar-facets-daily.gmdbar-facets-TODAY.facets[0].filters[0].count}};
+	total_online_maps_formatted = Number(total_online_maps).toLocaleString('en');
+	document.getElementById('gmdmar_recent_daily').insertAdjacentHTML("afterend", total_online_maps);
+
+
 	var total_online_maps = {{site.data.map-facets-daily.map-facets-TODAY.facets[0].filters[0].count}};
 	total_online_maps_formatted = Number(total_online_maps).toLocaleString('en');
 	document.getElementById('total_online_maps_formatted').insertAdjacentHTML("afterbegin", total_online_maps);
