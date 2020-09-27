@@ -122,6 +122,14 @@ title: Maps Dashboard
 </div>-->
 
 <script src="//d3js.org/d3.v4.min.js"></script>
+{% include d3-maps-online.html %}
+{% include d3-maps-partof.html %}
+{% include d3-gmdmar-recent.html %}
+{% include d3-gmdmar-recent-daily.html %}
+{% include d3-maps-online-daily.html %}
+{% include d3-gmdmar-total-daily.html %}
+{% include d3-maps-not-online-daily.html %}
+{% include d3-sanborn-total-daily.html %}
 
 <script>
 	//Top row
@@ -151,18 +159,11 @@ title: Maps Dashboard
 	total_online_sanborns_formatted = Number(total_online_sanborns).toLocaleString('en');
 	document.getElementById('total_online_sanborns').insertAdjacentHTML("afterbegin", total_online_sanborns_formatted);
 
-	var total_notonline_sanborns = {{site.data.sanborn-facets-daily.sanborn-facets-TODAY.facets[0].filters[1].count | default: 0}};
-	total_notonline_sanborns_formatted = Number(total_notonline_sanborns).toLocaleString('en');
-	document.getElementById('total_notonline_sanborns').insertAdjacentHTML("afterbegin", total_notonline_sanborns_formatted);
+	//var total_notonline_sanborns = {{site.data.sanborn-facets-daily.sanborn-facets-TODAY.facets[0].filters[1].count | default: 0}};
+	//total_notonline_sanborns_formatted = Number(total_notonline_sanborns).toLocaleString('en');
+	//document.getElementById('total_notonline_sanborns').insertAdjacentHTML("afterbegin", total_notonline_sanborns_formatted);
 
 </script>
 
-{% include d3-maps-online.html %}
-{% include d3-maps-partof.html %}
-{% include d3-gmdmar-recent.html %}
-{% include d3-gmdmar-recent-daily.html %}
-{% include d3-maps-online-daily.html %}
-{% include d3-gmdmar-total-daily.html %}
-{% include d3-maps-not-online-daily.html %}
-{% include d3-sanborn-total-daily.html %}
+
 
