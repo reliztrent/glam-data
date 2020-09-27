@@ -61,7 +61,7 @@ title: Maps Dashboard
 			<div id="d3-maps-online-donut" class="svg-container"></div>
 		</div>
 		<div class="card card-mini mr-3 mb-3">
-			<h3>Total Online Map objects, by Day</h3>
+			<h3 id = "total_online_maps"><span class = "small"> total Online Map objects</span></h3>
 			<p class="subtitle">All online map objects in loc.gov/maps, by daily count</p>
 			<div id="d3-maps-online-daily" class="svg-container"></div>
 		</div>
@@ -116,14 +116,22 @@ title: Maps Dashboard
 {% include d3-maps-not-online-daily.html %}
 {% include d3-sanborn-total-daily.html %}
 <script>
+	//Top row
 	var num1 = {{site.data.map-facets-daily.map-facets-TODAY.facets[0].filters[0].count}};
 	num1_formatted = Number(num1).toLocaleString('en');
 	document.getElementById('online-map-objects').innerHTML = num1_formatted;
+
 	var num2 = {{site.data.map-facets-daily.map-facets-TODAY.facets[5].filters[1].count}};
 	num2_formatted = Number(num2).toLocaleString('en');
 	document.getElementById('online-sanborn-atlases').innerHTML = num2_formatted;
+
 	var num3 = {{site.data.gmdmar-facets-daily.gmdmar-facets-TODAY.facets[0].filters[0].count}};
 	num3_formatted = Number(num3).toLocaleString('en');
 	document.getElementById('online-gmd-mar').innerHTML = num3_formatted;
+
+	//Charts and graphs
+	document.getElementById('total_online_maps').insertAdjacentHTML("afterbegin", 'test');
+
+
 </script>
 
