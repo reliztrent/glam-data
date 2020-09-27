@@ -61,8 +61,8 @@ title: Maps Dashboard
 			<div id="d3-maps-online-donut" class="svg-container"></div>
 		</div>
 		<div class="card card-mini mr-3 mb-3">
-			<h3 id = "total_online_maps"><span class = "small"> total Online Map objects</span></h3>
-			<p class="subtitle">All online map objects in loc.gov/maps, by daily count</p>
+			<h3 id = "total_online_maps"></h3>
+			<p class="subtitle">Total Online Map objects</p>
 			<div id="d3-maps-online-daily" class="svg-container"></div>
 		</div>
 		<div class="card card-mini mr-3 mb-3">
@@ -130,7 +130,8 @@ title: Maps Dashboard
 	document.getElementById('online-gmd-mar').innerHTML = num3_formatted;
 
 	//Charts and graphs
-	document.getElementById('total_online_maps').insertAdjacentHTML("afterbegin", 'test');
+	var total_online_maps = {{site.data.map-facets-daily.map-facets-TODAY.facets[0].filters[0].count};
+	document.getElementById('total_online_maps').insertAdjacentHTML("afterbegin", total_online_maps+' ');
 
 
 </script>
