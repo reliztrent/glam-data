@@ -131,14 +131,14 @@ title: Maps Dashboard
 	document.getElementById('online-gmd-mar').innerHTML = num3_formatted;
 
 	//Charts and graphs
-	var gmdmar_recent_daily = {{site.data.gmdmar-recent-daily.maps-loc-gov-facets-TODAY.facets[0].filters[0].count | default: 0}};
-	gmdmar_recent_daily_formatted = Number(gmdmar_recent_daily).toLocaleString('en');
+	var gmdmar_recent_daily_num = {{site.data.gmdmar-recent-daily.maps-loc-gov-facets-TODAY.facets[0].filters[0].count | default: 0}};
+	gmdmar_recent_daily_formatted = Number(gmdmar_recent_daily_num).toLocaleString('en');
 	document.getElementById('gmdmar_recent_daily').insertAdjacentHTML("afterend", gmdmar_recent_daily_formatted);
 
 
 	var total_online_maps = {{site.data.map-facets-daily.map-facets-TODAY.facets[0].filters[0].count | default: 0}};
 	total_online_maps_formatted = Number(total_online_maps).toLocaleString('en');
-	document.getElementById('total_online_maps_formatted').insertAdjacentHTML("afterbegin", total_online_maps_formatted);
+	document.getElementById('total_online_maps').insertAdjacentHTML("afterbegin", total_online_maps_formatted);
 
 	var total_notonline_maps = {{site.data.map-facets-daily.map-facets-TODAY.facets[0].filters[1].count | default: 0}};
 	total_notonline_maps_formatted = Number(total_notonline_maps).toLocaleString('en');
