@@ -16,20 +16,20 @@ title: Maps Dashboard
 	</div>
 
 <div class = "row">
-	<div class="col-md-4">
-		<div class="card card-mini mr-2 mb-2">
+	<div class="col-md-4 p-1">
+		<div class="card card-mini mb-2">
 			<p class="h3 pop" id="online-map-objects"></p>
 			<h3 class="h4">Online Map objects</h3>
 	    </div>
 	</div>
-	<div class="col-md-4">
-		<div class="card card-mini mr-2 mb-2">
+	<div class="col-md-4 p-1">
+		<div class="card card-mini mb-2">
 			<p class="h3 pop" id ="online-sanborn-atlases"></p>
 			<h3 class="h4"> Online Sanborns atlases</h3>
 		</div>
 	</div>
-	<div class="col-md-4">
- 		<div class="card card-mini mr-2 mb-2">
+	<div class="col-md-4 p-1">
+ 		<div class="card card-mini mb-2">
 			<p class="h3 pop" id="online-gmd-mar"></p>
 			<h3 class="h4"> Online GMD.MAR<a href="#notes">&#42;</a> objects</h3>
 		</div>
@@ -38,18 +38,18 @@ title: Maps Dashboard
 
 
 <div class="row mt-4">
-	<div class="col-4 sm-width-full left">
+	<div class="col-4 p-1">
 		<h2 class="ml-2">GMD.MAR</h2>
-		<div class="card card-mini mr-3 mb-3">
+		<div class="card card-mini mb-2">
 			<h3>Online GMD.MAR Objects</h3>
 			<span id="total_online_gmdmar" class="h3 pop"></span>
 			<div id="d3-gmdmar-total-daily" class="svg-container"></div>
 		</div>
-		<div class="card card-mini mr-3 mb-3">
+		<div class="card card-mini mb-2">
 			<h3>GMD.MAR Objects Modified</h3>
 			<div id="d3-gmdmar-recent-daily" class="svg-container"></div>
 		</div>
-		<div class="card card-mini mr-3 mb-3">
+		<div class="card card-mini mb-2">
 			<h3>GMD.MAR Objects, Month Last Modified</h3>
 			<div id="d3-gmdmar-recent" class="svg-container"></div>
 		</div>
@@ -57,12 +57,12 @@ title: Maps Dashboard
 
 	<div class="col-4 sm-width-full left">
 		<h2 class="ml-2">Sanborns</h2>
-		<div class="card card-mini mr-3 mb-3">
+		<div class="card card-mini mb-2">
 			<h3>Sanborn Objects Online</h3>
 			<span id="total_online_sanborns" class="h3 pop"></span>
 			<div id="d3-sanborn-total-daily" class="svg-container"></div>
 		</div>
-		<!--<div class="card card-mini mr-3 mb-3">
+		<!--<div class="card card-mini mb-2">
 			<h3>Sanborn Object Records (not online<a href="#notes">&#42;</a>)</h3>
 			<span id="total_notonline_sanborns" class="h3"></span>
 			<div id="d3-sanborn-total-daily-notonline" class="svg-container"></div>
@@ -71,21 +71,21 @@ title: Maps Dashboard
 
 	<div class="col-4 sm-width-full left">
 		<h2 class="ml-2">Maps</h2>
-		<div class="card card-mini mr-3 mb-3">
+		<div class="card card-mini mb-2">
 			<h3>Map Objects: Online vs. Not Online</h3>
 			<div id="d3-maps-online-donut" class="svg-container"></div>
 		</div>
-		<div class="card card-mini mr-3 mb-3">
+		<div class="card card-mini mb-2">
 			<h3>Online Map Objects</h3>
 			<span id="total_online_maps" class="h3 pop"></span>
 			<div id="d3-maps-online-daily" class="svg-container"></div>
 		</div>
-		<div class="card card-mini mr-3 mb-3">
+		<div class="card card-mini mb-2">
 			<h3>Bibliographic Map Records (not online<a href="#notes">&#42;</a>)</h3>
 			<span id="total_notonline_maps" class="h3 pop"></span>
 			<div id="d3-maps-not-online-daily" class="svg-container"></div>
 		</div>
-		<div class="card card-mini mr-3 mb-3">
+		<div class="card card-mini mb-2">
 			<h3>Online Map Objects, by Collection</h3>
 			<p class="subtitle">Objects can belong in more than one collection. "Collection" = "Part Of"</p>
 			<div id="d3-maps-partof" class="svg-container"></div>
@@ -108,7 +108,7 @@ title: Maps Dashboard
 		<h2 class="h0 py-4 mt-3">Notes</h2>
 	</div>
 	<div class="col-6 sm-width-full">
-		<div class="card card-mini mr-3 mb-3">
+		<div class="card card-mini mb-2">
 			<h3 id="notes">&#42; Definitions</h3>
 			<dl><dt>Online</dt><dd>digitized materials, webpages, finding aids, e-resources, other online resources</dd><dt>Not online</dt><dd>links to catalog  other descriptive records (other than finding aids) but objects themselves aren't online.</dd><dt>GMD.MAR</dt><dd>A grouping for processing purposes, which holds all online materials from LOC's Geography and Map Division that are not otherwise held in another processing group. In API query results, can be found in "group" field.All GMD.MAR objects are online.</dd></dl>
 		</div>
@@ -117,7 +117,7 @@ title: Maps Dashboard
 
 <!--<div class="clearfix">
 	<div class="col-12 sm-width-full">
-		<div class="card card-mini mr-3 mb-3">
+		<div class="card card-mini mb-2">
 			<h3>Data Freshness</h3>
 			{% include data_freshness.html %}
 		</div>
