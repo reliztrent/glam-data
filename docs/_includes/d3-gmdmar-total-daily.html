@@ -34,11 +34,7 @@ d3.json("data/gmdmar-total-daily.json", function(data) {
         .y(function(d) { return y(d.online); })
         .curve(d3.curveMonotoneX) ;
 
-    var area = d3.area()
-      .x(function(d) { return x(d.facet); })
-      .y0(gmdmar_total_daily_height)
-      .y1(function(d) { return y(d.online); })
-      .curve(d3.curveMonotoneX);
+
 
     // format the data
     data.forEach(function(d) {
@@ -56,6 +52,17 @@ d3.json("data/gmdmar-total-daily.json", function(data) {
     y.domain([d3.min(data, function(d) {
       return Math.min(d.online); })-10, d3.max(data, function(d) {
       return Math.max(d.online); })+10]); //structured to handle multiple lines
+
+    // Fill below line 
+    var area = d3.area()
+      .x(function(d) { return x(d.facet); })
+      .y0(gmdmar_total_daily_height)
+      .y1(function(d) { return y(d.online); })
+      .curve(d3.curveMonotoneX);
+    gmdmar_total_daily_svg.append("path")
+        .datum(data)
+        .attr("class", "area")
+        .attr("d", area);
 
     // Add (first) line. Additional lines can also be added. 
     gmdmar_total_daily_svg.append("path")
