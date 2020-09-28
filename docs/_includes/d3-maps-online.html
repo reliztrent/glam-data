@@ -1,7 +1,7 @@
 <script>
 // set the dimensions and margins of the graph
-var maps_online_donut_width = 330 
-    maps_online_donut_height = 330
+var maps_online_donut_width = 350 
+    maps_online_donut_height = 350
     maps_online_donut_margin = 30
 
 // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
@@ -10,8 +10,7 @@ var maps_online_donut_radius = Math.min(maps_online_donut_width, maps_online_don
 // append the svg "maps_online_donut" object to the div called 'my_dataviz'
 var maps_online_donut = d3.select("#d3-maps-online-donut")
   .append("svg")
-    .attr("width", maps_online_donut_width)
-    .attr("height", maps_online_donut_height)
+    .attr("viewBox", '0 0 350 350')
   .append("g")
     .attr("transform", "translate(" + maps_online_donut_width / 2 + "," + maps_online_donut_height / 2 + ")");
  
