@@ -71,8 +71,8 @@ maps_online_donut
       var posA = arc.centroid(d) // line insertion in the slice
       var posB = outerArc.centroid(d) // line break: we use the other arc generator that has been built only for that
       var posC = outerArc.centroid(d); // Label position = almost the same as posB
-      var midangle = d.startAngle + (d.endAngle - d.startAngle) / 2.5 // we need the angle to see if the X position will be at the extreme right or extreme left
-      posC[0] = maps_online_donut_radius * 0.65 * (midangle < Math.PI ? 1 : -1); // multiply by 1 or -1 to put it on the right or on the left
+      var midangle = d.startAngle + (d.endAngle - d.startAngle) / 2 // we need the angle to see if the X position will be at the extreme right or extreme left
+      posC[0] = maps_online_donut_radius * 0.55 * (midangle < Math.PI ? 1 : -1); // multiply by 1 or -1 to put it on the right or on the left
       return [posA, posB, posC]
     })
 
@@ -86,14 +86,15 @@ maps_online_donut
       if (d.data.facet =='true') {
         var label = 'online';
       } else {
-        var label = 'not<br>online';
+        var label = 'not\nonline';
       }
       return label
     } )
+    .attr('font-size','.90em')
     .attr('transform', function(d) {
         var pos = outerArc.centroid(d);
         var midangle = d.startAngle + (d.endAngle - d.startAngle) / 2
-        pos[0] = maps_online_donut_radius * 0.69 * (midangle < Math.PI ? 1 : -1);
+        pos[0] = maps_online_donut_radius * 0.59 * (midangle < Math.PI ? 1 : -1);
         return 'translate(' + pos + ')';
     })
     .style('text-anchor', function(d) {
