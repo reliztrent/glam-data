@@ -61,7 +61,7 @@ d3.json("data/gmdmar-total-daily.json", function(data) {
       .curve(d3.curveMonotoneX);
     gmdmar_total_daily_svg.append("path")
         .datum(data)
-        .attr("class", "area")
+        .attr("class", "area-teal")
         .attr("d", area);
 
     // Add (first) line. Additional lines can also be added. 

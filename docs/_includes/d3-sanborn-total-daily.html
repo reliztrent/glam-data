@@ -28,6 +28,17 @@ d3.json("data/sanborn-total-daily.json", function(data) {
     var x = d3.scaleTime().range([0, sanborn_total_daily_width]);
     var y = d3.scaleLinear().range([sanborn_total_daily_height, 0]);
 
+    // Fill below line 
+    var area = d3.area()
+      .x(function(d) { return x(d.facet); })
+      .y0(gmdmar_total_daily_height)
+      .y1(function(d) { return y(d.online); })
+      .curve(d3.curveMonotoneX);
+    gmdmar_total_daily_svg.append("path")
+        .datum(data)
+        .attr("class", "area-teal")
+        .attr("d", area);
+  
     // define the first line
     var line1 = d3.line()
         .x(function(d) { return x(d.facet); })
