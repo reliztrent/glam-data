@@ -19,7 +19,7 @@ d3.json("data/maps-online.json", function(data) {
 // set the color scale
 var color = d3.scaleOrdinal()
   .domain(["true","false"])
-  .range(["#8CD3DD","#ff7f0e"]);
+  .range(["#8CD3DD","rgba(255, 127, 14, 0.7)"]);
 
 // Compute the position of each group on the pie:
 var pie = d3.pie()
