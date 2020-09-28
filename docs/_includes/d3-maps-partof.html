@@ -45,6 +45,7 @@ maps_partof.selectAll("bar")
     .attr("x", function(d) { return x(d.facet); })
     .attr("width", x.bandwidth())
     .attr("fill", "#69b3a2")
+    .attr("class", "rect-pink")
     // no bar at the beginning thus:
     .attr("height", function(d) { return maps_partof_height - y(0); }) // always equal to 0
     .attr("y", function(d) { return y(0); })
