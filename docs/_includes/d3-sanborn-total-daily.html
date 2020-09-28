@@ -53,9 +53,9 @@ d3.json("data/sanborn-total-daily.json", function(data) {
 
     // Fill below line 
     var area = d3.area()
-      .x(function(d) { console.log(x(d.facet), return x(d.facet); })
+      .x(function(d) { return x(d.facet); })
       .y0(sanborn_total_daily_height)
-      .y1(function(d) { console.log(y(d.online), return y(d.online); })
+      .y1(function(d) { return y(d.online); })
       .curve(d3.curveMonotoneX);
     sanborn_total_daily_svg.append("path")
         .datum(data)
