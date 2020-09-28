@@ -8,8 +8,7 @@ var maps_not_online_daily_margin = {top: 20, right: 100, bottom: 100, left: 50},
 // Append to body
 var maps_not_online_daily_svg = d3.select("#d3-maps-not-online-daily")
   .append("svg")
-    .attr("width", maps_not_online_daily_width + maps_not_online_daily_margin.left + maps_not_online_daily_margin.right)
-    .attr("height", maps_not_online_daily_height + maps_not_online_daily_margin.top + maps_not_online_daily_margin.bottom)
+    .attr("viewBox", '0 0 450 350')
   .append("g")
     .attr("transform",
           "translate(" + maps_not_online_daily_margin.left + "," + maps_not_online_daily_margin.top + ")");
