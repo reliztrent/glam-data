@@ -59,11 +59,17 @@ header.clearfix .link-primary:hover {
 .card {
 	word-wrap: break-word;
 	background-color: #ffffff;
-	border:1px solid #e5e9f2;
 	border-radius: 0.25rem;
 	padding: 1.75rem;
 	box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.05);
 }
+
+.card.pink {border:1px solid #e83e8c;}
+.card.orange {border:1px solid orange;}
+.card.blue {border:1px solid #5b90ca;}
+.card.blue {border:1px solid #5b90ca;}
+.card.teal {border:1px solid #6be3bc;}
+.card.black {border:1px solid #2d2d2d;}
 
 .card-mini h1, .card-mini h2, .card-mini h3 {
 	margin-top:0px;
