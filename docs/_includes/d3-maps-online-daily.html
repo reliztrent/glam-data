@@ -51,13 +51,24 @@ d3.json("data/maps-online-daily.json", function(data) {
       return Math.min(d.online); })-10, d3.max(data, function(d) {
       return Math.max(d.online); })+10]); //structured to handle multiple lines
 
+    // Fill below line 
+      var area = d3.area()
+        .x(function(d) { return x(d.facet); })
+        .y0(maps_online_daily_svg_height)
+        .y1(function(d) { return y(d.online); })
+        .curve(d3.curveMonotoneX);
+      maps_online_daily_svg.append("path")
+          .datum(data)
+          .attr("class", "area-blue")
+          .attr("d", area);
+
     // Add (first) line
     maps_online_daily_svg.append("path")
         .data([data])
         .attr("class", "line")
         .attr("d", line1)
         .attr("fill", "none")
-        .attr("stroke", "#1f77b4");
+        .attr("stroke", "#8CD3DD");
 
     // Add Y Axis
     maps_online_daily_svg.append("g")
