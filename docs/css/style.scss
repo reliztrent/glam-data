@@ -62,15 +62,11 @@ h1.pop, h2.pop, h3.pop, h4.pop, .pop {
 	font-size:1.1em;
 }
 
-rect {
-	fill: #69b3a2;
+.top-right {
+	position:absolute;
+	top:6px;
+	right:8px;
 }
-
-rect:hover {
-	fill: #8CD3DD;
-}
-
-path:hover {}
 
 .toolTip {
 	position:absolute;
@@ -93,9 +89,9 @@ table.small {
   font-size:14px;
 }
 
+
 .top-right {
 	position:absolute;
 	top:6px;
 	right:8px;
 }
-
