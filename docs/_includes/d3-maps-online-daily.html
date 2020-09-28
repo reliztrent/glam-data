@@ -93,7 +93,7 @@ d3.json("data/maps-online-daily.json", function(data) {
         .data([data])
         .text("online")
         .attr("transform", "translate(" + maps_online_daily_width + "," + y(data[data.length-1].online) + ")")
-        .style("fill","#1f77b4")
+        .style("fill","#8CD3DD")
         .attr("x", -12)
         .attr("y", -12)//move up a bit;
 
@@ -107,7 +107,7 @@ d3.json("data/maps-online-daily.json", function(data) {
           .attr("cy", function(d) { return y(d.online) } )
           .attr("r", 4)
           .attr("stroke", "white")
-          .style("fill", "#1f77b4")
+          .style("fill", "#8CD3DD")
           .on("mousemove", function(d){
             tooltip
               .style("left", d3.event.pageX - 30 + "px")
