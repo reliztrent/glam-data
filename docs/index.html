@@ -78,7 +78,7 @@ title: Maps Dashboard
 			<h3>Bibliographic Map Records (not online<a href="#notes">&#42;</a>)</h3>
 			<div id="d3-maps-not-online-daily" class="svg-container"></div>
 		</div>
-		<div class="card card-mini oreange mb-2">
+		<div class="card card-mini orange mb-2">
 			<a href="https://github.com/{{ site.github_username }}/{{ site.baseurl }}/tree/master/docs/_data/map-facets-daily" class="data_download"></a>
 			<h3>Online Map Objects, by Collection</h3>
 			<p class="subtitle">Objects can belong in more than one collection. "Collection" = "Part Of"</p>
@@ -179,8 +179,8 @@ title: Maps Dashboard
 <script>
 const data_download = d3.selectAll('.data_download');
 const svg = data_download.append('svg')
-			.attr('width','1em')
-			.attr('height','1em')
+			.attr('width','1.2em')
+			.attr('height','1.2em')
 			.attr('viewBox','0 0 16 16')
 			.attr('class','bi bi-file-earmark-code-fill top-right')
 			.attr('xmlns','http://www.w3.org/2000/svg')
