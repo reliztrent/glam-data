@@ -1,7 +1,7 @@
 <script>
 
 // Dimensions and maps_not_online_daily_margins
-var maps_not_online_daily_margin = {top: 20, right: 100, bottom: 100, left: 50},
+var maps_not_online_daily_margin = {top: 20, right: 60, bottom: 100, left: 50},
     maps_not_online_daily_width = 450 - maps_not_online_daily_margin.left - maps_not_online_daily_margin.right,
     maps_not_online_daily_height = 350 - maps_not_online_daily_margin.top - maps_not_online_daily_margin.bottom;
 
@@ -83,8 +83,8 @@ d3.json("data/maps-online-daily.json", function(data) {
         .text("records")
         .attr("transform", "translate(" + maps_not_online_daily_width + "," + y(data[data.length-1].not_online) + ")")
         .style("fill","#ff7f0e")
-        .attr("x", 12)
-        .attr("y", -8)//move up a bit;
+        .attr("x", -12)
+        .attr("y", -12)//move up a bit;
 
     // Add the point(s)
     maps_not_online_daily_svg
