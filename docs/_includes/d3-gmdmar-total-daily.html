@@ -1,7 +1,7 @@
 <script>
 
 // Dimensions and gmdmar_total_daily_margins
-var gmdmar_total_daily_margin = {top: 20, right: 100, bottom: 100, left: 50},
+var gmdmar_total_daily_margin = {top: 20, right: 60, bottom: 100, left: 50},
     gmdmar_total_daily_width = 450 - gmdmar_total_daily_margin.left - gmdmar_total_daily_margin.right,
     gmdmar_total_daily_height = 350 - gmdmar_total_daily_margin.top - gmdmar_total_daily_margin.bottom;
 
@@ -83,8 +83,8 @@ d3.json("data/gmdmar-total-daily.json", function(data) {
         .text("online")
         .attr("transform", "translate(" + gmdmar_total_daily_width + "," + y(data[data.length-1].online) + ")")
         .style("fill","#8CD3DD")
-        .attr("x", 12)
-        .attr("y", -8)//move up a bit;
+        .attr("x", -12)
+        .attr("y", -12)//move up a bit;
 
     // Add the point(s)
     gmdmar_total_daily_svg
