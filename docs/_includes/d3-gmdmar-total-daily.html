@@ -36,7 +36,7 @@ d3.json("data/gmdmar-total-daily.json", function(data) {
 
     var area = d3.area()
       .x(function(d) { return x(d.facet); })
-      .y0(height)
+      .y0(gmdmar_total_daily_height)
       .y1(function(d) { return y(d.online); })
       .curve(d3.curveMonotoneX);
 
