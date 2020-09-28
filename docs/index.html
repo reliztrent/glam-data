@@ -22,7 +22,7 @@ title: Maps Dashboard
 	<div class="col-lg-4 p-1">
  		<div class="card card-mini mb-2">
 			<p class="h3 pop" id="online-gmd-mar"></p>
-			<h3 class="h4"> Online GMD.MAR Objects<a href="#notes">&#42;</a> objects</h3>
+			<h3 class="h4"> Online<a href="#notes">&#42;</a> GMD.MAR Objects</h3>
 		</div>
 	</div>
 	<div class="col-lg-4 p-1">
@@ -43,18 +43,18 @@ title: Maps Dashboard
 <div class="row">
 	<div class="col-lg-4 p-1">
 		<div class="card card-mini mb-2">
-			<a href="{{ site.baseurl }}/tree/master/docs/_data/gmdmar-total-facets-daily" class="data_download"></a>
+			<a href="https://github.com/{{ site.github_username }}/{{ site.baseurl }}/tree/master/docs/_data/gmdmar-total-facets-daily" class="data_download"></a>
 			<!--<span id="total_online_gmdmar" class="h3 pop"></span>-->
 			<h3>Online GMD.MAR Objects</h3>
 			<div id="d3-gmdmar-total-daily" class="svg-container"></div>
 		</div>
 		<div class="card card-mini mb-2">
-			<a href="" class="data_download"></a>
+			<a href="https://github.com/{{ site.github_username }}/{{ site.baseurl }}/tree/master/docs/_data/gmdmar-recent-daily" class="data_download"></a>
 			<h3>GMD.MAR Objects Modified</h3>
 			<div id="d3-gmdmar-recent-daily" class="svg-container"></div>
 		</div>
 		<div class="card card-mini mb-2">
-			<a href="" class="data_download"></a>
+			<a href="https://github.com/{{ site.github_username }}/{{ site.baseurl }}/tree/master/docs/_data/gmdmar-recent-monthly" class="data_download"></a>
 			<h3>GMD.MAR Objects, Month Most Recently Modified</h3>
 			<div id="d3-gmdmar-recent" class="svg-container"></div>
 		</div>
@@ -62,24 +62,24 @@ title: Maps Dashboard
 
 	<div class="col-lg-4 p-1">
 		<div class="card card-mini mb-2">
-			<a href="" class="data_download"></a>
+			<a href="https://github.com/{{ site.github_username }}/{{ site.baseurl }}/tree/master/docs/_data/map-facets-daily" class="data_download"></a>
 			<h3>Map Objects: Online vs. Not Online</h3>
 			<div id="d3-maps-online-donut" class="svg-container"></div>
 		</div>
 		<div class="card card-mini mb-2">
-			<a href="" class="data_download"></a>
+			<a href="https://github.com/{{ site.github_username }}/{{ site.baseurl }}/tree/master/docs/_data/map-facets-daily" class="data_download"></a>
 			<span id="total_online_maps" class="h3 pop"></span>
 			<h3>Online Map Objects</h3>
 			<div id="d3-maps-online-daily" class="svg-container"></div>
 		</div>
 		<div class="card card-mini mb-2">
-			<a href="" class="data_download"></a>
+			<a href="https://github.com/{{ site.github_username }}/{{ site.baseurl }}/tree/master/docs/_data/map-facets-daily" class="data_download"></a>
 			<span id="total_notonline_maps" class="h3 pop"></span>
 			<h3>Bibliographic Map Records (not online<a href="#notes">&#42;</a>)</h3>
 			<div id="d3-maps-not-online-daily" class="svg-container"></div>
 		</div>
 		<div class="card card-mini mb-2">
-			<a href="" class="data_download"></a>
+			<a href="https://github.com/{{ site.github_username }}/{{ site.baseurl }}/tree/master/docs/_data/map-facets-daily" class="data_download"></a>
 			<h3>Online Map Objects, by Collection</h3>
 			<p class="subtitle">Objects can belong in more than one collection. "Collection" = "Part Of"</p>
 			<div id="d3-maps-partof" class="svg-container"></div>
@@ -89,7 +89,7 @@ title: Maps Dashboard
 	<div class="col-lg-4 p-1">
 		<div class="card card-mini mb-2">
 			<!--<span id="total_online_sanborns" class="h3 pop"></span>-->
-			<a href="" class="data_download"></a>
+			<a href="https://github.com/{{ site.github_username }}/{{ site.baseurl }}/tree/master/docs/_data/sanborn-facets-daily" class="data_download"></a>
 			<h3>Sanborn Objects Online</h3>
 			<div id="d3-sanborn-total-daily" class="svg-container"></div>
 		</div>
@@ -117,9 +117,9 @@ title: Maps Dashboard
 	<div class="col-12">
 		<h2 class="h0 py-4 mt-3">Notes</h2>
 	</div>
-	<div class="col-6 sm-width-full">
-		<div class="card card-mini mb-2">
-			<h3 id="notes">&#42; Definitions</h3>
+	<div class="col-12l">
+		<div class="mb-2">
+			<h3 id="notes">&#42;Definitions</h3>
 			<dl><dt>Online</dt><dd>digitized materials, webpages, finding aids, e-resources, other online resources</dd><dt>Not online</dt><dd>links to catalog  other descriptive records (other than finding aids) but objects themselves aren't online.</dd><dt>GMD.MAR</dt><dd>A grouping for processing purposes, which holds all online materials from LOC's Geography and Map Division that are not otherwise held in another processing group. In API query results, can be found in "group" field.All GMD.MAR objects are online.</dd></dl>
 		</div>
 	</div>
