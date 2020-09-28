@@ -34,6 +34,12 @@ d3.json("data/gmdmar-total-daily.json", function(data) {
         .y(function(d) { return y(d.online); })
         .curve(d3.curveMonotoneX) ;
 
+    var area = d3.area()
+      .x(function(d) { return x(d.facet); })
+      .y0(height)
+      .y1(function(d) { return y(d.online); })
+      .curve(d3.curveMonotoneX);
+
     // format the data
     data.forEach(function(d) {
         d.facet = parseTime(d.facet);
@@ -51,7 +57,7 @@ d3.json("data/gmdmar-total-daily.json", function(data) {
       return Math.min(d.online); })-10, d3.max(data, function(d) {
       return Math.max(d.online); })+10]); //structured to handle multiple lines
 
-    // Add (first) line
+    // Add (first) line. Additional lines can also be added. 
     gmdmar_total_daily_svg.append("path")
         .data([data])
         .attr("class", "line")
