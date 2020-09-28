@@ -28,17 +28,6 @@ d3.json("data/sanborn-total-daily.json", function(data) {
     var x = d3.scaleTime().range([0, sanborn_total_daily_width]);
     var y = d3.scaleLinear().range([sanborn_total_daily_height, 0]);
 
-    // Fill below line 
-    var area = d3.area()
-      .x(function(d) { return x(d.facet); })
-      .y0(sanborn_total_daily_height)
-      .y1(function(d) { return y(d.online); })
-      .curve(d3.curveMonotoneX);
-    sanborn_total_daily_svg.append("path")
-        .datum(data)
-        .attr("class", "area-teal")
-        .attr("d", area);
-  
     // define the first line
     var line1 = d3.line()
         .x(function(d) { return x(d.facet); })
@@ -61,6 +50,17 @@ d3.json("data/sanborn-total-daily.json", function(data) {
     y.domain([d3.min(data, function(d) {
       return Math.min(d.online); })-10, d3.max(data, function(d) {
       return Math.max(d.online); })+10]); //structured to handle multiple lines
+
+    // Fill below line 
+    var area = d3.area()
+      .x(function(d) { console.log(x(d.facet), return x(d.facet); })
+      .y0(sanborn_total_daily_height)
+      .y1(function(d) { console.log(y(d.online), return y(d.online); })
+      .curve(d3.curveMonotoneX);
+    sanborn_total_daily_svg.append("path")
+        .datum(data)
+        .attr("class", "area-teal")
+        .attr("d", area);
 
     // Add (first) line
     sanborn_total_daily_svg.append("path")
