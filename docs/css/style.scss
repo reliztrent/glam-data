@@ -17,13 +17,7 @@ p.small {
 
 .h0 {
 	font-size:3.2rem; 
-}
-
-h2.subtle {
-	color:#9ba1b5;
-}
-h1.pop, h2.pop, h3.pop, h4.pop, .pop {
-	color:#f463a6;;
+	color:#535457;
 }
 
 a {
@@ -36,24 +30,11 @@ a:hover {
 	text-decoration:underline;
 }
 
-
-
-header.clearfix {
- background-color:#353946;
- color:white;
+h2.subtle {
+	color:#9ba1b5;
 }
-header.clearfix .text-accent {
- color:#acb4cc;
-}
-header.clearfix .text-accent:hover {
- color:#acb4cc;
-}
-header.clearfix .link-primary:hover {
- color:#d1d8ee;
-}
-
-.container {
-	max-width:80em;
+h1.pop, h2.pop, h3.pop, h4.pop, .pop {
+	color:#f463a6;;
 }
 
 .card {
@@ -79,12 +60,6 @@ header.clearfix .link-primary:hover {
 
 .card .subtitle {
 	font-size:1.1em;
-}
-
-
-.svg-container{
-	display: flex;
-	justify-content: center;
 }
 
 rect {
