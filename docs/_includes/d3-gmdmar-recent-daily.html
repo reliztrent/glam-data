@@ -3,14 +3,16 @@
 
 // set the dimensions and margins of the graph
 var gmdmar_recent_daily_margin = {top: 10, right: 10, bottom: 80, left: 40},
-    gmdmar_recent_daily_width = 330 - gmdmar_recent_daily_margin.left - gmdmar_recent_daily_margin.right,
-    gmdmar_recent_daily_height = 350 - gmdmar_recent_daily_margin.top - gmdmar_recent_daily_margin.bottom;
+    gmdmar_recent_daily_vb_width = 330,
+    gmdmar_recent_daily_vb_height = 350,
+    gmdmar_recent_daily_width = gmdmar_recent_daily_vb_width - gmdmar_recent_daily_margin.left - gmdmar_recent_daily_margin.right,
+    gmdmar_recent_daily_height = gmdmar_recent_daily_vb_height - gmdmar_recent_daily_margin.top - gmdmar_recent_daily_margin.bottom,
+
 
 // append the svg object to the body of the page
 var gmdmar_recent_daily = d3.select("#d3-gmdmar-recent-daily")
   .append("svg")
-    .attr("width", gmdmar_recent_daily_width + gmdmar_recent_daily_margin.left + gmdmar_recent_daily_margin.right)
-    .attr("height", gmdmar_recent_daily_height + gmdmar_recent_daily_margin.top + gmdmar_recent_daily_margin.bottom)
+    .attr("viewBox", `0 0 gmdmar_recent_daily_vb_width gmdmar_recent_daily_vb_height`)
   .append("g")
     .attr("transform",
           "translate(" + gmdmar_recent_daily_margin.left + "," + gmdmar_recent_daily_margin.top + ")");
@@ -19,7 +21,6 @@ var tooltip = d3.select("body").append("div").attr("class", "toolTip");
 
 // Parse the Data
 d3.json("data/gmdmar-recent-daily.json", function(data) {
-  console.log(data)
 
   // parse the date / time
   var parseTime = d3.timeParse("%Y-%m-%d");
@@ -34,7 +35,6 @@ d3.json("data/gmdmar-recent-daily.json", function(data) {
   data.sort(function(a, b){
       return a["facet"]-b["facet"]; 
     })
-  console.log(data)
 
   // X axis
   var x = d3.scaleBand()
@@ -83,7 +83,7 @@ d3.json("data/gmdmar-recent-daily.json", function(data) {
     .duration(800)
     .attr("y", function(d) { return y(d.online); })
     .attr("height", function(d) { return gmdmar_recent_daily_height - y(d.online); })
-    .delay(function(d,i){console.log(i) ; return(i*100)})
+    .delay(function(d,i){return(i*100)})
 
 })
 
