@@ -62,16 +62,15 @@ sanborn_online_donut
   .data(data_ready)
   .enter()
   .append('polyline')
-    .attr("stroke", "black")
+    .attr("stroke", "#75777b")
     .style("fill", "none")
     .attr("stroke-width", 1)
     .attr('points', function(d) {
       var posA = arc.centroid(d) // line insertion in the slice
       var posB = outerArc.centroid(d) // line break: we use the other arc generator that has been built only for that
       var posC = outerArc.centroid(d); // Label position = almost the same as posB
-      var midangle = d.startAngle + (d.endAngle - d.startAngle) / 2.5 // we need the angle to see if the X position will be at the extreme right or extreme left
+      var midangle = d.startAngle + (d.endAngle - d.startAngle) / 2 // we need the angle to see if the X position will be at the extreme right or extreme left
       posC[0] = sanborn_online_donut_radius * 0.75 * (midangle < Math.PI ? 1 : -1); // multiply by 1 or -1 to put it on the right or on the left
-      console.log (posA, posB, posC)
       return [posA, posB, posC]
     })
 
@@ -90,6 +89,7 @@ sanborn_online_donut
       return label
     } )
     .attr('font-size','.70em')
+    .attr('fill', '#75777b')
     .attr('transform', function(d) {
         var pos = outerArc.centroid(d);
         var midangle = d.startAngle + (d.endAngle - d.startAngle) / 2
