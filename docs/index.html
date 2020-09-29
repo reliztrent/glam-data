@@ -93,12 +93,11 @@ title: Maps Dashboard
 			<h3>Sanborn Objects Online</h3>
 			<div id="d3-sanborn-total-daily" class="svg-container"></div>
 		</div>
-		<!--<div class="card card-mini mb-2">
-			<a href="" class="data_download"></a>
-			<h3>Sanborn Object Records (not online<a href="#notes">&#42;)</a></h3>
-			<span id="total_notonline_sanborns" class="h3"></span>
-			<div id="d3-sanborn-total-daily-notonline" class="svg-container"></div>
-		</div>-->
+		<div class="card card-mini mb-2">
+			<a href="https://github.com/{{ site.github_username }}/{{ site.baseurl }}/tree/master/docs/_data/sanborn-facets-daily" class="data_download"></a>
+			<h3>Sanborn Object Records (not online)</a></h3>
+			<div id="d3-maps-not-online-daily" class="svg-container"></div>
+		</div>
 	</div>
 
 </div>
@@ -149,6 +148,7 @@ title: Maps Dashboard
 {% include d3-gmdmar-total-daily.html %}
 {% include d3-maps-not-online-daily.html %}
 {% include d3-sanborn-total-daily.html %}
+{% include d3-sanborn-not-online-daily.html %}
 
 <script>
 	//Top row
