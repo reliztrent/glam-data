@@ -78,7 +78,8 @@ d3.json("data/gmdmar-total-daily.json", function(data) {
         .call(d3.axisLeft(y));
 
     console.log ('test')
-    console.log (y.ticks(10))
+    console.log (x.ticks(10))
+    console.log (x((ticks(2)[2]-ticks(2)[1]))
 
     // Add X Axis
     gmdmar_total_daily_svg.append("g")
