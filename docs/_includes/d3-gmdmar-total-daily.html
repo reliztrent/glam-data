@@ -82,6 +82,25 @@ d3.json("data/gmdmar-total-daily.json", function(data) {
     var tickArr = x.ticks(2);
     console.log (x(tickArr[2]-tickArr[1]))
 
+    var x_scale_pow = d3.axisBottom(x)
+          .tickFormat(d3.timeFormat("%a %b %d"))
+          .tickValues(data.map(function(d){return d.facet}))
+          .ticks(20);
+
+    // ticksDistance is constant for a specific x_scale
+    const getTicksDistance = (scale) => {
+          const ticks = scale.ticks();
+          const spaces = []
+          for(let i=0; i < ticks.length - 1; i++){
+            spaces.push(scale(ticks[i+1]) - scale(ticks[i]))
+          }
+          return spaces;
+    };
+
+    //you have to recalculate when x_scale or ticks change
+    const ticksSpacingPow = getTicksDistance(x_scale_pow);
+    console.log (ticksSpacingPow)
+
     // Add X Axis
     gmdmar_total_daily_svg.append("g")
         .attr("class", "axis")
