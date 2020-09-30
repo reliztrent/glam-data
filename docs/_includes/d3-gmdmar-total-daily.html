@@ -100,7 +100,7 @@ d3.json("data/gmdmar-total-daily.json", function(data) {
     //you have to recalculate when x_scale or ticks change
     const ticksSpacingPow = getTicksDistance(x_scale_pow);
     console.log (ticksSpacingPow)
-    console.log (getTicksDistance)
+
 
     // Add X Axis
     gmdmar_total_daily_svg.append("g")
@@ -109,6 +109,7 @@ d3.json("data/gmdmar-total-daily.json", function(data) {
         .call(d3.axisBottom(x)
           .tickFormat(d3.timeFormat("%a %b %d"))
           .tickValues(data.map(function(d){return d.facet})))
+          .ticks(10)
         .selectAll("text") 
           .style("text-anchor", "end")
           .attr("dx", "-.8em")
