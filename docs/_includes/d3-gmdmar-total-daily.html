@@ -77,6 +77,9 @@ d3.json("data/gmdmar-total-daily.json", function(data) {
         .attr("class", "axis")
         .call(d3.axisLeft(y));
 
+    console.log ('test')
+    console.log (y.ticks(10)
+
     // Add X Axis
     gmdmar_total_daily_svg.append("g")
         .attr("class", "axis")
