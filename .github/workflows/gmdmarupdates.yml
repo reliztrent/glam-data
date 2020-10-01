@@ -1,7 +1,9 @@
 name: New gmd.mar updates
 on:
+  push:
+    branches: master
   schedule:
-      - cron: '10 4 * * *' 
+      - cron: '46 * * * *' 
 jobs:
   refresh-feed:
     runs-on: ubuntu-latest
@@ -12,10 +14,10 @@ jobs:
           persist-credentials: false
           
       - name: Set TIMESTAMP env
-        run: echo ::set-env name=TIMESTAMP::$(date -d "4 hours ago" +"%Y%m%d") #offset from UTC
+        run: echo ::set-env name=TIMESTAMP::$(date -d "4 hours ago" +"%Y%m%d%h") #offset from UTC
       - name: Set TODAY env
         run: echo ::set-env name=TODAY::$(date -d "1 day ago" +"%Y-%m-%d") #offset due to timing of catalog/P1 updates 
-      - name: Set YESTEDAY env
+      - name: Set YESTERDAY env
         run: echo ::set-env name=YESTERDAY::$(date -d "2 days ago" +"%Y-%m-%d") #offset due to timing of catalog/P1 updates 
   
       - name: Fetch API Data - ${{ env.TIMESTAMP }}📦
