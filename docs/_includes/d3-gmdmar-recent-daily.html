@@ -44,9 +44,7 @@ var tooltip = d3.select("body").append("div").attr("class", "toolTip");
     .call(d3.axisBottom(x)
       .tickFormat(d3.timeFormat("%a %b %d"))
       .tickValues(data.map(function(d){return d.facet})))
-    .selectAll("text")
-      .attr("transform", "translate(-10,0)rotate(-45)")
-      .style("text-anchor", "end");
+    
 
   // Add Y axis
   var y = d3.scaleLinear()
