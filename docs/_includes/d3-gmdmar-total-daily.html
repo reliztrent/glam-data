@@ -92,7 +92,7 @@ d3.json("data/gmdmar-total-daily.json", function(data) {
           .attr("transform", "rotate(-65)");
     gmdmar_total_daily_svg.append("g")//Weekly Sunday ticks
         .attr("class", "axis axis-major")
-        .attr("transform", "translate(0," + gmdmar_total_daily_height + ")")
+        .attr("transform", "translate(0," + function(d) { return y(d.online); } + ")")
         .call(d3.axisBottom(x)
           .ticks(d3.timeWeek.every(1))
           .tickFormat(d3.timeFormat("")))          
@@ -106,7 +106,7 @@ d3.json("data/gmdmar-total-daily.json", function(data) {
         .attr("transform", "translate(0," + gmdmar_total_daily_height + ")")
         .call(d3.axisBottom(x)
           .ticks(d3.timeMonth.every(1))
-          .tickFormat(d3.timeFormat("%B")))          
+          .tickFormat(d3.timeFormat("%B %Y")))          
         .selectAll("text")
           .style("text-anchor", "end")
           .attr("dx", "-.8em")
