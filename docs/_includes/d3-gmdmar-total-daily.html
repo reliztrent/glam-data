@@ -92,10 +92,16 @@ d3.json("data/gmdmar-total-daily.json", function(data) {
           .attr("transform", "rotate(-65)");
     gmdmar_total_daily_svg.append("g")//Weekly Sunday ticks
         .attr("class", "axis axis-major")
-        .attr("transform", "translate(0,0)")
+        .attr("transform", "translate(0," + gmdmar_total_daily_height + ")")
         .call(d3.axisBottom(x)
           .ticks(d3.timeWeek.every(1))
+          .tickSize(-height)
           .tickFormat(d3.timeFormat("")))          
+        .selectAll("text") 
+          .style("text-anchor", "end")
+          .attr("dx", "-.8em")
+          .attr("dy", ".15em")
+          .attr("transform", "rotate(-65)");
     gmdmar_total_daily_svg.append("g")//Monthly ticks and labels
         .attr("class", "axis axis-major")
         .attr("transform", "translate(0," + gmdmar_total_daily_height + ")")
