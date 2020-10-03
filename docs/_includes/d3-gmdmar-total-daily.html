@@ -146,7 +146,7 @@ d3.json("data/gmdmar-total-daily.json", function(data) {
               .style("top", d3.event.pageY - 80 + "px")
               .style("display", "inline-block")
               .html(d.online+"<br>"+displayDate(d.facet)
-              );
+              )
           })
           .on("mouseout", function(d){ tooltip.style("display", "none");});
 
