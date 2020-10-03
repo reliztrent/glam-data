@@ -37,7 +37,7 @@ d3.json("data/gmdmar-total-daily.json", function(data) {
 
 
     // format the data
-    data.forEach(function(d) {
+    var cleandata = data.forEach(function(d) {
         d.facet = parseTime(d.facet);
         d.online = +d.online;
     });
@@ -127,7 +127,7 @@ d3.json("data/gmdmar-total-daily.json", function(data) {
     // Add the point(s)
     gmdmar_total_daily_svg
       .selectAll("points")
-      .data(data)
+      .data(cleandata)
       .enter()
         .append("circle")
           .attr("cx", function(d) { return x(d.facet) } )
