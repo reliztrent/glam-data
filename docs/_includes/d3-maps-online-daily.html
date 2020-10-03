@@ -104,6 +104,7 @@ d3.json("data/maps-online-daily.json", function(data) {
     maps_online_daily_svg.append("g")//Monthly ticks and labels
         .attr("class", "axis axis-major")
         .attr("transform", "translate(0," + maps_online_daily_height + ")")
+        .attr("stroke","#7ab9c1")
         .call(d3.axisBottom(x)
           .ticks(d3.timeMonth.every(1))
           .tickFormat(d3.timeFormat("%b %Y")))          
@@ -136,7 +137,7 @@ d3.json("data/maps-online-daily.json", function(data) {
           .on("mousemove", function(d){
             tooltip
               .style("left", d3.event.pageX - 30 + "px")
-              .style("top", d3.event.pageY - 40 + "px")
+              .style("top", d3.event.pageY - 60 + "px")
               .style("display", "inline-block")
               .html(
                 d.online+
