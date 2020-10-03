@@ -90,7 +90,7 @@ d3.json("data/gmdmar-total-daily.json", function(data) {
           .attr("dx", "-.8em")
           .attr("dy", ".15em")
           .attr("transform", "rotate(-65)");
-    gmdmar_total_daily_svg.append("h")
+    gmdmar_total_daily_svg.append("g")
         .attr("class", "axis")
         .attr("transform", "translate(0," + gmdmar_total_daily_height + ")")
         .call(d3.axisBottom(x)
