@@ -140,8 +140,7 @@ d3.json("data/gmdmar-total-daily.json", function(data) {
               .style("left", d3.event.pageX - 30 + "px")
               .style("top", d3.event.pageY - 40 + "px")
               .style("display", "inline-block")
-              .html((d.online))
-              .httml((+"\ntest"));
+              .html((d.online+"<br>test"));
           })
           .on("mouseout", function(d){ tooltip.style("display", "none");});
 
