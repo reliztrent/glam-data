@@ -138,7 +138,7 @@ d3.json("data/gmdmar-total-daily.json", function(data) {
           .on("mousemove", function(d){
             tooltip
               .style("left", d3.event.pageX - 30 + "px")
-              .style("top", d3.event.pageY - 40 + "px")
+              .style("top", d3.event.pageY - 80 + "px")
               .style("display", "inline-block")
               .html((d.online+"<br>test"));
           })
