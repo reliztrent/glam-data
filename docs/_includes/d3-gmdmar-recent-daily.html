@@ -22,6 +22,9 @@ var tooltip = d3.select("body").append("div").attr("class", "toolTip");
   // parse the date / time
   var parseTime = d3.timeParse("%Y-%m-%d");
 
+  // format dates for tick text
+  var displayDate = d3.timeFormat("%a %b %d, %Y");
+
   // format the data
   data.forEach(function(d) {
         d.facet = parseTime(d.facet);
@@ -42,9 +45,8 @@ var tooltip = d3.select("body").append("div").attr("class", "toolTip");
   gmdmar_recent_daily.append("g")
     .attr("transform", "translate(0," + gmdmar_recent_daily_height + ")")
     .call(d3.axisBottom(x)
-      .tickFormat(d3.timeFormat("%a %b %d"))
+      .tickFormat(d3.timeFormat(""))
       .tickValues(data.map(function(d){return d.facet})))
-    
 
   // Add Y axis
   var y = d3.scaleLinear()
@@ -67,9 +69,14 @@ var tooltip = d3.select("body").append("div").attr("class", "toolTip");
     .on("mousemove", function(d){
         tooltip
           .style("left", d3.event.pageX - 30 + "px")
-          .style("top", d3.event.pageY - 40 + "px")
+          .style("top", d3.event.pageY - 60 + "px")
           .style("display", "inline-block")
-          .html((d.online));
+          .html(
+            d.online+
+            "<br><span class=\"small\">"+
+            displayDate(d.facet)+
+            "</span>"
+          ); 
     })
     .on("mouseout", function(d){ tooltip.style("display", "none");})
 
