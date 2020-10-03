@@ -83,9 +83,10 @@ d3.json("data/gmdmar-total-daily.json", function(data) {
         .attr("class", "axis")
         .attr("transform", "translate(0," + gmdmar_total_daily_height + ")")
         .call(d3.axisBottom(x)
+          .ticks(d3.timeMonth.every(1))
           .tickFormat(d3.timeFormat("%a %b %d"))
-          .tickValues(data.map(function(d){return d.facet}))
-          .ticks(d3.timeMonth.every(15)))
+          .tickValues(data.map(function(d){return d.facet})))
+          
         .selectAll("text") 
           .style("text-anchor", "end")
           .attr("dx", "-.8em")
