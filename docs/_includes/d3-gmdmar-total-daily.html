@@ -127,7 +127,7 @@ d3.json("data/gmdmar-total-daily.json", function(data) {
     console.log("Testing ticks")
     console.log(data)
 
-    var displayDate = d3.time.format("%d %b %Y");
+    var displayDate = d3.timeParse("%d %b %Y");
 
     // Add the point(s)
     gmdmar_total_daily_svg
