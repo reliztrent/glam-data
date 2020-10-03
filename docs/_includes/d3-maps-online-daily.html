@@ -104,10 +104,10 @@ d3.json("data/maps-online-daily.json", function(data) {
     maps_online_daily_svg.append("g")//Monthly ticks and labels
         .attr("class", "axis axis-major")
         .attr("transform", "translate(0," + maps_online_daily_height + ")")
-        .attr("stroke","#7ab9c1")
         .call(d3.axisBottom(x)
           .ticks(d3.timeMonth.every(1))
           .tickFormat(d3.timeFormat("%b %Y")))          
+          .attr("stroke","#7ab9c1")
         .selectAll("text")
           .style("text-anchor", "end")
           .attr("dx", "-.8em")
