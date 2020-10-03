@@ -1,7 +1,5 @@
 name: New gmd.mar updates
 on:
-  push:
-    branches: master
   schedule:
       - cron: '46 * * * *' 
 jobs:
