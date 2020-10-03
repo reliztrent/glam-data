@@ -145,9 +145,8 @@ d3.json("data/gmdmar-total-daily.json", function(data) {
               .style("left", d3.event.pageX - 30 + "px")
               .style("top", d3.event.pageY - 80 + "px")
               .style("display", "inline-block")
-              .html(function(d){
-                return d.online+"<br>"+displayDate(d.facet)
-              });
+              .html(d.online+"<br>"+displayDate(d.facet)
+              );
           })
           .on("mouseout", function(d){ tooltip.style("display", "none");});
 
