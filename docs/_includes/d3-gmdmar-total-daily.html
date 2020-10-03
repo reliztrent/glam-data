@@ -137,13 +137,13 @@ d3.json("data/gmdmar-total-daily.json", function(data) {
         .append("circle")
           .attr("cx", function(d) { return x(d.facet) } )
           .attr("cy", function(d) { return y(d.online) } )
-          .attr("r", 2)
-          .attr("stroke", "white")
+          .attr("r", 4)
+          .attr("stroke", "none")
           .style("fill", "#8CD3DD")
           .on("mousemove", function(d){
             tooltip
               .style("left", d3.event.pageX - 30 + "px")
-              .style("top", d3.event.pageY - 70 + "px")
+              .style("top", d3.event.pageY - 60 + "px")
               .style("display", "inline-block")
               .html(
                 d.online+
