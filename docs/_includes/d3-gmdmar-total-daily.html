@@ -85,11 +85,6 @@ d3.json("data/gmdmar-total-daily.json", function(data) {
         .call(d3.axisBottom(x)
           .ticks(d3.timeDay.every(1))
           .tickFormat(d3.timeFormat("")))          
-        .selectAll("text") 
-          .style("text-anchor", "end")
-          .attr("dx", "-.8em")
-          .attr("dy", ".15em")
-          .attr("transform", "rotate(-65)");
     gmdmar_total_daily_svg.append("g")//Weekly Sunday vertical lines
         .attr("class", "axis axis-lines")
         .attr("transform", "translate(0," + gmdmar_total_daily_height + ")")
@@ -98,11 +93,6 @@ d3.json("data/gmdmar-total-daily.json", function(data) {
           .ticks(d3.timeWeek.every(1))
           .tickSize(-gmdmar_total_daily_height)
           .tickFormat(d3.timeFormat("")))
-        .selectAll("text")
-          .style("text-anchor", "end")
-          .attr("dx", "-.8em")
-          .attr("dy", ".15em")
-          .attr("transform", "rotate(-65)");
     gmdmar_total_daily_svg.append("g")//Weekly Sunday vertical lines
         .attr("class", "axis axis-major axis-lines")
         .attr("transform", "translate(0," + gmdmar_total_daily_height + ")")
