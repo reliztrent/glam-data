@@ -93,11 +93,12 @@ d3.json("data/gmdmar-total-daily.json", function(data) {
     gmdmar_total_daily_svg.append("g")//Weekly Sunday ticks
         .attr("class", "axis axis-lines")
         .attr("transform", "translate(0," + gmdmar_total_daily_height + ")")
+        .attr("stroke","none")
         .call(d3.axisBottom(x)
           .ticks(d3.timeWeek.every(1))
           .tickSize(-gmdmar_total_daily_height)
-          .tickFormat(d3.timeFormat("")))       
-        .selectAll("text") 
+          .tickFormat(d3.timeFormat("")))
+        .selectAll("text")
           .style("text-anchor", "end")
           .attr("dx", "-.8em")
           .attr("dy", ".15em")
@@ -107,7 +108,7 @@ d3.json("data/gmdmar-total-daily.json", function(data) {
         .attr("transform", "translate(0," + gmdmar_total_daily_height + ")")
         .call(d3.axisBottom(x)
           .ticks(d3.timeMonth.every(1))
-          .tickFormat(d3.timeFormat("%B %Y")))          
+          .tickFormat(d3.timeFormat("%b %Y")))          
         .selectAll("text")
           .style("text-anchor", "end")
           .attr("dx", "-.8em")
@@ -139,7 +140,7 @@ d3.json("data/gmdmar-total-daily.json", function(data) {
               .style("left", d3.event.pageX - 30 + "px")
               .style("top", d3.event.pageY - 40 + "px")
               .style("display", "inline-block")
-              .html((d.online));
+              .html((d.online+"\ntest"));
           })
           .on("mouseout", function(d){ tooltip.style("display", "none");});
 
