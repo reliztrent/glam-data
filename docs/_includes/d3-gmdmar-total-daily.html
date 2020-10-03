@@ -79,8 +79,19 @@ d3.json("data/gmdmar-total-daily.json", function(data) {
 
 
     // Add X Axis
-    gmdmar_total_daily_svg.append("g")
-        .attr("class", "axis")
+    gmdmar_total_daily_svg.append("g")//Daily ticks
+        .attr("class", "axis axis-minor")
+        .attr("transform", "translate(0," + gmdmar_total_daily_height + ")")
+        .call(d3.axisBottom(x)
+          .ticks(d3.timeDay.every(1))
+          .tickFormat(d3.timeFormat("")))          
+        .selectAll("text") 
+          .style("text-anchor", "end")
+          .attr("dx", "-.8em")
+          .attr("dy", ".15em")
+          .attr("transform", "rotate(-65)");
+    gmdmar_total_daily_svg.append("g")//Weekly Sunday ticks
+        .attr("class", "axis axis-major")
         .attr("transform", "translate(0," + gmdmar_total_daily_height + ")")
         .call(d3.axisBottom(x)
           .ticks(d3.timeWeek.every(1))
@@ -90,8 +101,8 @@ d3.json("data/gmdmar-total-daily.json", function(data) {
           .attr("dx", "-.8em")
           .attr("dy", ".15em")
           .attr("transform", "rotate(-65)");
-    gmdmar_total_daily_svg.append("g")
-        .attr("class", "axis")
+    gmdmar_total_daily_svg.append("g")//Monthly ticks and labels
+        .attr("class", "axis axis-major")
         .attr("transform", "translate(0," + gmdmar_total_daily_height + ")")
         .call(d3.axisBottom(x)
           .ticks(d3.timeMonth.every(1))
