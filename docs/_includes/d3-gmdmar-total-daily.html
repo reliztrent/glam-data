@@ -85,6 +85,9 @@ d3.json("data/gmdmar-total-daily.json", function(data) {
         .call(d3.axisBottom(x)
           .ticks(d3.timeWeek.every(1))
           .tickFormat(d3.timeFormat("%a %b %d")))
+        .call(d3.axisBottom(x)
+          .ticks(d3.timeMonth.every(1))
+          .tickFormat(d3.timeFormat("%a %B %d")))
           
         .selectAll("text") 
           .style("text-anchor", "end")
