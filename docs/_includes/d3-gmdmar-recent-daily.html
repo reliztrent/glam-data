@@ -37,10 +37,7 @@ var tooltip = d3.select("body").append("div").attr("class", "toolTip");
     })
 
   // X axis
-  var x = d3.scaleBand()
-    .range([ 0, gmdmar_recent_daily_width ])
-    .domain(data.map(function(d) { return d.facet; }))
-    .padding(0.2);
+    var x = d3.scaleTime().range([0, sanborn_not_online_daily_width]);
 
   gmdmar_recent_daily.append("g")
     .attr("transform", "translate(0," + gmdmar_recent_daily_height + ")")
