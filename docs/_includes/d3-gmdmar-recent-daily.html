@@ -43,6 +43,7 @@ var tooltip = d3.select("body").append("div").attr("class", "toolTip");
     .padding(0.2);
 
   var x_ticks = d3.scaleTime().range([0, gmdmar_recent_daily_width]);
+  console.log(x_ticks)
 
   gmdmar_recent_daily.append("g")
     .attr("transform", "translate(0," + gmdmar_recent_daily_height + ")")
