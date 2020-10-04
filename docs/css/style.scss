@@ -121,11 +121,11 @@ rect.pink:hover {
 }
 
 .axis-lines line {
-    stroke:white;
+    stroke:rgba(255, 255, 255, 0.5);
 }
 .axis-major.axis-lines line {
 	stroke-width: 3px;
-	stroke:rgba(255, 255, 255, 0.5);
+	stroke:rgba(255, 255, 255, 1);
 }
 .axis-lines .domain {
   stroke:none;
