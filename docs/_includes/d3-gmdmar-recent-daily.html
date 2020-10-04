@@ -62,10 +62,9 @@ var gmdmar_recent_daily = d3.select("#d3-gmdmar-recent-daily")
       .tickFormat(d3.timeFormat("%b %Y"))
     ) 
     .selectAll("text")
-      .style("text-anchor", "end")
-      .attr("dx", "-.8em")
-      .attr("dy", ".15em")
-      .attr("transform", "rotate(-45)")
+      .style("text-anchor", "middle")
+      .attr("dx", "0")
+      .attr("dy", "1.1em")
       .style("fill", function(d) {
         if(justDay(d) == 1){
             return 'black';
