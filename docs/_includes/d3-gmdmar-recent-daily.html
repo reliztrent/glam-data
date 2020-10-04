@@ -47,7 +47,7 @@ var tooltip = d3.select("body").append("div").attr("class", "toolTip");
 
   gmdmar_recent_daily.append("g")
     .attr("transform", "translate(0," + gmdmar_recent_daily_height + ")")
-    .call(d3.axisBottom(x)
+    .call(d3.axisBottom(x_ticks)
       .tickFormat(d3.timeFormat(""))
       .tickValues(data.map(function(d){return d.facet})))
   gmdmar_recent_daily.append("g")//Monthly ticks and labels
