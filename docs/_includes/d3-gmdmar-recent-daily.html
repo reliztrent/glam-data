@@ -60,8 +60,14 @@ var gmdmar_recent_daily = d3.select("#d3-gmdmar-recent-daily")
       //.ticks(d3.timeMonth.every(1))
       //.tickValues(data.map(function(d){return d.facet}))
       .tickFormat(d3.timeFormat("%b %Y"))
-      .tickSize(11)
-      ) 
+      .tickSize(function(d) {
+        if(justDay(d) == 1){
+            return 6;
+        } else {
+            return 0;
+        }
+      })
+    ) 
     .selectAll("text")
       .style("text-anchor", "end")
       .attr("dx", "-.8em")
