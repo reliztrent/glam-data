@@ -66,6 +66,8 @@ var gmdmar_recent_daily = d3.select("#d3-gmdmar-recent-daily")
       .attr("dy", ".15em")
       .attr("transform", "rotate(-45)")
       .style("fill", function(d) {
+        console.log(justDay(d.facet))
+        
         if(justDay(d.facet) == 0){
             return 'black';
         } else if(justDay(d.facet) < 2){
