@@ -58,21 +58,17 @@ var gmdmar_recent_daily = d3.select("#d3-gmdmar-recent-daily")
     .attr("transform", "translate(0," + gmdmar_recent_daily_height + ")")
     .call(d3.axisBottom(x)
       .ticks(d3.timeMonth.every(1))
-      .tickFormat(d3.timeFormat("%b"))) 
+      .tickFormat(d3.timeFormat("%b %Y"))) 
     .selectAll("text")
       .style("text-anchor", "end")
       .attr("dx", "-.8em")
       .attr("dy", ".15em")
       .attr("transform", "rotate(-45)")
       .style("fill", function(d) {
-        console.log(justDay(d))
-
-        if(justDay(d) == 0){
+        if(justDay(d) == 1){
             return 'black';
-        } else if(justDay(d) < 2){
-            return 'red';
         } else {
-            return 'purple';
+            return 'none';
         }
     });
 
