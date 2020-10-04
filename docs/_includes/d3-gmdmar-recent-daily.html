@@ -40,6 +40,18 @@ var gmdmar_recent_daily = d3.select("#d3-gmdmar-recent-daily")
     .range([ 0, gmdmar_recent_daily_width ])
     .domain(data.map(function(d) { return d.facet; }))
     .padding(0.2);
+    
+  // Y axis
+  var y = d3.scaleLinear()
+    .range([ gmdmar_recent_daily_height, 0])
+    .domain([0, d3.max(data, function(d) {
+          return Math.max(d.online); })+10]);
+    
+  // Scale the range of the data
+  x.domain(d3.extent(data, function(d) { return d.facet; })); //list of all facets
+  y.domain([d3.min(data, function(d) {
+    return Math.min(d.not_online); })-10, d3.max(data, function(d) {
+    return Math.max(d.not_online); })+10]); //structured to handle multiple lines
 
   var x_ticks = d3.scaleTime().range([0, gmdmar_recent_daily_width]);
   console.log(x_ticks)
@@ -61,11 +73,7 @@ var gmdmar_recent_daily = d3.select("#d3-gmdmar-recent-daily")
           .attr("dy", ".15em")
           .attr("transform", "rotate(-45)");
 
-  // Add Y axis
-  var y = d3.scaleLinear()
-    .domain([0, d3.max(data, function(d) {
-          return Math.max(d.online); })+10])
-    .range([ gmdmar_recent_daily_height, 0]);
+
   gmdmar_recent_daily.append("g")
     .call(d3.axisLeft(y));
 
