@@ -61,7 +61,7 @@ var gmdmar_recent_daily = d3.select("#d3-gmdmar-recent-daily")
       .style("text-anchor", "end")
       .attr("dx", "-.8em")
       .attr("dy", ".15em")
-      .attr("transform", "rotate(-45)");
+      .attr("transform", "rotate(-45)")
       .style("fill", function(d) {
         if(data[d].key == 0){
             return 'black';
@@ -70,7 +70,7 @@ var gmdmar_recent_daily = d3.select("#d3-gmdmar-recent-daily")
         } else {
             return 'green';
         }
-    })
+    });
 
 
   gmdmar_recent_daily.append("g")
