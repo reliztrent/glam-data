@@ -18,33 +18,34 @@ var gmdmar_recent_daily = d3.select("#d3-gmdmar-recent-daily")
   // Parse the Data
   d3.json("data/gmdmar-recent-daily.json", function(data) {
   
-      // parse the date / time
-    var parseTime = d3.timeParse("%Y-%m-%d");
+  // parse the date / time
+  var parseTime = d3.timeParse("%Y-%m-%d");
 
-    // format dates for tick text
-    var displayDate = d3.timeFormat("%a %b %d, %Y");
+  // format dates for tick text
+  var displayDate = d3.timeFormat("%a %b %d, %Y");
 
-    // set the ranges
-    var x = d3.scaleTime().range([0, sanborn_not_online_daily_width]);
-    var y = d3.scaleLinear().range([sanborn_not_online_daily_height, 0]);
-
-
-    // format the data
-    data.forEach(function(d) {
+  // format the data
+  data.forEach(function(d) {
         d.facet = parseTime(d.facet);
-        d.online = +d.not_online;
+        d.online = +d.online;
     });
 
-    // sort years ascending
-    data.sort(function(a, b){
+  // order the data
+  data.sort(function(a, b){
       return a["facet"]-b["facet"]; 
     })
 
-    // Scale the range of the data
-    x.domain(d3.extent(data, function(d) { return d.facet; })); //list of all facets
-    y.domain([d3.min(data, function(d) {
-      return Math.min(d.not_online); })-10, d3.max(data, function(d) {
-      return Math.max(d.not_online); })+10]); //structured to handle multiple lines
+  // X axis
+  var x = d3.scaleBand()
+    .range([ 0, gmdmar_recent_daily_width ])
+    .domain(data.map(function(d) { return d.facet; }))
+    .padding(0.2);
+
+  // Y axis
+  var y = d3.scaleLinear()
+    .range([ gmdmar_recent_daily_height, 0])
+    .domain([0, d3.max(data, function(d) {
+          return Math.max(d.online); })+4]);
   
   // Add X axis, ticks and labels
   gmdmar_recent_daily.append("g")
