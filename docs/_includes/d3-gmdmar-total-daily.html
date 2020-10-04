@@ -110,9 +110,9 @@ d3.json("data/gmdmar-total-daily.json", function(data) {
           .ticks(d3.timeMonth.every(1))
           .tickFormat(d3.timeFormat("%b %Y")))          
         .selectAll("text")
-          .style("text-anchor", "end")
+          .style("text-anchor", "middle")
           .attr("dx", "0")
-          .attr("dy", "1em");
+          .attr("dy", "1.1em");
 
     // Add line label(s)
     gmdmar_total_daily_svg.append("text")
