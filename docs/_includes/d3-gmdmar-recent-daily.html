@@ -62,6 +62,15 @@ var gmdmar_recent_daily = d3.select("#d3-gmdmar-recent-daily")
       .attr("dx", "-.8em")
       .attr("dy", ".15em")
       .attr("transform", "rotate(-45)");
+      .style("fill", function(d) {
+        if(data[d].key == 0){
+            return 'black';
+        } else if(data[d].key < 2){
+            return 'red';
+        } else {
+            return 'green';
+        }
+    })
 
 
   gmdmar_recent_daily.append("g")
