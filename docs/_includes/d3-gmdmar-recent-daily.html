@@ -47,28 +47,25 @@ var gmdmar_recent_daily = d3.select("#d3-gmdmar-recent-daily")
     .domain([0, d3.max(data, function(d) {
           return Math.max(d.online); })+4]);
   
-  // Testing  
-  var x_ticks = d3.scaleTime().range([0, gmdmar_recent_daily_width]);
-  console.log(x_ticks)
-
-
   // Add X axis, ticks and labels
   gmdmar_recent_daily.append("g")
+    .attr("class", "axis axis-minor")
     .attr("transform", "translate(0," + gmdmar_recent_daily_height + ")")
     .call(d3.axisBottom(x)
-      .tickFormat(d3.timeFormat(""))
-      .tickValues(data.map(function(d){return d.facet})))
+      .ticks(d3.timeDay.every(1))
+      .tickFormat(d3.timeFormat(""))) 
+
   gmdmar_recent_daily.append("g")//Monthly ticks and labels
-        .attr("class", "axis axis-major")
-        .attr("transform", "translate(0," + gmdmar_recent_daily_height + ")")
-        .call(d3.axisBottom(x)
-          .ticks(d3.timeMonth.every(1))
-          .tickFormat(d3.timeFormat("%b %Y")))
-        .selectAll("text")
-          .style("text-anchor", "end")
-          .attr("dx", "-.8em")
-          .attr("dy", ".15em")
-          .attr("transform", "rotate(-45)");
+    .attr("class", "axis axis-major")
+    .attr("transform", "translate(0," + gmdmar_recent_daily_height + ")")
+    .call(d3.axisBottom(x)
+      .ticks(d3.timeMonth.every(1))
+      .tickFormat(d3.timeFormat("%b %Y")))
+    .selectAll("text")
+      .style("text-anchor", "end")
+      .attr("dx", "-.8em")
+      .attr("dy", ".15em")
+      .attr("transform", "rotate(-45)");
 
 
   gmdmar_recent_daily.append("g")
