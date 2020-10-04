@@ -24,16 +24,7 @@ var gmdmar_recent_daily = d3.select("#d3-gmdmar-recent-daily")
   // format dates for tick text
   var displayDate = d3.timeFormat("%a %b %d, %Y");
 
-  // format the data
-  data.forEach(function(d) {
-        d.facet = parseTime(d.facet);
-        d.online = +d.online;
-    });
-
-  // order the data
-  data.sort(function(a, b){
-      return a["facet"]-b["facet"]; 
-    })
+  
 
   // X axis
   var x = d3.scaleBand()
@@ -46,6 +37,17 @@ var gmdmar_recent_daily = d3.select("#d3-gmdmar-recent-daily")
     .range([ gmdmar_recent_daily_height, 0])
     .domain([0, d3.max(data, function(d) {
           return Math.max(d.online); })+4]);
+
+  // format the data
+  data.forEach(function(d) {
+        d.facet = parseTime(d.facet);
+        d.online = +d.online;
+    });
+
+  // order the data
+  data.sort(function(a, b){
+      return a["facet"]-b["facet"]; 
+    })
   
   // Add X axis, ticks and labels
   gmdmar_recent_daily.append("g")
