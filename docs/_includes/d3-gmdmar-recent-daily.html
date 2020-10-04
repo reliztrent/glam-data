@@ -46,6 +46,8 @@ var gmdmar_recent_daily = d3.select("#d3-gmdmar-recent-daily")
     .range([ gmdmar_recent_daily_height, 0])
     .domain([0, d3.max(data, function(d) {
           return Math.max(d.online); })+4]);
+
+  console.log(data)
   
   // Add X axis, ticks and labels
   gmdmar_recent_daily.append("g")
@@ -53,7 +55,7 @@ var gmdmar_recent_daily = d3.select("#d3-gmdmar-recent-daily")
     .attr("transform", "translate(0," + gmdmar_recent_daily_height + ")")
     .call(d3.axisBottom(x)
       .ticks(d3.timeMonth.every(1))
-      .tickFormat(d3.timeFormat("%a %b %Y"))) 
+      .tickFormat(d3.timeFormat("%a %b %d"))) 
     .selectAll("text")
       .style("text-anchor", "end")
       .attr("dx", "-.8em")
