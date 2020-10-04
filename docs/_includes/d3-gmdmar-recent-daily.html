@@ -35,10 +35,11 @@ var gmdmar_recent_daily = d3.select("#d3-gmdmar-recent-daily")
       return a["facet"]-b["facet"]; 
     })
 
+  var x_domain = data.map(function(d) { return d.facet; })
   // X axis
   var x = d3.scaleBand()
     .range([ 0, gmdmar_recent_daily_width ])
-    .domain(data.map(function(d) { return d.facet; }))
+    .domain(x_domain)
     .padding(0.2);
 
   // Y axis
