@@ -7,9 +7,10 @@ layout: none
   {
     "new": "{{ file.pagination.of}}",
     "file": "{{ filename }}"
-  }
+  }{% if forloop.last == false %},{% endif %}
   {% endif %}
 {% endfor %}]
+]
 
 
 maps-loc-gov-facets-20201015-23.json
