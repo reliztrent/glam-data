@@ -1,0 +1,15 @@
+---
+layout: none
+---
+[{% for file in site.data.gmdmar-facets-daily %}
+  {% if file[0].size == 31 %}
+  {% assign filename = filename | push: file[0] %}
+  {
+    "new": "{{ file.pagination.of}}",
+    "file": "{{ filename }}"
+  }
+  {% endif %}
+{% endfor %}]
+
+
+maps-loc-gov-facets-20201015-23.json
