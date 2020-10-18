@@ -22,6 +22,8 @@ layout: none
 		    "results":[
 		    {% for result in file[1].results. %} 
 		     {
+		     	"id":"{{ result.id }}",
+		     	"title": "{{ result.title }}",
 		     	"number_source_modified":"{{ result.number_source_modified[0] }}",
 		     	"timestamp":"{{ result.timestamp }}",
 		     	"extract_timestamp": "{{ result.extract_timestamp }}"
