@@ -3,14 +3,10 @@ layout: none
 ---
 [{% for file in site.data.gmdmar-facets-daily %}
   {% if file[0].size == 31 %}
-  {% assign filename = filename | push: file[0] %}
   {
-    "new": "{{ file.pagination.of}}",
-    "file": "{{ filename }}"
+    "new": "{{ file[1].pagination.of}}",
+    "file": "{{ file[0] }}"
   }{% if forloop.last == false %},{% endif %}
   {% endif %}
 {% endfor %}]
 ]
-
-
-maps-loc-gov-facets-20201015-23.json
