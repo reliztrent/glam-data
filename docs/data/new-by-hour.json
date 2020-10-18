@@ -3,7 +3,7 @@ layout: none
 ---
 
 {% assign filenames = '' | split: ',' %}
-{% for file in site.data.gmdmar-facets-dailyy %}
+{% for file in site.data.gmdmar-facets-daily %}
 	{% if file[0].size == 31 %}
 	{% if file[1].pagination.of > 0 %}
 	 {% assign filenames = filenames | push: file[0] %}
