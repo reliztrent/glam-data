@@ -2,6 +2,8 @@ name: New gmd.mar updates
 on:
   schedule:
       - cron: '15 19 * * 0' 
+  push:
+    branches: master
 jobs:
   refresh-feed:
     runs-on: ubuntu-latest
