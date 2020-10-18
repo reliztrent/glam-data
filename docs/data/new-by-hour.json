@@ -10,9 +10,9 @@ layout: none
   },
   {% endif %}
   {% endif %}
+{% endfor %}
   {
   	"new":"",
     "file":""
   }
-{% endfor %}
 ]
