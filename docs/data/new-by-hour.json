@@ -14,8 +14,7 @@ layout: none
 
 
 [{% for filename in sorted_filenames %}
-	{{filename}}
-	{% for file in site.data.map-facets-daily %}
+	{% for file in site.data.gmdmar-facets-daily %}
 		{% if file[0] == filename %}
 		  {
 		    "new": "{{ file[1].pagination.of}}",
