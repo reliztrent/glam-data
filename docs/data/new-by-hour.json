@@ -22,7 +22,6 @@ layout: none
 		    "results": 
 		    	{{ file[0].results }}
 		  }{% endif %}{% endfor %},
-	}
 {% endfor %}
 {}
 ]
