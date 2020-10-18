@@ -1,18 +1,26 @@
 ---
 layout: none
 ---
-[{% for file in site.data.gmdmar-facets-daily %}
-  {% if file[0].size == 31 %}
-  {% if file[1].pagination.of > 0 %}
-  {
-    "new": "{{ file[1].pagination.of}}",
-    "file": "{{ file[0] }}"
-  },
-  {% endif %}
-  {% endif %}
+
+{% assign filenames = '' | split: ',' %}
+{% for file in site.data.gmdmar-facets-dailyy %}
+	{% if file[0].size == 31 %}
+	{% if file[1].pagination.of > 0 %}
+	 {% assign filenames = filenames | push: file[0] %}
+	{% endif %}
+	{% endif %}
 {% endfor %}
-  {
-  	"new":"",
-    "file":""
-  }
+{% assign sorted_filenames  = filenames | sort | reverse %}
+
+
+[{% for filename in sorted_filenames %}
+	{% for file in site.data.map-facets-daily %}
+	{% if file[0] == filename %}
+	  {
+	    "new": "{{ file[1].pagination.of}}",
+	    "file": "{{ file[0] }}",
+	    "results": 
+	    	{{ file[0].results }}
+	  }{% endif %}{% endfor %}{% if forloop.last == false %},{% endif %}
+{% endfor %}
 ]
