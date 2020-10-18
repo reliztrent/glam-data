@@ -7,8 +7,12 @@ layout: none
   {
     "new": "{{ file[1].pagination.of}}",
     "file": "{{ file[0] }}"
-  }{% if forloop.last == false %},{% endif %}
+  },
   {% endif %}
   {% endif %}
+  {
+  	"new":"",
+    "file":""
+  }
 {% endfor %}
 ]
