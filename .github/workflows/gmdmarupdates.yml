@@ -1,7 +1,7 @@
 name: New gmd.mar updates
 on:
   schedule:
-      - cron: '46 * * * *' 
+      - cron: '10 15 * * 0' 
 jobs:
   refresh-feed:
     runs-on: ubuntu-latest
@@ -14,23 +14,23 @@ jobs:
       - name: Set TIMESTAMP env
         run: echo ::set-env name=TIMESTAMP::$(date -d "4 hours ago" +"%Y%m%d-%H") #offset from UTC
       - name: Set TODAY env
-        run: echo ::set-env name=TODAY::$(date -d "1 day ago" +"%Y-%m-%d") #offset due to timing of catalog/P1 updates 
+        run: echo ::set-env name=TODAY::$(date -d "4 hours ago" +"%Y-%m-%d") #offset due to timing of catalog/P1 updates 
       - name: Set YESTERDAY env
-        run: echo ::set-env name=YESTERDAY::$(date -d "2 days ago" +"%Y-%m-%d") #offset due to timing of catalog/P1 updates 
+        run: echo ::set-env name=LASTSUNDAY::$(date -d "172 hours ago" +"%Y-%m-%d") #offset due to timing of catalog/P1 updates 
   
       - name: Fetch API Data - ${{ env.TIMESTAMP }}📦
         uses: JamesIves/fetch-api-data-action@1.0.15
         with:
-          ENDPOINT: https://www.loc.gov/search/?all=true&sb=shelf-id&sq=group:gmd.mar+AND+number_source_modified:[${{ env.YESTERDAY }} TO ${{ env.TODAY }}]&fo=json
+          ENDPOINT: https://www.loc.gov/search/?all=true&sb=shelf-id&sq=group:gmd.mar+AND+number_source_modified:[${{ env.LASTSUNDAY }} TO ${{ env.TODAY }}]&fo=json
           RETRY: true
           SAVE_NAME: maps-loc-gov-facets-${{ env.TIMESTAMP }}
           
       - name: Fetch API Data - TODAY 📦
         uses: JamesIves/fetch-api-data-action@1.0.15
         with:
-          ENDPOINT: https://www.loc.gov/search/?all=true&sb=shelf-id&sq=group:gmd.mar+AND+number_source_modified:[${{ env.YESTERDAY }} TO ${{ env.TODAY }}]&fo=json
+          ENDPOINT: https://www.loc.gov/search/?all=true&sb=shelf-id&sq=group:gmd.mar+AND+number_source_modified:[${{ env.LASTSUNDAY }} TO ${{ env.TODAY }}]&fo=json
           RETRY: true
-          SAVE_NAME: maps-loc-gov-facets-TODAY
+          SAVE_NAME: maps-loc-gov-facets-THISWEEK
           
       - name: Build and Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@releases/v3
