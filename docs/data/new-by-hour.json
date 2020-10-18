@@ -8,5 +8,5 @@ layout: none
     "file": "{{ file[0] }}"
   }{% if forloop.last == false %},{% endif %}
   {% endif %}
-{% endfor %}]
+{% endfor %}
 ]
