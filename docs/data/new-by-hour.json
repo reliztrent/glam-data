@@ -19,8 +19,15 @@ layout: none
 		  {
 		    "new": "{{ file[1].pagination.of}}",
 		    "file": "{{ file[0] }}",
-		    "results": 
-		    	{{ file[0].results }}
+		    "results":[
+		    {% for result in file[1].results. %} 
+		     {
+		     	"number_source_modified":"{{ result.number_source_modified[0] }}",
+		     	"timestamp":"{{ result.timestamp }}",
+		     	"extract_timestamp": "{{ result.extract_timestamp }}"
+		     }{% if forloop.last == false %},{% endif %}
+		    {% endfor %}
+			]
 		  }{% endif %}{% endfor %},
 {% endfor %}
 {}
