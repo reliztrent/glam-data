@@ -14,13 +14,16 @@ layout: none
 
 
 [{% for filename in sorted_filenames %}
+	{{filename}}
 	{% for file in site.data.map-facets-daily %}
-	{% if file[0] == filename %}
-	  {
-	    "new": "{{ file[1].pagination.of}}",
-	    "file": "{{ file[0] }}",
-	    "results": 
-	    	{{ file[0].results }}
-	  }{% endif %}{% endfor %}{% if forloop.last == false %},{% endif %}
+		{% if file[0] == filename %}
+		  {
+		    "new": "{{ file[1].pagination.of}}",
+		    "file": "{{ file[0] }}",
+		    "results": 
+		    	{{ file[0].results }}
+		  }{% endif %}{% endfor %},
+	}
 {% endfor %}
+{}
 ]
