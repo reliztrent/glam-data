@@ -4,8 +4,6 @@
 name: Log 7 days of gmd.mar updates
 
 on:
-  push:
-    branches: master
   schedule:
     - cron: "0 7 * * *"
 jobs:
@@ -57,5 +55,5 @@ jobs:
         git config --global user.email "[bot@github.com]"
         git add .
         # "echo" returns true so the build succeeds, even if no changed files
-        git commit -m 'Update generated files' || echo
+        git commit -m 'Deploying from mod-gmdmar.yml 🚀' || echo
         git push
