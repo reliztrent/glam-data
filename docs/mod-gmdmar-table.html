@@ -49,7 +49,7 @@ title: GMD.MAR modified item list
 				    {% endfor %}
 				    </td>
 				    <td>
-				    	{{result.item.digital_id}}
+				    	{{result.item}}
 				    {% for hdl in result.item.digital_id %}
 				    {{ hdl | default: "not found"}}{% if forloop.last == false %}<br>{% endif %}
 				    {% endfor %}
