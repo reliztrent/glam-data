@@ -69,7 +69,7 @@ def json_output(items,directory,end_date):
     new.drop('_merge', axis=1, inplace=True)
     #Save new items to json file
     new.to_json(
-        directory + '/new_gmdmar_items_' + end_date + '.json', 
+        directory + '/new_gmdmar_daily_' + end_date + '.json', 
         orient='records'
         )
     #Update the baseline file with new items and updated metadata on mod'd items
