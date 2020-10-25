@@ -5,6 +5,7 @@ title: GMD.MAR modified items
 <div class="container-fluid p-4">
 	<div class="row">
 		<div class="col-md-12">
+			<h1 class="h0">{{ page.title }}</h1>
 			<table class="table">
 				<thead>
 				  <tr>
@@ -18,8 +19,15 @@ title: GMD.MAR modified items
 				  </tr>
 				</thead>
 				<tbody>
-
+{% assign filenames = '' | split: ',' %}
 {% for file in site.data.mod-gmdmar-daily %}
+	{% if file[0].size == 25 %}
+	 {% assign filenames = filenames | push: file[0] %}
+	{% endif %}
+{% endfor %}
+{% assign sorted_filenames  = filenames | sort | reverse %}
+
+{% for file in sorted_filenames %}
  {% if file[0].size == 25 %}
   {% for result in file[1].results %}
    {% assign year = file[0] | slice: -8, 4 %}
