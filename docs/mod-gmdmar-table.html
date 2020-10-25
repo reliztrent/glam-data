@@ -26,13 +26,16 @@ title: GMD.MAR modified items
 	{% endif %}
 {% endfor %}
 {% assign sorted_filenames  = filenames | sort | reverse %}
+sorted_filenames
 
 {% for file in sorted_filenames %}
- {% if file[0].size == 25 %}
-  {% for result in file[1].results %}
-   {% assign year = file[0] | slice: -8, 4 %}
-   {% assign month = file[0] | slice: -4, 2 %}
-   {% assign day = file[0] | slice: -2, 2 %}
+ {% for file in site.data.sanborn-facets-daily %}
+  {% if file[0] == filename %}
+	 {% if file[0].size == 25 %}
+	  {% for result in file[1].results %}
+	   {% assign year = file[0] | slice: -8, 4 %}
+	   {% assign month = file[0] | slice: -4, 2 %}
+	   {% assign day = file[0] | slice: -2, 2 %}
 				  <tr>
 				    <td>{{ result.id | default: ""}}</td>
 				    <td>{{ result.title | default: ""}}</td>
@@ -57,8 +60,10 @@ title: GMD.MAR modified items
 				    </td>
 				  </tr>		
 
+	  {% endfor %}
+	 {% endif %}
+   {% endif %}
   {% endfor %}
- {% endif %}
 {% endfor %}
 				</tbody>
 			</table>
