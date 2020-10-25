@@ -14,7 +14,6 @@ title: GMD.MAR modified item list
 				    <th>date</th>
 				    <th>bibliographic record modified</th>
 				    <th>call number</th>
-				    <th>persistent URL</th>
 				    <th>thumbnail</th>
 				  </tr>
 				</thead>
@@ -46,12 +45,6 @@ title: GMD.MAR modified item list
 				    <td>
 				    {% for call_number in result.item.call_number %}
 				    {{ call_number | default: ""}}{% if forloop.last == false %}<br>{% endif %}
-				    {% endfor %}
-				    </td>
-				    <td>
-				    	{{result.item}}
-				    {% for hdl in result.item.digital_id %}
-				    {{ hdl | default: "not found"}}{% if forloop.last == false %}<br>{% endif %}
 				    {% endfor %}
 				    </td>
 				    <td>

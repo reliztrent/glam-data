@@ -67,7 +67,7 @@ def main(argv):
     try:
         opts, args = getopt.getopt(argv,"hs:e:d:",["start=","end=","directory="])
     except getopt.GetoptError:
-        print ('loc_json.py -s <start_date (YYYY-MM-DD)> -e <end_date (YYYY-MM-DD)> -d <directory>')
+        print ('mod-gmdmar.py -s <start_date (YYYY-MM-DD)> -e <end_date (YYYY-MM-DD)> -d <directory>')
         sys.exit(2)
     for opt, arg in opts:
         if opt == '-h':
