@@ -30,8 +30,9 @@ title: GMD.MAR modified item list
 
 {% for filenames in sorted_filenames %}
  {% for file in site.data.mod-gmdmar-daily %}
- 	<p>{{file}}</p>
+ 	<p>{{file[0]}}</p>
   {% if file[0] == filename %}
+  	<p>match</p>
 	  {% for result in file[1].results %}
 	   {% assign year = file[0] | slice: -8, 4 %}
 	   {% assign month = file[0] | slice: -4, 2 %}
