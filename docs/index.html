@@ -41,13 +41,13 @@ title: Maps Dashboard
 
 	<div class="row">
 		<div class="col-md-4 p-1">
-			<div class="card card-mini blue mb-2">
+			<div id="card-gmdmar-total-daily"class="card card-mini blue mb-2">
 				<a href="https://github.com/{{ site.github_username }}/{{ site.baseurl }}/tree/master/docs/_data/gmdmar-facets-daily" class="data_download"></a>
 				<h3>Online GMD.MAR Objects</h3>
 				<div id="d3-gmdmar-total-daily" class="svg-container"></div>
 				<p class="small">Beginning Sept 20, this number includes gmd.mar items that are not maps.</p>
 			</div>
-			<div class="card card-mini blue mb-2">
+			<div id="card-mod-gmdmar-daily" class="card card-mini blue mb-2">
 				<a href="https://github.com/{{ site.github_username }}/{{ site.baseurl }}/tree/master/docs/_data/gmdmar-recent-daily" class="data_download"></a>
 				<h3>GMD.MAR Objects Modified</h3>
 				<div id="d3-mod-gmdmar-daily" class="svg-container"></div>
@@ -60,24 +60,24 @@ title: Maps Dashboard
 		</div>
 
 		<div class="col-md-4 p-1">
-			<div class="card card-mini orange mb-2">
+			<div id="card-maps-online-donut" class="card card-mini orange mb-2">
 				<a href="https://github.com/{{ site.github_username }}/{{ site.baseurl }}/tree/master/docs/_data/map-facets-daily" class="data_download"></a>
 				<h3>Map Objects: Online vs. Not Online</h3>
 				<div id="d3-maps-online-donut" class="svg-container"></div>
 			</div>
-			<div class="card card-mini orange mb-2">
+			<div id="card-maps-online-daily" class="card card-mini orange mb-2">
 				<a href="https://github.com/{{ site.github_username }}/{{ site.baseurl }}/tree/master/docs/_data/map-facets-daily" class="data_download"></a>
 				<span id="total_online_maps" class="h3 pop"></span>
 				<h3>Online Map Objects</h3>
 				<div id="d3-maps-online-daily" class="svg-container"></div>
 			</div>
-			<div class="card card-mini orange mb-2">
+			<div id="card-maps-not-online-daily"  class="card card-mini orange mb-2">
 				<a href="https://github.com/{{ site.github_username }}/{{ site.baseurl }}/tree/master/docs/_data/map-facets-daily" class="data_download"></a>
 				<span id="total_notonline_maps" class="h3 pop"></span>
 				<h3>Bibliographic Map Records (not online)</h3>
 				<div id="d3-maps-not-online-daily" class="svg-container"></div>
 			</div>
-			<div class="card card-mini orange mb-2">
+			<div id="card-maps-partof" class="card card-mini orange mb-2">
 				<a href="https://github.com/{{ site.github_username }}/{{ site.baseurl }}/tree/master/docs/_data/map-facets-daily" class="data_download"></a>
 				<h3>Online Map Objects, by Collection</h3>
 				<p class="subtitle">Objects can belong in more than one collection. "Collection" = "Part Of"</p>
@@ -86,18 +86,18 @@ title: Maps Dashboard
 		</div>
 
 		<div class="col-md-4 p-1">
-			<div class="card card-mini pink mb-2">
+			<div id="card-sanborn-online-donut" class="card card-mini pink mb-2">
 				<a href="https://github.com/{{ site.github_username }}/{{ site.baseurl }}/tree/master/docs/_data/sanborn-facets-daily" class="data_download"></a>
 				<h3>Sanborn Objects: Online vs Not Online</h3>
 				<div id="d3-sanborn-online-donut" class="svg-container"></div>
 			</div>
-			<div class="card card-mini pink mb-2">
+			<div id="card-sanborn-total-daily" class="card card-mini pink mb-2">
 				<!--<span id="total_online_sanborns" class="h3 pop"></span>-->
 				<a href="https://github.com/{{ site.github_username }}/{{ site.baseurl }}/tree/master/docs/_data/sanborn-facets-daily" class="data_download"></a>
 				<h3>Sanborn Objects Online</h3>
 				<div id="d3-sanborn-total-daily" class="svg-container"></div>
 			</div>
-			<div class="card card-mini pink mb-2">
+			<div id="card-sanborn-not-online-daily" class="card card-mini pink mb-2">
 				<a href="https://github.com/{{ site.github_username }}/{{ site.baseurl }}/tree/master/docs/_data/sanborn-facets-daily" class="data_download"></a>
 				<h3>Sanborn Object Records (not online)</h3>
 				<div id="d3-sanborn-not-online-daily" class="svg-container"></div>
