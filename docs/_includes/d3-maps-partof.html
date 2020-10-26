@@ -16,7 +16,10 @@ var maps_partof = d3.select("#d3-maps-partof")
 
 // Parse the Data
 d3.json("data/all-facet-partof.json", function(data) {
-  
+
+// Set tooltip variable
+var tooltip = d3.select("body").append("div").attr("class", "toolTip")
+
 
 // X axis
 var x = d3.scaleBand()
