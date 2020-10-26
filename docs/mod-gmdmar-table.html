@@ -46,7 +46,7 @@ title: GMD.MAR modified item list
 					    {% endfor %}
 					    </td>
 					    <td>
-					    <img src="{{ result.resources[0].image }}">
+					    <img alt="thumbnail image of item" src="{{ result.resources[0].image | default:""}}">
 					    </td>
 					  </tr>		
 
