@@ -1,7 +1,9 @@
 <script>
 $('.sidebar .nav-link').click(function(){
-    $('.navbar-nav .nav-link').removeClass('active');
+    $('.sidebar .nav-link').removeClass('active');
     $(this).addClass('active');
+    var location = window.location.href;
+    console.log(location)
 })
 
 </script>
