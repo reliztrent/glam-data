@@ -92,7 +92,7 @@ title: Maps Dashboard
 				<div id="d3-sanborn-online-donut" class="svg-container"></div>
 			</div>
 			<div id="card-sanborn-total-daily" class="card card-mini pink mb-2">
-				<!--<span id="total_online_sanborns" class="h3 pop"></span>-->
+				<span id="total_online_sanborns" class="h3 pop"></span>
 				<a href="https://github.com/{{ site.github_username }}/{{ site.baseurl }}/tree/master/docs/_data/sanborn-facets-daily" class="data_download"></a>
 				<h3>Sanborn Objects Online</h3>
 				<div id="d3-sanborn-total-daily" class="svg-container"></div>
@@ -155,18 +155,18 @@ title: Maps Dashboard
 
 	var total_online_maps = {{site.data.map-facets-daily.map-facets-TODAY.facets[0].filters[0].count | default: 0}};
 	total_online_maps_formatted = Number(total_online_maps).toLocaleString('en');
-	document.getElementById('total_online_maps').insertAdjacentHTML("afterbegin", total_online_maps_formatted);
+	//document.getElementById('total_online_maps').insertAdjacentHTML("afterbegin", total_online_maps_formatted);
 
 	var total_notonline_maps = {{site.data.map-facets-daily.map-facets-TODAY.facets[0].filters[1].count | default: 0}};
 	total_notonline_maps_formatted = Number(total_notonline_maps).toLocaleString('en');
-	document.getElementById('total_notonline_maps').insertAdjacentHTML("afterbegin", total_notonline_maps_formatted);
+	//document.getElementById('total_notonline_maps').insertAdjacentHTML("afterbegin", total_notonline_maps_formatted);
 
 	var total_online_sanborns = {{site.data.sanborn-facets-daily.sanborn-facets-TODAY.facets[0].filters[0].count | default: 0}};
 	total_online_sanborns_formatted = Number(total_online_sanborns).toLocaleString('en');
-	document.getElementById('total_online_sanborns').insertAdjacentHTML("afterbegin", total_online_sanborns_formatted);
+	//document.getElementById('total_online_sanborns').insertAdjacentHTML("afterbegin", total_online_sanborns_formatted);
 
-	//var total_notonline_sanborns = {{site.data.sanborn-facets-daily.sanborn-facets-TODAY.facets[0].filters[1].count | default: 0}};
-	//total_notonline_sanborns_formatted = Number(total_notonline_sanborns).toLocaleString('en');
+	var total_notonline_sanborns = {{site.data.sanborn-facets-daily.sanborn-facets-TODAY.facets[0].filters[1].count | default: 0}};
+	total_notonline_sanborns_formatted = Number(total_notonline_sanborns).toLocaleString('en');
 	//document.getElementById('total_notonline_sanborns').insertAdjacentHTML("afterbegin", total_notonline_sanborns_formatted);
 
 </script>
