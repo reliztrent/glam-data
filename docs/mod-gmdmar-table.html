@@ -33,7 +33,7 @@ title: GMD.MAR modified item list
 	   {% assign day = file[0] | slice: -2, 2 %}
 					  <tr>
 					    <td><a href="{{ result.id | default: ""}}">{{ result.id | default: ""}}</a></td>
-					    <td>{{ result.title | default: ""}}</td>
+					    <td>{{ result.title | slice: 0, 10 | default: ""}}</td>
 					    <td>{{ result.date | defailt: ""}}</td>
 					    <td>
 					    {% for date in  result.number_source_modified %}
