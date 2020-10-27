@@ -16,19 +16,7 @@ $('main').append(emptyModal);
 
 $('.zoom').hover(function(){
 	$(this).attr('data-target','zoomModal');
-});
-
-$('.zoom').click(function(){
 	var modalCard = document.getElementById('zoomModal');
 	var card = $(this).closest(".card");
 	card.clone().appendTo( '#zoomModal');
-	modalCard.style.display = "block";
 });
-
-window.onclick = function(event) {
-  var modalCard = document.getElementById('zoomModal');
-  if (event.target == modalCard) {
-    modalCard.style.display = "none";
-  }
-  modalCard.empty();
-}
