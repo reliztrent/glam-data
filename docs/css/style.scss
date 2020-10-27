@@ -205,24 +205,24 @@ rect.pink:hover {
  */
 
 @keyframes shadowPulse {
-    0% {
-        box-shadow:0 0.125rem 0.25rem rgba(0,0,0,0.05);
-    }
-
-    50% {
-        box-shadow: 0px 0px 2rem #007bff;
-    }
-
-    100% {
-        box-shadow:0 0.125rem 0.25rem rgba(0,0,0,0.05);
-    }
+	0% {
+		box-shadow:0 0.125rem 0.25rem rgba(0,0,0,0.05)
+	}
+	30% {
+		box-shadow:0px 0px 1.5rem #52d0e0;
+	}
+	50% {
+		box-shadow:0px 0px 1.5rem #52d0e0;
+	}
+	100% {
+		box-shadow:0 0.125rem 0.25rem rgba(0,0,0,0.05)
+	}
 }
-
 .glow {
-    animation-name: shadowPulse;
-    animation-duration: 4s;
-    animation-iteration-count: 1;
-    animation-timing-function: linear;
+	animation-name:shadowPulse;
+	animation-duration:3s;
+	animation-iteration-count:1;
+	animation-timing-function:linear
 }
 
 /*
