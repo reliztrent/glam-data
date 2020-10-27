@@ -2,7 +2,7 @@
 $('.sidebar .nav-link').click(function(){
     $('.sidebar .nav-link').removeClass('active');
     $(this).addClass('active');
-    var anchor_href = this.attr("href");
+    var anchor_href = $(this).attr("href");
     var anchor = anchor_href[anchor_href.split('#').length-1];
     $("#anchor").addClass("glow");
     console.log(anchor);
