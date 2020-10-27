@@ -15,8 +15,7 @@ var emptyModal = $('<div id="zoomModal" class="modal fade" role="dialog" tabinde
 $('main').append(emptyModal);
 
 $('.zoom').hover(function(){
-	var modalCard = ('#zoomModal');
-	modalCard.empty();
+	$('#zoomModal').empty();
 	var card = $(this).closest(".card");
-	card.clone().appendTo( '#zoomModal');
+	card.clone().replaceWith( '#zoomModal');
 });
