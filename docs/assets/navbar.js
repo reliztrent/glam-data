@@ -15,14 +15,14 @@ var emptyModal = $('<div id="zoomModal" class="modal"></div>');
 $('main').append(emptyModal);
 
 $('.zoom').click(function(){
-	var modalCard = $('#zoomModal');
+	var modalCard = document.getElementById('zoomModal');
 	var card = $(this).closest(".card");
 	card.clone().appendTo( '#zoomModal');
 	modalCard.style.display = "block";
 })
 
 window.onclick = function(event) {
-  var modalCard = $('#zoomModal');
+  var modalCard = document.getElementById('zoomModal');
   if (event.target == modal) {
     modalCard.style.display = "none";
   }
