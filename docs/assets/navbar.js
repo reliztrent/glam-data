@@ -23,7 +23,7 @@ $('.zoom').click(function(){
 
 window.onclick = function(event) {
   var modalCard = document.getElementById('zoomModal');
-  if (event.target == modal) {
+  if (event.target == modalCard) {
     modalCard.style.display = "none";
   }
   modalCard.empty();
