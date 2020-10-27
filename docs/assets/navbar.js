@@ -18,13 +18,13 @@ $('.zoom').click(function(){
 	var modalCard = $('#zoomModal');
 	var card = $(this).closest(".card");
 	card.clone().appendTo( '#zoomModal');
-	modal.style.display = "block";
+	modalCard.style.display = "block";
 })
 
 window.onclick = function(event) {
   var modalCard = $('#zoomModal');
   if (event.target == modal) {
-    modal.style.display = "none";
+    modalCard.style.display = "none";
   }
   modalCard.empty();
 }
