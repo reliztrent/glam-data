@@ -11,10 +11,10 @@ $('.sidebar .nav-link').click(function(){
 
 /* zoom modals
 */
-var emptyModal = $('<div id="zoomModal" class="modal fade" role="dialog" tabindex=><button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button></div>');
+var emptyModal = $('<div id="zoomModal" class="modal fade" role="dialog" tabindex=></div>');
 $('main').append(emptyModal);
 
 $('.zoom').hover(function(){
 	var card = $(this).closest(".card").clone();
-	$('#zoomModal').html($(card).clone());
+	$('#zoomModal .modal-body').html($(card).clone());
 });
