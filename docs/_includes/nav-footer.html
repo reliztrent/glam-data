@@ -5,7 +5,8 @@ $('.sidebar .nav-link').click(function(){
     var anchor = anchor_href.split('#')[anchor_href.split('#').length-1];
     var anchor_id = $('#' + anchor);
     anchor_id.addClass('glow');
-    console.log(anchor);
-    console.log(anchor_href);
+    setTimeout(function () {
+        anchor_id.removeClass('glow');
+    }, 5000);
 })
 </script>
