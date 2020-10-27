@@ -26,5 +26,5 @@ window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
-  $(#zoomModal).empty();
+  modalCard.empty();
 }
