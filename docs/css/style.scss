@@ -42,7 +42,6 @@ h1.pop, h2.pop, h3.pop, h4.pop, .pop {
 	border-radius: 0.25rem;
 	padding: 1.75rem;
 	box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.05);
-	scroll-margin-top:2rem;
 }
 
 /*
@@ -198,6 +197,10 @@ rect.pink:hover {
 
 .sidebar-heading {
   font-size: .75rem;
+}
+
+.card {
+  scroll-margin-top:2rem;
 }
 
 /*
