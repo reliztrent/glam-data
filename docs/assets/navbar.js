@@ -46,7 +46,7 @@ $('.zoom').click(function(){
 	$(this).hide();
 });
 
-$('.card-close').child('span').click(function(){
+$('.card-close').children('span').click(function(){
 	/* get parent card */
 	var card = $(this).closest(".card");
 	/* remove zoom properites */
