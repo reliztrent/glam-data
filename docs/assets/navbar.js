@@ -14,7 +14,7 @@ $('.sidebar .nav-link').click(function(){
 var emptyModal = $('<div id="zoomModal" class="modal fade" role="dialog" tabindex=></div>');
 $('main').append(emptyModal);
 
-$('.zoom').focus(function(){
+$('.zoom').click(function(){
 	var card = $(this).closest(".card").clone();
 	$('#zoomModal .modal-body').html($(card).clone());
 });
