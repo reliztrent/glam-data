@@ -49,6 +49,7 @@ $('.zoom').click(function(){
 $('.card-close').children('span').click(function(){
 	/* get parent card */
 	var card = $(this).closest(".card");
+	console.log(card)
 	/* remove zoom properites */
 	$(card)
 		.css('width','')
