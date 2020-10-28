@@ -16,5 +16,5 @@ $('main').append(emptyModal);
 
 $('.zoom').click(function(){
 	var card = $(this).closest(".card").clone();
-	$('#zoomModal .modal-body').html($(card).clone());
+	$('#zoomModal .modal-body').append($(card).clone());
 });
