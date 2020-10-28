@@ -16,5 +16,7 @@ $('main').append(emptyModal);
 
 $('.zoom').click(function(){
 	var card = $(this).closest(".card");
-	$('#zoomModal .modal-body').html($(card));
+	var id = $(card).attr('id');
+	$(card).attr("id","_"+id);
+	$('#zoomModal .modal-body').html($(card.clone()));
 });
