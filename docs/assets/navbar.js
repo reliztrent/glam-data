@@ -43,21 +43,22 @@ $('.zoom').click(function(){
 	      '</div>'
 	      );
 	/* remove the zoom button */
+	$(this).hide();
 
+	$('.card-close').children('span').click(function(){
+	/* get parent card */
+		var card = $(this).closest(".card");
+		console.log(card)
+		/* remove zoom properites */
+		$(card)
+			.css('width','')
+			.css('position','')
+			.css('left','')
+			.css('z-index','')
+			.css('top','');
+	    /* remove close btn and restore zoom btn */
+		$(card).children('.modal-header').remove();
+		$(card).children('.zoom').show();
+	})
 });
 
-$('.card-close').children('span').click(function(){
-	/* get parent card */
-	var card = $(this).closest(".card");
-	console.log(card)
-	/* remove zoom properites */
-	$(card)
-		.css('width','')
-		.css('position','')
-		.css('left','')
-		.css('z-index','')
-		.css('top','');
-    /* remove close btn and restore zoom btn */
-	$(card).children('.modal-header').remove();
-	$(card).children('.zoom').show();
-})
