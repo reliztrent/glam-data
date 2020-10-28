@@ -15,6 +15,6 @@ var emptyModal = $('<div id="zoomModal" class="modal fade" role="dialog" tabinde
 $('main').append(emptyModal);
 
 $('.zoom').click(function(){
-	var card = $(this).closest(".card").clone();
-	$('#zoomModal .modal-body').append($(card).clone());
+	var card = $(this).closest(".card");
+	$('#zoomModal .modal-body').html($(card));
 });
