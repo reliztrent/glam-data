@@ -24,9 +24,15 @@ a {
 	text-decoration:underline dotted;
 }
 
+
 a:hover {
 	color:#007bff;
 	text-decoration:underline;
+}
+
+a.zoom:hover svg, a.data-download:hover svg {
+	fill:#000;
+  cursor: pointer;
 }
 
 h2.subtle {
