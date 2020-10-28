@@ -37,7 +37,7 @@ $('.zoom').click(function(){
     /* add a close button */
 	$(card).prepend(
 		  '<div class="modal-header">'+
-	        '<button type="button" class="close card-close" aria-label="Close">'+
+	        '<button type="button" class="close card-close p-0" aria-label="Close">'+
 	          '<span aria-hidden="true">×</span>'+
 	        '</button>'+
 	      '</div>'
