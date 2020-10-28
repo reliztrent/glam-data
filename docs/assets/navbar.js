@@ -43,7 +43,7 @@ $('.zoom').click(function(){
 	      '</div>'
 	      );
 	/* remove the zoom button */
-	$(card).children('.zoom').hide();
+	$(this).hide();
 });
 
 $('.card-close').child('span').click(function(){
