@@ -42,8 +42,8 @@ $('.zoom').click(function(){
 	        '</button>'+
 	      '</div>'
 	      );
-	/* remove the zoom button */
-	$(this).hide();
+	/* remove the top-right buttons */
+	$(this).closest('div.top-right').hide();
 
 	$('.card-close').children('span').click(function(){
 	/* get parent card */
@@ -58,7 +58,8 @@ $('.zoom').click(function(){
 			.css('top','');
 	    /* remove close btn and restore zoom btn */
 		$(card).children('.modal-header').remove();
-		$(card).find('.zoom').show();
+		/* restore close btn and restore zoom btn */
+		$(card).find('div.top-right').show();
 	})
 });
 
