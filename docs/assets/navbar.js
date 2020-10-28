@@ -58,8 +58,7 @@ $('.zoom').click(function(){
 			.css('top','');
 	    /* remove close btn and restore zoom btn */
 		$(card).children('.modal-header').remove();
-		console.log($(card).children('.zoom'))
-		$(card).children('.zoom').show();
+		$(card).find('.zoom').show();
 	})
 });
 
