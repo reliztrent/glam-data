@@ -27,9 +27,9 @@ $('.zoom').click(function(){
 	var cardp = cardw/cardh
 	var wh = $(window).height();
 	var ww = $(window).width();
+	var neww = wh * cardp;
 	/* only zoom if card is < 90% of the screen  size */
 	if (cardw < (ww*.8)) (
-			var neww = wh * cardp;
 			/* apply the zoom */
 			$(card)
 			  .width(neww)
