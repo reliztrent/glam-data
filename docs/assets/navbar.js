@@ -29,7 +29,7 @@ $('.zoom').click(function(){
 	var ww = $(window).width();
 	var neww = wh * cardp;
 	/* only zoom if card is < 90% of the screen  size */
-	if (cardw < (ww*.8)) (
+	if (cardw < (ww*.8)) {
 		/* apply the zoom */
 		$(card)
 		  .width(neww)
@@ -43,9 +43,10 @@ $('.zoom').click(function(){
 		          '<span aria-hidden="true">×</span>'+
 		        '</button>'+
 		      '</div>'
-	      	);)
+	      	);
 		/* remove the top-right buttons */
-	$(this).closest('div.top-right').hide();
+		$(this).closest('div.top-right').hide();
+	};
 		
 
 	$('.card-close').children('span').click(function(){
