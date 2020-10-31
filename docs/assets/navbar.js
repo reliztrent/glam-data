@@ -28,25 +28,26 @@ $('.zoom').click(function(){
 	var wh = $(window).height();
 	var ww = $(window).width();
 	/* only zoom if card is < 90% of the screen  size */
-	if cardw < (ww*.8):
-		var neww = wh * cardp;
-		/* apply the zoom */
-		$(card)
-		  .width(neww)
-		  .css('position','fixed')
-		  .css('left',(ww-neww)/2)
-		  .css('z-index','2000')
-		  .css('top','2rem');
-	    /* add a close button */
-		$(card).prepend(
-			  '<div class="modal-header">'+
-		        '<button type="button" class="close card-close p-0" aria-label="Close">'+
-		          '<span aria-hidden="true">×</span>'+
-		        '</button>'+
-		      '</div>'
-		      );
-	/* remove the top-right buttons */
-	$(this).closest('div.top-right').hide();
+	if (cardw < (ww*.8)) (
+			var neww = wh * cardp;
+			/* apply the zoom */
+			$(card)
+			  .width(neww)
+			  .css('position','fixed')
+			  .css('left',(ww-neww)/2)
+			  .css('z-index','2000')
+			  .css('top','2rem');
+		    /* add a close button */
+			$(card).prepend(
+				  '<div class="modal-header">'+
+			        '<button type="button" class="close card-close p-0" aria-label="Close">'+
+			          '<span aria-hidden="true">×</span>'+
+			        '</button>'+
+			      '</div>'
+			      );
+		/* remove the top-right buttons */
+		$(this).closest('div.top-right').hide();
+		);
 
 	$('.card-close').children('span').click(function(){
 		/* get parent card */
