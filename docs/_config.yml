@@ -1,7 +1,7 @@
 name: Maps Dashboard
 markdown: kramdown
 timezone: America/New_York 
-title: Maps Data Dashboards
+title: Maps Dashboard
 description: Data from loc.gov about online maps from Library of Congress
 baseurl: "/glam-data"
 github_repo: glam-data
