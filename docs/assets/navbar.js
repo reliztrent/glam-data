@@ -43,10 +43,10 @@ $('.zoom').click(function(){
 		          '<span aria-hidden="true">×</span>'+
 		        '</button>'+
 		      '</div>'
-	      	);
+	      	);)
 		/* remove the top-right buttons */
-		$(this).closest('div.top-right').hide();
-		);
+	$(this).closest('div.top-right').hide();
+		
 
 	$('.card-close').children('span').click(function(){
 		/* get parent card */
