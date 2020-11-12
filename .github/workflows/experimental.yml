@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Generate loc.gov JSON
+name: New gmd.mar items, update gmdmar-all-items.json
 
 # Controls when the action will run. Triggers the workflow on push events
 on:
