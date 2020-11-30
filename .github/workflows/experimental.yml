@@ -1,8 +1,6 @@
-name: New gmd.mar items, update gmdmar-all-items.json
+name: experimental.yml | gmd.mar new items, update gmdmar-all-items.json
 
 on:
-  push:
-    branches: master
   schedule:
     - cron: "0 6 * * *"
   #Do not run this more than once per day. Data may be lost. 
