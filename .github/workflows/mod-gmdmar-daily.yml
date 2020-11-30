@@ -1,11 +1,9 @@
 # This workflow will capture and save the last 14 days worth of modifications to gmd.mar. 
 # It will overwrite the existing files for these days. 
 
-name: Log 7 days of gmd.mar updates
+name: mod-gmdmar-daily.yml | Last 7 days of mods to gmd.mar, in mod-gmdmar-daily/
 
 on:
-  push: 
-    branches: master
   schedule:
     - cron: "0 7 * * *"
 jobs:
