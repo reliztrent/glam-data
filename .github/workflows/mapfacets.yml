@@ -1,5 +1,7 @@
 name: Daily get loc.gov map facets
 on:
+  push:
+    branches: master
   schedule:
     - cron: '0 4-23 * * *'
 jobs:
@@ -15,14 +17,14 @@ jobs:
         run: echo "TIMESTAMP=$(date +"%Y%m%d")" >> $GITHUB_ENV
   
       - name: Fetch API Data -${{ env.TIMESTAMP }}📦
-        uses: JamesIves/fetch-api-data-action@1.0.15
+        uses: JamesIves/fetch-api-data-action@1.0.19
         with:
           ENDPOINT: https://www.loc.gov/maps/?fo=json&at=facets
           RETRY: true
           SAVE_NAME: map-facets-${{ env.TIMESTAMP }}
           
       - name: Fetch API Data - TODAY📦
-        uses: JamesIves/fetch-api-data-action@1.0.15
+        uses: JamesIves/fetch-api-data-action@1.0.19
         with:
           ENDPOINT: https://www.loc.gov/maps/?fo=json&at=facets
           RETRY: true
