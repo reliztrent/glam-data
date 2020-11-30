@@ -1,7 +1,5 @@
-name: Daily get loc.gov map facets
+name: mapfacets.yml | Get current facets : loc.gov/maps 
 on:
-  push:
-    branches: master
   schedule:
     - cron: '0 4-23 * * *'
 jobs:
