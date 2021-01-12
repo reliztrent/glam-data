@@ -11,7 +11,7 @@ layout: none
 [
 {% for filename in sorted_filenames %}
 	{% for file in site.data.gmdmar-facets-daily %}
-	{% if file[0] == filename %}
+	{% if file[0] == filename and file[1].facets[0].filters[0].count != 0%}
 	{% assign online = file[1].facets[0].filters[0].count %}
 	{% assign not_online = file[1].facets[0].filters[1].count %}
 	{% assign year = file[0] | slice: -8, 4 %}
